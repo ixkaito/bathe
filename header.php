@@ -22,10 +22,7 @@
 <?php // <meta property="fb:app_id" content="" /> ?>
 
 <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico">
-
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/reset.css" />
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css" />
-
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css" type="text/css" media="all" />
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript">window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-1.10.2.min.js"><\/script>')</script>
