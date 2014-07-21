@@ -23,8 +23,7 @@ function head_title() {
 */
 function get_meta_description() {
 	if( is_singular() && have_posts() ):
-		while(have_posts()):
-			the_post();
+		while(have_posts()): the_post();
 			$description = mb_substr( get_the_excerpt(), 0, 100 );
 		endwhile;
 	else:
@@ -70,8 +69,7 @@ function og_url() {
 */
 function get_og_title() {
 	if( is_singular() && have_posts() ):
-		while(have_posts()):
-			the_post();
+		while(have_posts()): the_post();
 			$title = the_title('', '', false);
 		endwhile;
 	else:
