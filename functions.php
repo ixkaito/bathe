@@ -1,14 +1,15 @@
 <?php
-
 /*
 ================================================================================
 	meta title
 ================================================================================
 */
 function get_head_title() {
+	$title = '';
 	if( is_singular() )
-		return wp_title( ' | ', false, 'right' );
-	return get_bloginfo( 'name' );
+		$title .= wp_title( '|', false, 'right' );
+	$title .= get_bloginfo( 'name' );
+	return $title;
 }
 
 function head_title() {
@@ -21,16 +22,15 @@ function head_title() {
 ================================================================================
 */
 function get_meta_description() {
-	if( is_singular() ):
-		if( have_posts() ):
-			while( have_posts() ):
-				the_post();
-				return mb_substr( get_the_excerpt(), 0, 100 );
-			endwhile;
-		endif;
+	if( is_singular() && have_posts() ):
+		while(have_posts()):
+			the_post();
+			$description = mb_substr( get_the_excerpt(), 0, 100 );
+		endwhile;
 	else:
-		return get_bloginfo( 'description' );
+		$description = get_bloginfo( 'description' );
 	endif;
+	return $description;
 }
 
 function meta_description() {
@@ -69,17 +69,15 @@ function og_url() {
 ================================================================================
 */
 function get_og_title() {
-	if( is_singular() && ! is_archive() && ! is_front_page() && ! is_home() ):
-		return wp_title( '', false, '' );
-		// if(have_posts()):
-		// 	while(have_posts()):
-		// 		the_post();
-		// 		return the_title( '', '', false );
-		// 	endwhile;
-		// endif;
+	if( is_singular() && have_posts() ):
+		while(have_posts()):
+			the_post();
+			$title = the_title('', '', false);
+		endwhile;
 	else:
-		return get_bloginfo( 'name' );
+		$title = get_bloginfo( 'name' );
 	endif;
+	return $title;
 }
 
 function og_title() {
@@ -105,6 +103,7 @@ function og_description() {
 ================================================================================
 */
 function get_og_image() {
+	global $post;
 	$post_content	= (! is_archive() && ! is_front_page() && ! is_home()) ? $post->post_content : null;
 	$search_pattern	= '/<img.*?src=(["\'])(.+?)\1.*?>/i';
 	if( has_post_thumbnail() && ! is_archive() && ! is_front_page() && ! is_home() ):
@@ -121,4 +120,5 @@ function get_og_image() {
 function og_image() {
 	echo esc_attr( get_og_image() );
 }
-//
+
+// end
