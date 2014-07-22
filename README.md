@@ -13,3 +13,6 @@
 - favicon.ico
 - apple-touch-icon.png
 - OGP
+
+## Notes
+- The default theme stylesheet is not loaded.
