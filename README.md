@@ -14,5 +14,5 @@
 - apple-touch-icon.png
 - OGP
 
-## Notes
+## Notes:
 - The default theme stylesheet is not loaded.
