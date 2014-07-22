@@ -18,7 +18,7 @@
 <meta property="og:title" content="<?php og('title'); ?>" />
 <meta property="og:description" content="<?php og('description'); ?>" />
 <meta property="og:image" content="<?php og('image'); ?>" />
-<meta property="fb:admins" content="<?php // 1047363919; ?>" />
+<meta property="fb:admins" content="<?php // 1047363919 ?>" />
 <?php // <meta property="fb:app_id" content="" /> ?>
 
 <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" />
