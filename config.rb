@@ -1,7 +1,7 @@
 http_path = "/"
 preferred_syntax = :scss
 css_dir = "assets/css"
-sass_dir = "assets/_scss"
+sass_dir = "assets/_sass"
 images_dir = "assets/images"
 javascripts_dir = "assets/js"
 output_style = :compressed # :expanded, :nested, :compact or :compressed
