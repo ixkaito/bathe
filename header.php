@@ -21,14 +21,17 @@
 <meta property="fb:admins" content="<?php // 1047363919; ?>" />
 <?php // <meta property="fb:app_id" content="" /> ?>
 
-<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" />
+<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-touch-icon.png" />
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css" type="text/css" media="all" />
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script type="text/javascript">window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-1.10.2.min.js"><\/script>')</script>
+
 <!--[if lt IE 9]>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/selectivizr-min.js"></script>
 <![endif]-->
+
 <?php wp_deregister_script('jquery'); ?>
 <?php wp_head(); ?>
 </head>

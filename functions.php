@@ -1,12 +1,12 @@
 <?php
 /*
 ================================================================================
-	meta title
+	head title
 ================================================================================
 */
 function get_head_title() {
 	$title = '';
-	if( is_singular() )
+	if ( is_singular() )
 		$title .= wp_title( '|', false, 'right' );
 	$title .= get_bloginfo( 'name' );
 	return $title;
@@ -22,7 +22,7 @@ function head_title() {
 ================================================================================
 */
 function get_meta_description() {
-	if( is_singular() && have_posts() ):
+	if ( is_singular() && have_posts() ):
 		while(have_posts()): the_post();
 			$description = mb_substr( get_the_excerpt(), 0, 100 );
 		endwhile;
@@ -68,7 +68,7 @@ function og_url() {
 ================================================================================
 */
 function get_og_title() {
-	if( is_singular() && have_posts() ):
+	if ( is_singular() && have_posts() ):
 		while(have_posts()): the_post();
 			$title = the_title('', '', false);
 		endwhile;
@@ -104,11 +104,11 @@ function get_og_image() {
 	global $post;
 	$post_content	= (! is_archive() && ! is_front_page() && ! is_home()) ? $post->post_content : null;
 	$search_pattern	= '/<img.*?src=(["\'])(.+?)\1.*?>/i';
-	if( has_post_thumbnail() && ! is_archive() && ! is_front_page() && ! is_home() ):
+	if ( has_post_thumbnail() && ! is_archive() && ! is_front_page() && ! is_home() ):
 		$image_id	= get_post_thumbnail_id();
 		$image		= wp_get_attachment_image_src( $image_id, 'full' );
 		return $image[0];
-	elseif( preg_match( $search_pattern, $post_content, $imgurl ) && ! is_archive() && ! is_front_page() && ! is_home() ):
+	elseif ( preg_match( $search_pattern, $post_content, $imgurl ) && ! is_archive() && ! is_front_page() && ! is_home() ):
 		return $imgurl[2];
 	else:
 		return get_template_directory_uri() . '/assets/images/og-default.png';
