@@ -12,12 +12,12 @@
 <meta name="description" content="<?php meta_description(); ?>" />
 <meta name="keywords" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:type" content="<?php og_type(); ?>" />
-<meta property="og:url" content="<?php og_url(); ?>" />
+<meta property="og:type" content="<?php og('type'); ?>" />
+<meta property="og:url" content="<?php og('url'); ?>" />
 <meta property="og:site_name" content="<?php bloginfo('name'); ?>" />
-<meta property="og:title" content="<?php og_title(); ?>" />
-<meta property="og:description" content="<?php og_description(); ?>" />
-<meta property="og:image" content="<?php og_image(); ?>" />
+<meta property="og:title" content="<?php og('title'); ?>" />
+<meta property="og:description" content="<?php og('description'); ?>" />
+<meta property="og:image" content="<?php og('image'); ?>" />
 <meta property="fb:admins" content="<?php // 1047363919; ?>" />
 <?php // <meta property="fb:app_id" content="" /> ?>
 
