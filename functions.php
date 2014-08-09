@@ -47,12 +47,12 @@ function get_og( $arg ) {
 		$og = is_front_page() ? 'website' : 'article';
 
 	elseif ( $arg === 'url' ):
-		$og = 'http://' . (is_404() ? home_url() : $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
+		$og = is_404() ? home_url() : set_url_scheme( 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] );
 
 	elseif ( $arg === 'title' ):
 		if ( is_singular() && have_posts() ):
-			while(have_posts()): the_post();
-				$title = the_title('', '', false);
+			while( have_posts() ): the_post();
+				$title = the_title( '', '', false );
 			endwhile;
 		else:
 			$title = get_bloginfo( 'name' );
@@ -64,11 +64,11 @@ function get_og( $arg ) {
 
 	elseif ( $arg === 'image' ):
 		global $post;
-		$post_content	= (! is_archive() && ! is_front_page() && ! is_home()) ? $post->post_content : null;
-		$search_pattern	= '/<img.*?src=(["\'])(.+?)\1.*?>/i';
+		$post_content   = ( ! is_archive() && ! is_front_page() && ! is_home() ) ? $post->post_content : null;
+		$search_pattern = '/<img.*?src=(["\'])(.+?)\1.*?>/i';
 		if ( has_post_thumbnail() && ! is_archive() && ! is_front_page() && ! is_home() ):
-			$image_id	= get_post_thumbnail_id();
-			$image		= wp_get_attachment_image_src( $image_id, 'full' );
+			$image_id   = get_post_thumbnail_id();
+			$image      = wp_get_attachment_image_src( $image_id, 'full' );
 			$og = $image[0];
 		elseif ( preg_match( $search_pattern, $post_content, $imgurl ) && ! is_archive() && ! is_front_page() && ! is_home() ):
 			$og = $imgurl[2];

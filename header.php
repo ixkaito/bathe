@@ -12,12 +12,12 @@
 <meta name="description" content="<?php meta_description(); ?>" />
 <meta name="keywords" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:type" content="<?php og('type'); ?>" />
-<meta property="og:url" content="<?php og('url'); ?>" />
-<meta property="og:site_name" content="<?php bloginfo('name'); ?>" />
-<meta property="og:title" content="<?php og('title'); ?>" />
-<meta property="og:description" content="<?php og('description'); ?>" />
-<meta property="og:image" content="<?php og('image'); ?>" />
+<meta property="og:type" content="<?php og( 'type' ); ?>" />
+<meta property="og:url" content="<?php og( 'url' ); ?>" />
+<meta property="og:site_name" content="<?php bloginfo('name' ); ?>" />
+<meta property="og:title" content="<?php og( 'title' ); ?>" />
+<meta property="og:description" content="<?php og( 'description' ); ?>" />
+<meta property="og:image" content="<?php og( 'image' ); ?>" />
 <meta property="fb:admins" content="<?php // 1047363919 ?>" />
 <?php // <meta property="fb:app_id" content="" /> ?>
 
@@ -26,13 +26,13 @@
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css" type="text/css" media="all" />
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/modernizr-2.6.2.min.js"></script>
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script type="text/javascript">window.jQuery || document.write('<script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-1.10.2.min.js"><\/script>')</script>
+<script type="text/javascript">window.jQuery || document.write( '<script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-1.10.2.min.js"><\/script>' )</script>
 
 <!--[if lt IE 9]>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/selectivizr-min.js"></script>
 <![endif]-->
 
-<?php wp_deregister_script('jquery'); ?>
+<?php wp_deregister_script( 'jquery' ); ?>
 <?php wp_head(); ?>
 </head>
 <body id="top" <?php body_class(); ?>>
