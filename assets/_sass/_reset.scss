@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import "compass";
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -21,33 +22,104 @@ article, aside, dialog, figure, footer, header, hgroup, menu, nav, section, time
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, dialog, figure, footer, header, hgroup, menu, nav, section {display: block;}
+article, aside, details, figcaption, dialog, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 
-body {line-height: 1;}
+body {
+	line-height: 1;
+}
 
-b, strong {font-weight: bold;}
+b, strong {
+	font-weight: bold;
+}
 
-ol, ul {list-style: none;}
-:focus {outline: 0;}
-ins {text-decoration: none;}
-del {text-decoration: line-through;}
-caption, th {text-align: left;}
+ol, ul {
+	list-style: none;
+}
 
-small{font-size: 80%;}
-sub, sup {font-size: 75%; line-height: 0; position: relative; vertical-align: baseline;}
-sup {top: -0.5em;}
-sub {bottom: -0.25em;}
+:focus {
+	outline: 0;
+}
 
-blockquote, q {quotes: none;}
-blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
+ins {
+	text-decoration: none;
+}
 
-table {border-collapse: collapse; border-spacing: 0;}
+del {
+	text-decoration: line-through;
+}
 
-input {vertical-align: middle;}
-button, html input[type="button"], input[type="reset"], input[type="submit"] {-webkit-appearance: button; cursor: pointer; *overflow: visible;}
-button[disabled], html input[disabled] {cursor: default;}
+caption, th {
+	text-align: left;
+}
 
-hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+small{
+	font-size: 80%;
+}
 
-h1, h2, h3, h4, h5, h6 {font-weight: 400;}
-img {vertical-align: top;}
+sub, sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+input {
+	vertical-align: middle;
+}
+
+input, textarea, button {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+	*overflow: visible;
+}
+
+button[disabled], html input[disabled] {
+	cursor: default;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 400;
+}
+
+img {
+	vertical-align: top;
+}
