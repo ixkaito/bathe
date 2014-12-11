@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>       <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>><![endif]-->
-<!--[if IE 7]>          <html class="no-js lt-ie9 lt-ie8" <?php language_attributes(); ?>><![endif]-->
-<!--[if IE 8]>          <html class="no-js lt-ie9" <?php language_attributes(); ?>><![endif]-->
-<!--[if gt IE 8]><!-->  <html class="no-js" <?php language_attributes(); ?>><!--<![endif]-->
+<!--[if lt IE 7]>       <html class="no-js lt-ie9 lt-ie8 lt-ie7" <?php language_attributes(); ?>>  <![endif]-->
+<!--[if IE 7]>          <html class="no-js lt-ie9 lt-ie8" <?php language_attributes(); ?>>         <![endif]-->
+<!--[if IE 8]>          <html class="no-js lt-ie9" <?php language_attributes(); ?>>                <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" <?php language_attributes(); ?>>                       <!--<![endif]-->
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta http-equiv="Content-Style-Type" content="text/css" />
@@ -25,8 +25,8 @@
 <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-touch-icon.png" />
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css" type="text/css" media="all" />
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/modernizr-2.6.2.min.js"></script>
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script type="text/javascript">window.jQuery || document.write( '<script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-1.10.2.min.js"><\/script>' )</script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write( '<script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-1.11.1.min.js"><\/script>' )</script>
 
 <!--[if lt IE 9]>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/selectivizr-min.js"></script>
