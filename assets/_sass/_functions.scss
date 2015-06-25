@@ -1,6 +1,0 @@
-@charset "UTF-8";
-@import "compass";
-
-@function gray( $percentage: 50 ) {
-	@return	darken( #fff, $percentage );
-}

@@ -1,13 +1,36 @@
-# Ignore sublime setting files.
-sftp-config.json
-*.sublime-project
-*.sublime-workspace
+# Apache
+.htaccess
+.htpasswd
 
-# Ignore all logfiles and tempfiles.
-/log/*.log
+# Sass
+.sass-cache
+*.scssc
+
+# Sublime Text
+sftp-config.json
+
+# WordPress
+wp-config.php
+*.sql
+
+# Ruby on Rails
+/.bundle
+/db/*.sqlite3
+/db/*.sqlite3-journal
+/public/uploads
+
+# Jekyll
+_site
+
+# Node.js
+node_modules/
+
+# Logfiles and tempfiles
+/log/*
+!/log/.keep
 /tmp
 
-# Ignore other unneeded files.
+# Other unneeded files
 doc/
 *.swp
 *~
@@ -15,6 +38,3 @@ doc/
 .DS_Store
 .idea
 .secret
-
-# Ignore Sass cache files.
-*.scssc

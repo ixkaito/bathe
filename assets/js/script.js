@@ -1,1 +1,0 @@
-// This is the original file before minified of script.min.js.

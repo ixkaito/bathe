@@ -1,0 +1,31 @@
+{
+  "name": "gulp-jekyll-combo",
+  "version": "0.1.0",
+  "description": "Gulp, Jekyll, Compass, and Bourbon",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kite",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ixkaito/gulp-jekyll-combo.git"
+  },
+  "keywords": [
+    "jekyll",
+    "gulp",
+    "compass",
+    "browsersync"
+  ],
+  "bugs": {
+    "url": "https://github.com/ixkaito/gulp-jekyll-combo/issues"
+  },
+  "homepage": "https://github.com/ixkaito/gulp-jekyll-combo",
+  "devDependencies": {
+    "browser-sync": "^2.7.3",
+    "gulp": "^3.8.11",
+    "gulp-compass": "^2.1.0",
+    "gulp-plumber": "^1.0.1"
+  }
+}
