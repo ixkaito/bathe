@@ -3,9 +3,19 @@ var browserSync = require('browser-sync');
 var compass     = require('gulp-compass');
 var plumber     = require('gulp-plumber');
 
-var assetsDir = 'assets';
-var assetsCss = 'assets/css';
-var assetsSass = 'assets/_sass';
+var siteUrl     = 'wordpress.dev';
+var assetsDir   = 'assets';
+var assetsCss   = 'assets/css';
+var assetsSass  = 'assets/_sass';
+
+/*
+ * Start the sever
+ */
+gulp.task('browser-sync', function () {
+    browserSync({
+        proxy: siteUrl
+    });
+});
 
 /**
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
