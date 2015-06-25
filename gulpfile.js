@@ -1,20 +1,36 @@
+/**
+ * Change `siteUrl` for your development environment.
+ */
+var siteUrl      = 'wordpress.dev';
+
+/**
+ * Variables
+ */
+var assetsDir    = 'assets';
+var assetsCss    = 'assets/css';
+var assetsSass   = 'assets/_sass';
+var assetsJs     = 'assets/css';
+var assetsImages = 'assets/css';
+
+/**
+ * Gulp Package
+ */
 var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var compass     = require('gulp-compass');
 var plumber     = require('gulp-plumber');
 
-var siteUrl     = 'wordpress.dev';
-var assetsDir   = 'assets';
-var assetsCss   = 'assets/css';
-var assetsSass  = 'assets/_sass';
-
-/*
- * Start the sever
+/**
+ * Browser
  */
-gulp.task('browser-sync', function () {
-    browserSync({
-        proxy: siteUrl
-    });
+gulp.task('browser', function () {
+  browserSync({
+      proxy: siteUrl
+  });
+});
+
+gulp.task('browser-reload', function () {
+  browserSync.reload();
 });
 
 /**
@@ -37,10 +53,11 @@ gulp.task('compass', function () {
  */
 gulp.task('watch', function () {
   gulp.watch(assetsSass + '/**/*', ['compass']);
+  gulp.watch(['**/*.php', assetsCss + '/**/*', assetsJs + '/**/*', assetsImages + '/**/*'], ['browser-reload']);
 });
 
 /**
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
-gulp.task('default', ['watch']);
+gulp.task('default', ['compass', 'browser', 'watch']);
