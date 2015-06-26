@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Change `siteUrl` for your development environment.
  */
