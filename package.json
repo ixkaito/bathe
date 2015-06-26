@@ -24,8 +24,10 @@
   "homepage": "https://github.com/ixkaito/gulp-jekyll-combo",
   "devDependencies": {
     "browser-sync": "^2.7.3",
+    "browserify": "^10.2.4",
     "gulp": "^3.8.11",
     "gulp-compass": "^2.1.0",
-    "gulp-plumber": "^1.0.1"
+    "gulp-plumber": "^1.0.1",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

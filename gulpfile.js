@@ -4,13 +4,13 @@
 var siteUrl      = 'wordpress.dev';
 
 /**
- * Variables
+ * Path
  */
-var assetsDir    = 'assets';
-var assetsCss    = 'assets/css';
-var assetsSass   = 'assets/_sass';
-var assetsJs     = 'assets/css';
-var assetsImages = 'assets/css';
+var assetsDir = 'assets';
+var cssDir    = assetsDir + '/css';
+var sassDir   = assetsDir + '/_sass';
+var jsDir     = assetsDir + '/js';
+var imagesDir = assetsDir + '/images';
 
 /**
  * Gulp Package
@@ -34,16 +34,16 @@ gulp.task('browser-reload', function () {
 });
 
 /**
- * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
+ * Compile files from Sass directory into CSS directory
  */
 gulp.task('compass', function () {
-  gulp.src(assetsSass + '/**/*')
+  gulp.src(sassDir + '/**/*')
     .pipe(plumber())
     .pipe(compass({
       config_file: 'config.rb',
       comments: false,
-      css: assetsCss,
-      sass: assetsSass
+      css: cssDir,
+      sass: sassDir
     }));
 });
 
@@ -52,8 +52,8 @@ gulp.task('compass', function () {
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-  gulp.watch(assetsSass + '/**/*', ['compass']);
-  gulp.watch(['**/*.php', assetsCss + '/**/*', assetsJs + '/**/*', assetsImages + '/**/*'], ['browser-reload']);
+  gulp.watch(sassDir + '/**/*', ['compass']);
+  gulp.watch(['**/*.php', cssDir + '/**/*', jsDir + '/**/*', imagesDir + '/**/*'], ['browser-reload']);
 });
 
 /**
