@@ -4,13 +4,16 @@
 var siteUrl        = 'wordpress.dev';
 
 /**
- * Path
+ * Settings
  */
-var assetsDir = 'assets';
-var cssDir    = assetsDir + '/css';
-var sassDir   = assetsDir + '/_sass';
-var jsDir     = assetsDir + '/js';
-var imagesDir = assetsDir + '/images';
+var assetsDir           = './assets';
+var cssDir              = assetsDir + '/css';
+var sassDir             = assetsDir + '/_sass';
+var jsDir               = assetsDir + '/js';
+var imagesDir           = assetsDir + '/images';
+var compassConfigFile   = './config.rb';
+var compassStyle        = 'compressed';
+var compassComments     = false;
 var jsFilesToBrowserify = [
   jsDir + '/main.js'
 ];
@@ -48,10 +51,12 @@ gulp.task('compass', function () {
   gulp.src(sassDir + '/**/*')
     .pipe(plumber())
     .pipe(compass({
-      config_file: 'config.rb',
-      comments: false,
+      config_file: compassConfigFile,
+      style: compassStyle,
+      comments: compassComments,
       css: cssDir,
-      sass: sassDir
+      sass: sassDir,
+      image: imagesDir
     }));
 });
 
@@ -61,6 +66,7 @@ gulp.task('compass', function () {
 gulp.task('browserify', function () {
   browserify(jsFilesToBrowserify)
     .bundle()
+    .pipe(plumber())
     .pipe(source(destJsFilename))
     .pipe(buffer())
     .pipe(uglify())
