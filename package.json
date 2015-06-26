@@ -1,27 +1,29 @@
 {
-  "name": "gulp-jekyll-combo",
+  "name": "Bathe",
   "version": "0.1.0",
-  "description": "Gulp, Jekyll, Compass, and Bourbon",
+  "description": "Blank WordPress theme for Gulp",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kite",
-  "license": "MIT",
+  "license": "GPLv3",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ixkaito/gulp-jekyll-combo.git"
+    "url": "https://github.com/ixkaito/bathe.git"
   },
   "keywords": [
-    "jekyll",
-    "gulp",
-    "compass",
-    "browsersync"
+    "WordPress",
+    "Gulp",
+    "Sass",
+    "Compass",
+    "Browserify",
+    "Browsersync"
   ],
   "bugs": {
-    "url": "https://github.com/ixkaito/gulp-jekyll-combo/issues"
+    "url": "https://github.com/ixkaito/bathe/issues"
   },
-  "homepage": "https://github.com/ixkaito/gulp-jekyll-combo",
+  "homepage": "https://github.com/ixkaito/bathe",
   "devDependencies": {
     "browser-sync": "^2.7.3",
     "browserify": "^10.2.4",
