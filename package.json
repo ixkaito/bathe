@@ -6,8 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Kite",
-  "license": "GPLv3",
   "repository": {
     "type": "git",
     "url": "https://github.com/ixkaito/bathe.git"
@@ -18,16 +16,18 @@
     "Sass",
     "Compass",
     "Browserify",
-    "Browsersync"
+    "Browser-sync"
   ],
+  "author": "Kite",
+  "license": "GPLv3",
   "bugs": {
     "url": "https://github.com/ixkaito/bathe/issues"
   },
   "homepage": "https://github.com/ixkaito/bathe",
   "devDependencies": {
-    "browser-sync": "^2.7.3",
+    "browser-sync": "^2.7.12",
     "browserify": "^10.2.4",
-    "gulp": "^3.8.11",
+    "gulp": "^3.9.0",
     "gulp-compass": "^2.1.0",
     "gulp-plumber": "^1.0.1",
     "gulp-uglify": "^1.2.0",
