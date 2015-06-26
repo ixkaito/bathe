@@ -1,7 +1,7 @@
 /**
  * Change `siteUrl` for your development environment.
  */
-var siteUrl      = 'wordpress.dev';
+var siteUrl        = 'wordpress.dev';
 
 /**
  * Path
@@ -11,6 +11,10 @@ var cssDir    = assetsDir + '/css';
 var sassDir   = assetsDir + '/_sass';
 var jsDir     = assetsDir + '/js';
 var imagesDir = assetsDir + '/images';
+var jsFilesToBrowserify = [
+  jsDir + '/main.js'
+];
+var destJsFilename = 'main.min.js';
 
 /**
  * Gulp Package
@@ -18,6 +22,10 @@ var imagesDir = assetsDir + '/images';
 var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var compass     = require('gulp-compass');
+var browserify  = require('browserify');
+var source      = require('vinyl-source-stream');
+var buffer      = require('vinyl-buffer');
+var uglify      = require('gulp-uglify');
 var plumber     = require('gulp-plumber');
 
 /**
@@ -48,6 +56,18 @@ gulp.task('compass', function () {
 });
 
 /**
+ * Browserify and compress JavaScripts
+ */
+gulp.task('browserify', function () {
+  browserify(jsFilesToBrowserify)
+    .bundle()
+    .pipe(source(destJsFilename))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(gulp.dest(jsDir));
+});
+
+/**
  * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
@@ -60,4 +80,4 @@ gulp.task('watch', function () {
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
-gulp.task('default', ['compass', 'browser', 'watch']);
+gulp.task('default', ['compass', 'browserify', 'browser', 'watch']);
