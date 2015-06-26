@@ -34,7 +34,6 @@ var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var compass     = require('gulp-compass');
 var browserify  = require('browserify');
-var watchify    = require('watchify');
 var source      = require('vinyl-source-stream');
 var buffer      = require('vinyl-buffer');
 var uglify      = require('gulp-uglify');
@@ -75,28 +74,21 @@ gulp.task('compass', function () {
 gulp.task('browserify', function () {
   browserify(js.src)
     .bundle()
-    .pipe(plumber)
+    .pipe(plumber())
     .pipe(source(js.destFilename))
     .pipe(buffer())
     .pipe(uglify())
     .pipe(gulp.dest(path.js));
 });
 
-// var watching = false;
-// gulp.task('enable-watch-mode', function () { watching = true; });
-
-// gulp.task('browserify', watchify (function (watchify) {
-//   gulp.src()
-// }))
-
 /**
  * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
-// gulp.task('watch', function () {
-//   gulp.watch(path.sass + '/**/*', ['compass']);
-//   gulp.watch(['**/*.php', path.css + '/**/*', path.js + '/**/*', path.images + '/**/*'], ['browser-reload']);
-// });
+gulp.task('watch', function () {
+  gulp.watch(path.sass + '/**/*', ['compass']);
+  gulp.watch(['**/*.php', path.css + '/**/*', path.js + '/**/*', path.images + '/**/*'], ['browser-reload']);
+});
 
 /**
  * Default task, running just `gulp` will compile the sass,
