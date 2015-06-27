@@ -3,7 +3,7 @@
 /**
  * Change `siteUrl` for your development environment.
  */
-var siteUrl        = 'wordpress.dev';
+var siteUrl = 'wordpress.dev';
 
 /**
  * Settings
@@ -34,6 +34,7 @@ var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var compass     = require('gulp-compass');
 var browserify  = require('browserify');
+var watchify    = require('watchify');
 var source      = require('vinyl-source-stream');
 var buffer      = require('vinyl-buffer');
 var uglify      = require('gulp-uglify');
@@ -72,22 +73,41 @@ gulp.task('compass', function () {
  * Browserify and compress JavaScripts
  */
 gulp.task('browserify', function () {
-  browserify(js.src)
-    .bundle()
-    .pipe(plumber())
-    .pipe(source(js.destFilename))
-    .pipe(buffer())
-    .pipe(uglify())
-    .pipe(gulp.dest(path.js));
+  return compile(false);
 });
+
+gulp.task('watchify', function () {
+  return compile(true);
+});
+
+function compile(watching) {
+  var b = browserify(js.src);
+  if (watching) {
+    b = watchify(b);
+  }
+
+  function bundle() {
+    return b.bundle()
+      .pipe(source(js.destFilename))
+      .pipe(buffer())
+      .pipe(uglify())
+      .pipe(gulp.dest(path.js));
+  }
+
+  b.on('update', function () {
+    bundle();
+  });
+
+  return bundle();
+}
 
 /**
  * Watch scss files for changes & recompile
  * Watch html/md files, run jekyll & reload BrowserSync
  */
-gulp.task('watch', function () {
+gulp.task('watch', ['watchify'], function () {
   gulp.watch(path.sass + '/**/*', ['compass']);
-  gulp.watch(['**/*.php', path.css + '/**/*', path.js + '/**/*', path.images + '/**/*'], ['browser-reload']);
+  gulp.watch(['**/*.php', path.css + '/**/*', path.js + '/' + js.destFilename, path.images + '/**/*'], ['browser-reload']);
 });
 
 /**
