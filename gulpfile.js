@@ -8,7 +8,7 @@ var siteUrl        = 'wordpress.dev';
 /**
  * Settings
  */
-var path = { assets: './assets' };
+var path    = { assets: './assets' };
 path.css    = path.assets + '/css';
 path.sass   = path.assets + '/_sass';
 path.js     = path.assets + '/js';
