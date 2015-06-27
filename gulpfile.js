@@ -56,7 +56,7 @@ gulp.task('browser-reload', function () {
  * Compile files from Sass directory into CSS directory
  */
 gulp.task('compass', function () {
-  gulp.src(path.sass + '/**/*')
+  return gulp.src(path.sass + '/**/*')
     .pipe(plumber())
     .pipe(compass({
       config_file: compass.config,
