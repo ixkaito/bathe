@@ -6,6 +6,7 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var compass     = require('gulp-compass');
+var imagemin    = require('gulp-imagemin');
 var browserify  = require('browserify');
 var watchify    = require('watchify');
 var source      = require('vinyl-source-stream');
@@ -51,6 +52,16 @@ gulp.task('compass', function () {
       sass: config.paths.sass,
       image: config.paths.images
     }));
+});
+
+/**
+ * Imagemin
+ */
+gulp.task('imagemin', function () {
+  return gulp.src(config.paths.imagesSrc + '/**/*')
+    .pipe(plumber())
+    .pipe(imagemin())
+    .pipe(gulp.dest(config.paths.images));
 });
 
 /**
@@ -104,6 +115,7 @@ gulp.task('watch', ['watchify'], function () {
  */
 gulp.task('default', [
   tasks.compass,
+  tasks.imagemin,
   tasks.browserify,
   tasks.browser,
   tasks.watch
