@@ -16,19 +16,18 @@ var plumber     = require('gulp-plumber');
 
 // Load configurations
 var config = require('./gulpconfig.json');
+var tasks = [];
 
-var tasks = {
-  watch:      config.tasks.watch ? 'watch' : '',
-  browser:    config.tasks.browserSync ? 'browser' : '',
-  compass:    config.tasks.compass ? 'compass' : '',
-  browserify: config.tasks.browserify ? 'browserify' : '',
-  imagemin:   config.tasks.imagemin ? 'imagemin' : '',
-};
+Object.keys(config.tasks).forEach(function (key) {
+  if (config.tasks[key]) {
+    tasks.push(key);
+  }
+});
 
 /**
  * Browser
  */
-gulp.task('browser', function () {
+gulp.task('browser-sync', function () {
   browserSync({
       proxy: config.siteurl
   });
@@ -113,10 +112,4 @@ gulp.task('watch', ['watchify'], function () {
  * Default task, running just `gulp` will compile the sass,
  * bundle the js, launch BrowserSync & watch files.
  */
-gulp.task('default', [
-  tasks.compass,
-  tasks.imagemin,
-  tasks.browserify,
-  tasks.browser,
-  tasks.watch
-]);
+gulp.task('default', tasks);

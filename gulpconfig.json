@@ -2,11 +2,11 @@
   "siteurl": "wordpress.dev",
 
   "tasks": {
-    "watch":       true,
-    "browserSync": true,
-    "compass":     true,
-    "browserify":  true,
-    "imagemin":    true
+    "compass":      true,
+    "browserify":   true,
+    "imagemin":     true,
+    "browser-sync": true,
+    "watch":        true
   },
 
   "paths": {
