@@ -1,5 +1,5 @@
 # Bathe
-_Blank WordPress Theme for Gulp_
+__Blank WordPress Theme for Gulp__
 
 ## Features
 - Gulp
@@ -14,7 +14,7 @@ _Blank WordPress Theme for Gulp_
 ## Usage
 If you don't use Gulp or Compass, you can just use this theme like other themes. Nothing else is necessary except WordPress Environment.
 
-### Use Gulp to develop in Bathe
+### Using Gulp to develop in Bathe
 
 #### 1.1 Install Node.js
 
