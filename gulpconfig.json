@@ -11,12 +11,12 @@
 
   "paths": {
     "assets":    "./assets",
-    "css":       "./assets/css",
-    "sass":      "./assets/_sass",
-    "js":        "./assets/js",
-    "jsSrc":     "./assets/_js",
-    "images":    "./assets/images",
-    "imagesSrc": "./assets/_images"
+    "css":       "css",
+    "js":        "js",
+    "images":    "images",
+    "sass":      "_sass",
+    "jsSrc":     "_js",
+    "imagesSrc": "_images"
   },
 
   "compass": {
@@ -27,7 +27,7 @@
 
   "js": {
     "src": [
-      "./assets/_js/main.js"
+      "main.js"
     ],
     "dist": "main.js"
   }
