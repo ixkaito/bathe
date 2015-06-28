@@ -20,7 +20,7 @@
     "Browser-sync"
   ],
   "author": "Kite",
-  "license": "GPLv3",
+  "license": "(GPL-3.0 OR BSD-2-Clause)",
   "bugs": {
     "url": "https://github.com/ixkaito/bathe/issues"
   },
