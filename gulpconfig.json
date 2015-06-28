@@ -1,16 +1,14 @@
 {
-  // Change this for your environment
   "siteurl": "wocker.dev",
 
-  // Gulp tasks.
-  // Boolean (true or false)
-  "watch":        true,
-  "browser-sync": true,
-  "compass":      true,
-  "browserify":   true,
-  "imagemin":     true,
+  "tasks": {
+    "watch":       true,
+    "browserSync": true,
+    "compass":     true,
+    "browserify":  true,
+    "imagemin":    true
+  },
 
-  // Paths
   "paths": {
     "assets":    "./assets",
     "css":       "./assets/css",
@@ -21,17 +19,15 @@
     "imagesSrc": "./assets/_images"
   },
 
-  // Compass config
   "compass": {
     "config":   "./config.rb",
     "style":    "compressed",
     "comments": false
   },
 
-  // Browserify config
   "js": {
     "src": [
-      "main.js"
+      "./assets/_js/main.js"
     ],
     "dist": "main.js"
   }
