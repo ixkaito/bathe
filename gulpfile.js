@@ -14,21 +14,32 @@ var buffer      = require('vinyl-buffer');
 var uglify      = require('gulp-uglify');
 var plumber     = require('gulp-plumber');
 
-// Load configurations
+// Load configurations set variables
 var config = require('./gulpconfig.json');
+var tasks = [];
+var paths = {};
+var jsSrc = [];
 
-var tasks = {
-  watch:      config.tasks.watch ? 'watch' : '',
-  browser:    config.tasks.browserSync ? 'browser' : '',
-  compass:    config.tasks.compass ? 'compass' : '',
-  browserify: config.tasks.browserify ? 'browserify' : '',
-  imagemin:   config.tasks.imagemin ? 'imagemin' : '',
-};
+Object.keys(config.tasks).forEach(function (key) {
+  if (config.tasks[key]) {
+    tasks.push(key);
+  }
+});
+
+Object.keys(config.paths).forEach(function (key) {
+  if (key != 'assets') {
+    paths[key] = config.paths.assets + '/' + config.paths[key];
+  }
+});
+
+for (var i = 0; i <= config.js.src.length - 1; i++) {
+  jsSrc.push(paths.jsSrc + '/' + config.js.src[i]);
+}
 
 /**
  * Browser
  */
-gulp.task('browser', function () {
+gulp.task('browser-sync', function () {
   browserSync({
       proxy: config.siteurl
   });
@@ -42,15 +53,15 @@ gulp.task('browser-reload', function () {
  * Compass
  */
 gulp.task('compass', function () {
-  return gulp.src(config.paths.sass + '/**/*')
+  return gulp.src(paths.sass + '/**/*')
     .pipe(plumber())
     .pipe(compass({
       config_file: config.compass.config,
       style: config.compass.style,
       comments: config.compass.comments,
-      css: config.paths.css,
-      sass: config.paths.sass,
-      image: config.paths.images
+      css: paths.css,
+      sass: paths.sass,
+      image: paths.images
     }));
 });
 
@@ -58,10 +69,10 @@ gulp.task('compass', function () {
  * Imagemin
  */
 gulp.task('imagemin', function () {
-  return gulp.src(config.paths.imagesSrc + '/**/*')
+  return gulp.src(paths.imagesSrc + '/**/*')
     .pipe(plumber())
     .pipe(imagemin())
-    .pipe(gulp.dest(config.paths.images));
+    .pipe(gulp.dest(paths.images));
 });
 
 /**
@@ -76,7 +87,7 @@ gulp.task('watchify', function () {
 });
 
 function compile(watching) {
-  var b = browserify(config.js.src);
+  var b = browserify(jsSrc);
   if (watching) {
     b = watchify(b);
   }
@@ -86,7 +97,7 @@ function compile(watching) {
       .pipe(source(config.js.dist))
       .pipe(buffer())
       .pipe(uglify())
-      .pipe(gulp.dest(config.paths.js));
+      .pipe(gulp.dest(paths.js));
   }
 
   b.on('update', function () {
@@ -100,12 +111,12 @@ function compile(watching) {
  * Watch files for changes, recompile, and reload the browser.
  */
 gulp.task('watch', ['watchify'], function () {
-  gulp.watch(config.paths.sass + '/**/*', ['compass']);
+  gulp.watch(paths.sass + '/**/*', ['compass']);
   gulp.watch([
     '**/*.php',
-    config.paths.css + '/**/*',
-    config.paths.js + '/**/*',
-    config.paths.images + '/**/*'
+    paths.css + '/**/*',
+    paths.js + '/**/*',
+    paths.images + '/**/*'
   ], ['browser-reload']);
 });
 
@@ -113,10 +124,4 @@ gulp.task('watch', ['watchify'], function () {
  * Default task, running just `gulp` will compile the sass,
  * bundle the js, launch BrowserSync & watch files.
  */
-gulp.task('default', [
-  tasks.compass,
-  tasks.imagemin,
-  tasks.browserify,
-  tasks.browser,
-  tasks.watch
-]);
+gulp.task('default', tasks);
