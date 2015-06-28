@@ -3,7 +3,7 @@
 /**
  * Change `siteUrl` for your development environment.
  */
-var siteUrl = 'wordpress.dev';
+var siteUrl = 'wocker.dev';
 
 /**
  * Settings
