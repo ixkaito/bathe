@@ -12,6 +12,7 @@ var path    = { assets: './assets' };
 path.css    = path.assets + '/css';
 path.sass   = path.assets + '/_sass';
 path.js     = path.assets + '/js';
+path.jsSrc  = path.assets + '/_js';
 path.images = path.assets + '/images';
 
 var compass = {
@@ -22,13 +23,13 @@ var compass = {
 
 var js = {
   src: [
-    path.js + '/main.js'
+    path.jsSrc + '/main.js'
   ],
-  destFilename: 'main.min.js'
+  distFilename: 'main.js'
 };
 
 /**
- * Gulp Package
+ * Gulp modules
  */
 var gulp        = require('gulp');
 var browserSync = require('browser-sync');
@@ -54,7 +55,7 @@ gulp.task('browser-reload', function () {
 });
 
 /**
- * Compile files from Sass directory into CSS directory
+ * Compass
  */
 gulp.task('compass', function () {
   return gulp.src(path.sass + '/**/*')
@@ -70,7 +71,7 @@ gulp.task('compass', function () {
 });
 
 /**
- * Browserify and compress JavaScripts
+ * Browserify and Watchify
  */
 gulp.task('browserify', function () {
   return compile(false);
@@ -88,7 +89,7 @@ function compile(watching) {
 
   function bundle() {
     return b.bundle()
-      .pipe(source(js.destFilename))
+      .pipe(source(js.distFilename))
       .pipe(buffer())
       .pipe(uglify())
       .pipe(gulp.dest(path.js));
@@ -102,16 +103,20 @@ function compile(watching) {
 }
 
 /**
- * Watch scss files for changes & recompile
- * Watch html/md files, run jekyll & reload BrowserSync
+ * Watch files for changes, recompile, and reload the browser.
  */
 gulp.task('watch', ['watchify'], function () {
   gulp.watch(path.sass + '/**/*', ['compass']);
-  gulp.watch(['**/*.php', path.css + '/**/*', path.js + '/' + js.destFilename, path.images + '/**/*'], ['browser-reload']);
+  gulp.watch([
+    '**/*.php',
+    path.css + '/**/*',
+    path.js + '/**/*',
+    path.images + '/**/*'
+  ], ['browser-reload']);
 });
 
 /**
  * Default task, running just `gulp` will compile the sass,
- * compile the jekyll site, launch BrowserSync & watch files.
+ * bundle the js, launch BrowserSync & watch files.
  */
 gulp.task('default', ['compass', 'browserify', 'browser', 'watch']);
