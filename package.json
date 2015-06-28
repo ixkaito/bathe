@@ -16,10 +16,11 @@
     "Sass",
     "Compass",
     "Browserify",
+    "Watchify",
     "Browser-sync"
   ],
   "author": "Kite",
-  "license": "GPLv3",
+  "license": "GPLv2 or later",
   "bugs": {
     "url": "https://github.com/ixkaito/bathe/issues"
   },
