@@ -5,14 +5,15 @@
  */
 var gulp        = require('gulp');
 var browserSync = require('browser-sync');
+var plumber     = require('gulp-plumber');
 var compass     = require('gulp-compass');
 var imagemin    = require('gulp-imagemin');
+var pngquant    = require('imagemin-pngquant');
 var browserify  = require('browserify');
 var watchify    = require('watchify');
 var source      = require('vinyl-source-stream');
 var buffer      = require('vinyl-buffer');
 var uglify      = require('gulp-uglify');
-var plumber     = require('gulp-plumber');
 
 // Load configurations set variables
 var config = require('./gulpconfig.json');
@@ -71,7 +72,11 @@ gulp.task('compass', function () {
 gulp.task('imagemin', function () {
   return gulp.src(paths.imagesSrc + '/**/*')
     .pipe(plumber())
-    .pipe(imagemin())
+    .pipe(imagemin({
+      progressive: true,
+      svgoPlugins: [{removeViewBox: false}],
+      use: [pngquant()]
+    }))
     .pipe(gulp.dest(paths.images));
 });
 
