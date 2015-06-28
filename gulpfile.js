@@ -1,9 +1,11 @@
 'use strict';
 
+var config = require('./gulpconfig.json');
+
 /**
  * Change `siteUrl` for your development environment.
  */
-var siteUrl = 'wordpress.dev';
+var siteUrl = config.siteurl;
 
 /**
  * Settings
