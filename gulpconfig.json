@@ -26,6 +26,10 @@
   },
 
   "js": {
+    "src": [
+      "main.js",
+      "!lib/**/*"
+    ],
     "dist": "main.js"
   }
 }
