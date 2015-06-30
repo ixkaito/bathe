@@ -28,6 +28,7 @@
   "devDependencies": {
     "browser-sync": "^2.7.12",
     "browserify": "^10.2.4",
+    "glob": "^5.0.12",
     "gulp": "^3.9.0",
     "gulp-compass": "^2.1.0",
     "gulp-imagemin": "^2.3.0",
