@@ -4,8 +4,9 @@
  * Gulp modules
  */
 var gulp        = require('gulp');
-var browserSync = require('browser-sync');
+var newer       = require('gulp-newer');
 var plumber     = require('gulp-plumber');
+var browserSync = require('browser-sync');
 var compass     = require('gulp-compass');
 var imagemin    = require('gulp-imagemin');
 var pngquant    = require('imagemin-pngquant');
@@ -72,6 +73,7 @@ gulp.task('compass', function () {
 gulp.task('imagemin', function () {
   return gulp.src(paths.imagesSrc + '/**/*')
     .pipe(plumber())
+    .pipe(newer(paths.imagesSrc))
     .pipe(imagemin({
       progressive: true,
       svgoPlugins: [{removeViewBox: false}],
