@@ -124,12 +124,14 @@ gulp.task('watch', ['watchify'], function () {
     gulp.start('imagemin');
   });
   gulp.watch(paths.sass + '/**/*', ['compass']);
-  gulp.watch([
-    '**/*.php',
-    paths.css + '/**/*',
-    paths.js + '/**/*',
-    paths.images + '/**/*'
-  ], ['browser-reload']);
+  if (config.tasks['browser-sync']) {
+    gulp.watch([
+      '**/*.php',
+      paths.css + '/**/*',
+      paths.js + '/**/*',
+      paths.images + '/**/*'
+    ], ['browser-reload']);
+  }
 });
 
 /**
