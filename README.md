@@ -60,5 +60,33 @@ Change `siteurl` in `gulpconfig.json` for your environment.
 $ gulp
 ```
 
+### Options
+
+You can change the configuration by editing `gulpconfig.json`
+
+- siteurl: `wordpress.dev`
+- tasks:
+  - compass:      `true`
+  - browserify:   `true`
+  - imagemin:     `true`
+  - browser-sync: `true`
+  - watch:        `true`
+- paths:
+  - assets:    `./assets`
+  - css:       `css`
+  - js:        `js`
+  - images:    `images`
+  - sass:      `_sass`
+  - jsSrc:     `_js`
+  - imagesSrc: `_images`
+- compass:
+  - config:   `./config.rb`
+  - style:    `compressed`
+  - comments: `false`
+- js:
+  - src:
+    - `main.js`
+  - dist: `main.js`
+
 ## Notes
 - The default theme stylesheet is not loaded.
