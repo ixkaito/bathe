@@ -21,6 +21,7 @@ var uglify      = require('gulp-uglify');
 var config = require('./gulpconfig.json');
 var tasks = [];
 var paths = {};
+var jsSrc = [];
 
 Object.keys(config.tasks).forEach(function (key) {
   if (config.tasks[key]) {
@@ -33,6 +34,10 @@ Object.keys(config.paths).forEach(function (key) {
     paths[key] = config.paths.assets + '/' + config.paths[key];
   }
 });
+
+for (var i = 0; i <= config.js.src.length - 1; i++) {
+  jsSrc.push(paths.jsSrc + '/' + config.js.src[i]);
+}
 
 /**
  * Browser
@@ -90,31 +95,24 @@ gulp.task('watchify', function () {
 });
 
 function compile(watching) {
-  var b = browserify();
+  var b = browserify(jsSrc);
   if (watching) {
     b = watchify(b);
   }
 
-  glob(paths.jsSrc + '/**/*', {}, function (err, files) {
-    files.forEach(function (file) {
-      b.add(file);
-    });
+  function bundle() {
+    return b.bundle()
+      .pipe(source(config.js.dist))
+      .pipe(buffer())
+      .pipe(uglify())
+      .pipe(gulp.dest(paths.js));
+  }
 
-    function bundle() {
-      return b.bundle()
-        .pipe(source(config.js.dist))
-        .pipe(buffer())
-        .pipe(uglify())
-        .pipe(gulp.dest(paths.js));
-    }
-
-    b.on('update', function () {
-      bundle();
-    });
-
-    return bundle();
+  b.on('update', function () {
+    bundle();
   });
 
+  return bundle();
 }
 
 /**
