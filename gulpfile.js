@@ -4,7 +4,6 @@
  * Gulp modules
  */
 var gulp        = require('gulp');
-var glob        = require('glob');
 var newer       = require('gulp-newer');
 var plumber     = require('gulp-plumber');
 var browserSync = require('browser-sync');
