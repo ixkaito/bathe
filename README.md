@@ -52,7 +52,7 @@ $ npm install
 
 #### 6. Change the site url
 
-Change `siteUrl` in `gulpfile.js` for your environment.
+Change `siteurl` in `gulpconfig.json` for your environment.
 
 #### 7. Run Gulp
 
