@@ -5,8 +5,10 @@ __Blank WordPress Theme for Gulp__
 - Gulp
 - Sass
 - Compass
+- Imagemin
 - Browserify
 - Watchify
+- UglifyJS
 - Browser-Sync
 - Bourbon
 - Neat
