@@ -15,6 +15,7 @@ var watchify    = require('watchify');
 var source      = require('vinyl-source-stream');
 var buffer      = require('vinyl-buffer');
 var uglify      = require('gulp-uglify');
+var watch       = require('gulp-watch');
 
 // Load configurations set variables
 var config = require('./gulpconfig.json');
@@ -70,10 +71,11 @@ gulp.task('compass', function () {
 /**
  * Imagemin
  */
+
 gulp.task('imagemin', function () {
   return gulp.src(paths.imagesSrc + '/**/*')
     .pipe(plumber())
-    .pipe(newer(paths.imagesSrc))
+    .pipe(newer(paths.images))
     .pipe(imagemin({
       progressive: true,
       svgoPlugins: [{removeViewBox: false}],
@@ -118,13 +120,18 @@ function compile(watching) {
  * Watch files for changes, recompile, and reload the browser.
  */
 gulp.task('watch', ['watchify'], function () {
+  watch(paths.imagesSrc + '/**/*', function() {
+    gulp.start('imagemin');
+  });
   gulp.watch(paths.sass + '/**/*', ['compass']);
-  gulp.watch([
-    '**/*.php',
-    paths.css + '/**/*',
-    paths.js + '/**/*',
-    paths.images + '/**/*'
-  ], ['browser-reload']);
+  if (config.tasks['browser-sync']) {
+    gulp.watch([
+      '**/*.php',
+      paths.css + '/**/*',
+      paths.js + '/**/*',
+      paths.images + '/**/*'
+    ], ['browser-reload']);
+  }
 });
 
 /**

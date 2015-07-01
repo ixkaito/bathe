@@ -34,6 +34,7 @@
     "gulp-newer": "^0.5.1",
     "gulp-plumber": "^1.0.1",
     "gulp-uglify": "^1.2.0",
+    "gulp-watch": "^4.2.4",
     "imagemin-pngquant": "^4.1.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
