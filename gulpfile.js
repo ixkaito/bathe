@@ -120,10 +120,12 @@ function compile(watching) {
  * Watch files for changes, recompile, and reload the browser.
  */
 gulp.task('watch', ['watchify'], function () {
-  watch(paths.imagesSrc + '/**/*', function() {
+  watch(paths.imagesSrc + '/**/*', function () {
     gulp.start('imagemin');
   });
-  gulp.watch(paths.sass + '/**/*', ['compass']);
+  watch(paths.sass + '/**/*', function () {
+    gulp.start('compass');
+  });
   if (config.tasks['browser-sync']) {
     gulp.watch([
       '**/*.php',
