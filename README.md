@@ -52,11 +52,11 @@ You can also download the .zip file from the following URL.
 $ npm install
 ```
 
-#### 6. Change the site url
+#### 5. Change the site url
 
 Change `siteurl` in `gulpconfig.json` for your environment.
 
-#### 7. Run Gulp
+#### 6. Run Gulp
 
 ```
 $ gulp
