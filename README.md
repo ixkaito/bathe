@@ -18,11 +18,11 @@ If you don't use Gulp or Compass, you can just use this theme like other themes.
 
 ### Using Gulp to develop in Bathe
 
-#### 1.1 Install Node.js
+#### 1 Install Node.js
 
 [https://nodejs.org/](https://nodejs.org/)
 
-#### 1.2 Or Use Homebrew
+Instead, the easiest way is using Homebrew.
 
 ```
 $ brew install node
@@ -31,22 +31,22 @@ $ brew install node
 #### 2. Install Sass and Compass
 
 ```
-$ sudo gem install sass compass
+$ gem install compass
 ```
 
-#### 3.1 Clone this repo
+This will install both Sass and Compass.
+
+#### 3 Clone this repo in WordPress theme directory
 
 ```
-$ git clone https://github.com/ixkaito/bathe.git
+$ git clone https://github.com/ixkaito/bathe.git && cd bathe
 ```
 
-#### 3.2 Or download and unzip the .zip file
+You can also download the .zip file from the following URL.
 
 [https://github.com/ixkaito/bathe/archive/master.zip](https://github.com/ixkaito/bathe/archive/master.zip)
 
-#### 4. Change into the directory
-
-#### 5. Install Node modules
+#### 4. Install Node modules
 
 ```
 $ npm install
@@ -91,4 +91,4 @@ You can change the configuration by editing `gulpconfig.json`
   - dist: `main.js`
 
 ## Notes
-- The default theme stylesheet is not loaded.
+- The default theme stylesheet will not be loaded.
