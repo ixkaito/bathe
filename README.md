@@ -24,21 +24,27 @@ If you don't use Gulp or Compass, you can just use this theme like other themes.
 
 Instead, the easiest way is using Homebrew.
 
-```
+```bash
 $ brew install node
 ```
 
-#### 2. Install Sass and Compass
+#### 2. Install Gulp globally
 
+```bash
+$ npm install --global gulp
 ```
+
+#### 3. Install Sass and Compass
+
+```bash
 $ gem install compass
 ```
 
 This will install both Sass and Compass.
 
-#### 3 Clone this repo in WordPress theme directory
+#### 4 Clone this repo in WordPress theme directory
 
-```
+```bash
 $ git clone https://github.com/ixkaito/bathe.git && cd bathe
 ```
 
@@ -46,17 +52,17 @@ You can also download the .zip file from the following URL.
 
 [https://github.com/ixkaito/bathe/archive/master.zip](https://github.com/ixkaito/bathe/archive/master.zip)
 
-#### 4. Install Node modules
+#### 5. Install Node modules
 
-```
+```bash
 $ npm install
 ```
 
-#### 5. Change the site url
+#### 6. Change the site url
 
 Change `siteurl` in `gulpconfig.json` for your environment.
 
-#### 6. Run Gulp
+#### 7. Run Gulp
 
 ```
 $ gulp
