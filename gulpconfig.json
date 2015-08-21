@@ -1,5 +1,5 @@
 {
-  "siteurl": "wordpress.dev",
+  "siteurl": "wocker.dev",
 
   "tasks": {
     "compass":      true,

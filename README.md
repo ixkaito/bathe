@@ -66,7 +66,7 @@ $ gulp
 
 You can change the configuration by editing `gulpconfig.json`
 
-- siteurl: `wordpress.dev`
+- siteurl: `wocker.dev`
 - tasks:
   - compass:      `true`
   - browserify:   `true`
