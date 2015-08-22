@@ -12,6 +12,7 @@ __Blank WordPress Theme for Gulp__
 - Browser-Sync
 - Bourbon
 - Neat
+- Bitters
 
 ## Usage
 If you don't use Gulp or Compass, you can just use this theme like other themes. Nothing else is necessary except WordPress Environment.
