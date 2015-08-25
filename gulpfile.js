@@ -31,7 +31,11 @@ Object.keys(config.tasks).forEach(function (key) {
 
 Object.keys(config.paths).forEach(function (key) {
   if (key != 'assets') {
-    paths[key] = config.paths.assets + '/' + config.paths[key];
+    if (config.paths.assets === '') {
+      paths[key] = './' + config.paths[key];
+    } else {
+      paths[key] = config.paths.assets + '/' + config.paths[key];
+    }
   }
 });
 
