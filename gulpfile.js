@@ -71,7 +71,6 @@ gulp.task('compass', function () {
 /**
  * Imagemin
  */
-
 gulp.task('imagemin', function () {
   return gulp.src(paths.imagesSrc + '/**/*')
     .pipe(plumber())
