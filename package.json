@@ -26,8 +26,8 @@
   },
   "homepage": "https://github.com/ixkaito/bathe",
   "devDependencies": {
-    "browser-sync": "^2.7.12",
-    "browserify": "^10.2.4",
+    "browser-sync": "^2.9.11",
+    "browserify": "^11.2.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-compass": "^2.1.0",
@@ -35,11 +35,11 @@
     "gulp-newer": "^0.5.1",
     "gulp-plumber": "^1.0.1",
     "gulp-sass": "^2.0.4",
-    "gulp-uglify": "^1.2.0",
-    "gulp-watch": "^4.2.4",
-    "imagemin-pngquant": "^4.1.0",
+    "gulp-uglify": "^1.4.2",
+    "gulp-watch": "^4.3.5",
+    "imagemin-pngquant": "^4.2.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.2.3"
+    "watchify": "^3.4.0"
   }
 }
