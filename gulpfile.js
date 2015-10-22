@@ -157,12 +157,14 @@ gulp.task('watch', ['watchify'], function () {
   }
 
   if (config.tasks['browser-sync']) {
-    gulp.watch([
-      '**/*.php',
+    watch([
+      './**/*.php',
       paths.css + '/**/*',
       paths.js + '/**/*',
       paths.images + '/**/*'
-    ], ['browser-reload']);
+    ], function () {
+      gulp.start('browser-reload');
+    });
   }
 });
 
