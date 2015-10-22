@@ -33,6 +33,7 @@
     "gulp-imagemin": "^2.3.0",
     "gulp-newer": "^0.5.1",
     "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.0.4",
     "gulp-uglify": "^1.2.0",
     "gulp-watch": "^4.2.4",
     "imagemin-pngquant": "^4.1.0",

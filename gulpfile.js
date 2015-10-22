@@ -7,6 +7,7 @@ var gulp        = require('gulp');
 var newer       = require('gulp-newer');
 var plumber     = require('gulp-plumber');
 var browserSync = require('browser-sync');
+var sass        = require('gulp-sass');
 var compass     = require('gulp-compass');
 var imagemin    = require('gulp-imagemin');
 var pngquant    = require('imagemin-pngquant');
@@ -22,6 +23,10 @@ var config = require('./gulpconfig.json');
 var tasks = [];
 var paths = {};
 var jsSrc = [];
+
+if (config.tasks.compass) {
+  config.tasks.sass = false;
+}
 
 Object.keys(config.tasks).forEach(function (key) {
   if (config.tasks[key]) {
@@ -54,6 +59,16 @@ gulp.task('browser-sync', function () {
 
 gulp.task('browser-reload', function () {
   browserSync.reload();
+});
+
+/**
+ * Sass
+ */
+gulp.task('sass', function () {
+  return gulp.src(paths.sass + '/**/*')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(sass({outputStyle: config.sass.outputStyle}))
+    .pipe(gulp.dest(paths.css));
 });
 
 /**
@@ -123,12 +138,22 @@ function compile(watching) {
  * Watch files for changes, recompile, and reload the browser.
  */
 gulp.task('watch', ['watchify'], function () {
-  watch(paths.imagesSrc + '/**/*', function () {
-    gulp.start('imagemin');
-  });
-  watch(paths.sass + '/**/*', function () {
-    gulp.start('compass');
-  });
+  if (config.tasks.imagemin) {
+    watch(paths.imagesSrc + '/**/*', function () {
+      gulp.start('imagemin');
+    });
+  }
+
+  if (config.tasks.compass) {
+    watch(paths.sass + '/**/*', function () {
+      gulp.start('compass');
+    });
+  } else if (config.tasks.sass) {
+    watch(paths.sass + '/**/*', function () {
+      gulp.start('sass');
+    });
+  }
+
   if (config.tasks['browser-sync']) {
     gulp.watch([
       '**/*.php',

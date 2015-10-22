@@ -2,7 +2,8 @@
   "siteurl": "wocker.dev",
 
   "tasks": {
-    "compass":      true,
+    "sass":         true,
+    "compass":      false,
     "browserify":   true,
     "imagemin":     true,
     "browser-sync": true,
@@ -17,6 +18,10 @@
     "sass":      "_sass",
     "jsSrc":     "_js",
     "imagesSrc": "_images"
+  },
+
+  "sass": {
+    "outputStyle": "compressed"
   },
 
   "compass": {
