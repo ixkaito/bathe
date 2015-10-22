@@ -24,6 +24,14 @@
     "outputStyle": "compressed"
   },
 
+  "autoprefixer" : {
+    "browsers": [
+      "> 1%",
+      "last 2 versions",
+      "Firefox ESR"
+    ]
+  },
+
   "compass": {
     "config":   "./config.rb",
     "style":    "compressed",

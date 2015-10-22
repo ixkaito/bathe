@@ -3,20 +3,21 @@
 /**
  * Gulp modules
  */
-var gulp        = require('gulp');
-var newer       = require('gulp-newer');
-var plumber     = require('gulp-plumber');
-var browserSync = require('browser-sync');
-var sass        = require('gulp-sass');
-var compass     = require('gulp-compass');
-var imagemin    = require('gulp-imagemin');
-var pngquant    = require('imagemin-pngquant');
-var browserify  = require('browserify');
-var watchify    = require('watchify');
-var source      = require('vinyl-source-stream');
-var buffer      = require('vinyl-buffer');
-var uglify      = require('gulp-uglify');
-var watch       = require('gulp-watch');
+var gulp         = require('gulp');
+var newer        = require('gulp-newer');
+var plumber      = require('gulp-plumber');
+var browserSync  = require('browser-sync');
+var sass         = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
+var compass      = require('gulp-compass');
+var imagemin     = require('gulp-imagemin');
+var pngquant     = require('imagemin-pngquant');
+var browserify   = require('browserify');
+var watchify     = require('watchify');
+var source       = require('vinyl-source-stream');
+var buffer       = require('vinyl-buffer');
+var uglify       = require('gulp-uglify');
+var watch        = require('gulp-watch');
 
 // Load configurations set variables
 var config = require('./gulpconfig.json');
@@ -68,6 +69,7 @@ gulp.task('sass', function () {
   return gulp.src(paths.sass + '/**/*')
     .pipe(sass().on('error', sass.logError))
     .pipe(sass({outputStyle: config.sass.outputStyle}))
+    .pipe(autoprefixer({ browsers: config.autoprefixer.browsers }))
     .pipe(gulp.dest(paths.css));
 });
 
