@@ -2,6 +2,10 @@
 
 __Blank WordPress Theme for Gulp__
 
+## Version
+
+0.2.0
+
 ## Features
 
 - Gulp
