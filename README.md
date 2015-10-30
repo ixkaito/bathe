@@ -10,6 +10,7 @@ __Blank WordPress Theme for Gulp__
 
 - Gulp
 - Sass
+- Autoprefixer
 - Compass
 - Imagemin
 - Browserify
@@ -203,6 +204,18 @@ The output style of Sass.
 
 default: `"compressed"`  
 options: `"expanded"`, `"nested"`, `"compact"`, `"compressed"`
+
+#### autoprefixer
+
+Autoprefixer settings.
+
+##### browsers
+
+List of browsers, which are supported in your theme.
+
+default: `["> 1%", "last 2 versions", "Firefox ESR"]`  
+options: array. See [Browserslist docs](https://github.com/ai/browserslist#queries) for available queries.
+example: `["> 5%", "last 2 versions", "IE 8"]`
 
 #### compass
 
