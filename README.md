@@ -83,6 +83,7 @@ You can change the configuration by editing `gulpconfig.json`
 An EXISTING vhost.
 
 default: `"wocker.dev"`  
+options: string  
 example: `"localhost:8888"`
 
 #### tasks
@@ -137,6 +138,7 @@ Settings about paths.
 The directory to gather all assets.
 
 default: `"./assets"`  
+options: string  
 example: `"./"` (directly under the theme direcotry)
 
 ##### css
@@ -144,6 +146,7 @@ example: `"./"` (directly under the theme direcotry)
 The CSS destination directory for Sass or Compass.
 
 default: `"css"`  
+options: string  
 example: `"stylesheets"`
 
 ##### js
@@ -151,6 +154,7 @@ example: `"stylesheets"`
 The JavaScript destination directory for Browserify.
 
 default: `"js"`  
+options: string  
 example: `"javascripts"`
 
 ##### images
@@ -158,6 +162,7 @@ example: `"javascripts"`
 The destination directory of compressed image files for Imagemin.
 
 default: `"images"`  
+options: string  
 example: `"img"`
 
 ##### sass
@@ -165,6 +170,7 @@ example: `"img"`
 The directory of Sass files.
 
 default: `"_sass"`  
+options: string  
 example: `"src/sass"`
 
 ##### jsSrc
@@ -172,6 +178,7 @@ example: `"src/sass"`
 The directory of JavaScript source files to bundle up by Browserify.
 
 default: `"_js"`  
+options: string  
 example: `"src/js`"
 
 ##### imageSrc
@@ -179,6 +186,7 @@ example: `"src/js`"
 The directory of image source files to compress.
 
 default: `"_images"`  
+options: string  
 example: `"src/images"`
 
 #### sass
@@ -201,6 +209,7 @@ Compass settings.
 The config file for Compass.
 
 default: `"./config.rb"`  
+options: string  
 example: `"./myconfig.rb"`
 
 ##### style
@@ -226,6 +235,7 @@ JavaScript settings.
 File name(s) of JavaScript source file(s).
 
 default: `["main.js"]`  
+options: array  
 example: `["pluginA.js", "pluginB.js", "main.js"]`
 
 ##### dist
@@ -233,6 +243,7 @@ example: `["pluginA.js", "pluginB.js", "main.js"]`
 The distribution JavaScript file name.
 
 default: `"main.js"`  
+options: string  
 example: `"script.js"`
 
 ## Notes
