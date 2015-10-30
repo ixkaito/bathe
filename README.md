@@ -247,4 +247,13 @@ options: string
 example: `"script.js"`
 
 ## Notes
+
 Bathe doesn't load the default theme stylesheet "style.css" by default.
+
+## License
+
+GPLv2 or later
+
+## Copyright
+
+&copy; 2015 [Kite](https://github.com/ixkaito)
