@@ -93,7 +93,7 @@ gulp.task('compass', function () {
  * Imagemin
  */
 gulp.task('imagemin', function () {
-  return gulp.src(paths.imagesSrc + '/**/*')
+  return gulp.src(paths.imageSrc + '/**/*')
     .pipe(plumber())
     .pipe(newer(paths.images))
     .pipe(imagemin({
@@ -141,7 +141,7 @@ function compile(watching) {
  */
 gulp.task('watch', ['watchify'], function () {
   if (config.tasks.imagemin) {
-    watch(paths.imagesSrc + '/**/*', function () {
+    watch(paths.imageSrc + '/**/*', function () {
       gulp.start('imagemin');
     });
   }

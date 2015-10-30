@@ -174,7 +174,7 @@ The directory of JavaScript source files to bundle up by Browserify.
 default: `"_js"`  
 example: `"src/js`"
 
-##### imagesSrc
+##### imageSrc
 
 The directory of image source files to compress.
 
