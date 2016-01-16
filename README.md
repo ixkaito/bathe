@@ -1,6 +1,6 @@
 # Bathe
 
-__Blank WordPress Theme for Gulp__
+__WordPress Starter Theme for Gulp__
 
 ## Version
 
