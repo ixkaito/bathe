@@ -11,15 +11,15 @@ __WordPress Starter Theme for Gulp__
 - Gulp
 - Sass
 - Autoprefixer
+- Bourbon
+- Neat
+- Bitters
 - Compass
 - Imagemin
 - Browserify
 - Watchify
 - UglifyJS
 - Browser-Sync
-- Bourbon
-- Neat
-- Bitters
 
 Bourbon is a lightweight Sass framework. If you don't use it, it will do nothing to your CSS file.
 
@@ -267,10 +267,6 @@ example: `"script.js"`
 
 Bathe doesn't load the default theme stylesheet "style.css" by default.
 
-## License
+## Copyright/License
 
-GPLv2 or later
-
-## Copyright
-
-&copy; 2015 [Kite](https://github.com/ixkaito)
+Copyright &copy; 2015-2016 the contributors of the Bathe project under the [GPL version 2](https://raw.githubusercontent.com/wp-bathe/bathe/master/LICENSE) or later.
