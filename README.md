@@ -267,6 +267,6 @@ example: `"script.js"`
 
 Bathe doesn't load the default theme stylesheet "style.css" by default.
 
-## Copyright/License
+## Copyright / License
 
 Copyright &copy; 2015-2016 the contributors of the Bathe project under the [GPL version 2](https://raw.githubusercontent.com/wp-bathe/bathe/master/LICENSE) or later.
