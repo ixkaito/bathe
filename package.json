@@ -4,7 +4,12 @@
   "description": "Blank WordPress theme for Gulp",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp",
+    "compass": "gulp compass",
+    "browserify": "gulp browserify",
+    "imagemin": "gulp imagemin",
+    "browser-sync": "gulp browser-sync",
+    "watch": "gulp watch"
   },
   "repository": {
     "type": "git",
