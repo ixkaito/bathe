@@ -1,7 +1,7 @@
 {
   "name": "bathe",
-  "version": "0.2.0",
-  "description": "Blank WordPress theme for Gulp",
+  "version": "0.3.0",
+  "description": "Starter WordPress theme including full setup for Gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, Imagemin, Browsersync, etc.",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,7 +21,7 @@
     "Browser-sync"
   ],
   "author": "Kite",
-  "license": "(GPL-3.0 OR BSD-2-Clause)",
+  "license": "GPL-2.0+",
   "bugs": {
     "url": "https://github.com/ixkaito/bathe/issues"
   },

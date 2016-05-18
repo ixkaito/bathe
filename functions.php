@@ -1,15 +1,8 @@
 <?php
 
-/*
- * Get Bathe assets directory.
- */
-function get_bathe_assets_directory_uri() {
-	return get_template_directory_uri() . '/assets';
-}
-
 if ( ! function_exists( 'bathe_setup' ) ) {
 /**
- * Sets up theme defaults and registers support fo rvarious WordPress feaures.
+ * Set up theme defaults and registers support fo rvarious WordPress feaures.
  */
 function bathe_setup() {
 	load_theme_textdomain( 'bathe', get_template_directory() . '/languages' );
@@ -77,9 +70,9 @@ add_action( 'widgets_init', 'bathe_widgets_init' );
  */
 function bathe_scripts() {
 
-	wp_enqueue_style( 'bathe-style', get_bathe_assets_directory_uri() . '/css/main.css' );
+	wp_enqueue_style( 'bathe-style', get_template_directory_uri() . '/assets/css/main.css' );
 
-	wp_enqueue_script( 'bathe-script', get_bathe_assets_directory_uri() . '/js/main.js', array(), '', true );
+	wp_enqueue_script( 'bathe-script', get_template_directory_uri() . '/assets/js/main.js', array(), '', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
