@@ -3,7 +3,6 @@
 
   "tasks": {
     "sass":         true,
-    "compass":      false,
     "browserify":   true,
     "imagemin":     true,
     "browser-sync": true,
@@ -30,12 +29,6 @@
       "last 2 versions",
       "Firefox ESR"
     ]
-  },
-
-  "compass": {
-    "config":   "./config.rb",
-    "style":    "compressed",
-    "comments": false
   },
 
   "js": {

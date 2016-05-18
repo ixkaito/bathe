@@ -1,7 +1,7 @@
 {
   "name": "bathe",
   "version": "0.3.0",
-  "description": "Blank WordPress theme for Gulp",
+  "description": "Starter WordPress theme including full setup for Gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, Imagemin, Browsersync, etc.",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,7 +21,6 @@
     "Gulp",
     "Sass",
     "Autoprefixer",
-    "Compass",
     "Browserify",
     "Watchify",
     "Browser-sync"
@@ -37,7 +36,6 @@
     "browserify": "^13.0.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
-    "gulp-compass": "^2.1.0",
     "gulp-imagemin": "^2.4.0",
     "gulp-newer": "^1.1.0",
     "gulp-plumber": "^1.0.1",
