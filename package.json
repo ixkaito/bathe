@@ -1,14 +1,20 @@
 {
   "name": "bathe",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Blank WordPress theme for Gulp",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp",
+    "sass": "gulp sass",
+    "browserify": "gulp browserify",
+    "imagemin": "gulp imagemin",
+    "browser-sync": "gulp browser-sync",
+    "watch": "gulp watch"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ixkaito/bathe.git"
+    "url": "https://github.com/wp-bathe/bathe.git"
   },
   "keywords": [
     "WordPress",
@@ -21,11 +27,11 @@
     "Browser-sync"
   ],
   "author": "Kite",
-  "license": "(GPL-3.0 OR BSD-2-Clause)",
+  "license": "GPL-2.0+",
   "bugs": {
-    "url": "https://github.com/ixkaito/bathe/issues"
+    "url": "https://github.com/wp-bathe/bathe/issues"
   },
-  "homepage": "https://github.com/ixkaito/bathe",
+  "homepage": "https://github.com/wp-bathe/bathe",
   "devDependencies": {
     "browser-sync": "^2.11.1",
     "browserify": "^13.0.0",
@@ -42,5 +48,9 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
+  },
+  "dependencies": {
+    "bourbon": "^4.2.6",
+    "bourbon-neat": "^1.7.4"
   }
 }

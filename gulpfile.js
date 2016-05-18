@@ -10,6 +10,8 @@ var browserSync  = require('browser-sync');
 var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var compass      = require('gulp-compass');
+var bourbon      = require('bourbon').includePaths;
+var neat         = require('bourbon-neat').includePaths;
 var imagemin     = require('gulp-imagemin');
 var pngquant     = require('imagemin-pngquant');
 var browserify   = require('browserify');
@@ -67,6 +69,9 @@ gulp.task('browser-reload', function () {
  */
 gulp.task('sass', function () {
   return gulp.src(paths.sass + '/**/*')
+    .pipe(sass({
+      includePaths: [bourbon, neat],
+    }))
     .pipe(sass().on('error', sass.logError))
     .pipe(sass({outputStyle: config.sass.outputStyle}))
     .pipe(autoprefixer({ browsers: config.autoprefixer.browsers }))
