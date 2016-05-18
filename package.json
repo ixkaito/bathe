@@ -15,7 +15,6 @@
     "Gulp",
     "Sass",
     "Autoprefixer",
-    "Compass",
     "Browserify",
     "Watchify",
     "Browser-sync"
@@ -31,7 +30,6 @@
     "browserify": "^13.0.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
-    "gulp-compass": "^2.1.0",
     "gulp-imagemin": "^2.4.0",
     "gulp-newer": "^1.1.0",
     "gulp-plumber": "^1.0.1",
