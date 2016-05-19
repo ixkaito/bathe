@@ -1,24 +1,18 @@
 # Bathe
 
-__WordPress Starter Theme for Gulp__
-
-## Version
-
-0.3.0
+__WordPress starter theme including full setup for Gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, Imagemin, Browsersync, etc.__
 
 ## Features
 
 - Gulp
 - Sass
 - Autoprefixer
-- Bourbon
-- Neat
-- Bitters
-- Imagemin
+- Bourbon/Neat/Bitters
 - Browserify
 - Watchify
 - UglifyJS
-- Browser-Sync
+- Imagemin
+- Browsersync
 
 Bourbon is a lightweight Sass framework. If you don't use it, it will do nothing to your CSS file.
 
@@ -34,19 +28,13 @@ If you don't use Gulp or Sass, you can just use this theme like others. Nothing 
 
 Instead, the easiest way is using Homebrew.
 
-```bash
+```shell
 $ brew install node
 ```
 
-#### 2. Install Gulp globally
+#### 2 Clone this repo into your WordPress theme directory
 
-```bash
-$ npm install --global gulp
-```
-
-#### 4 Clone this repo in WordPress theme directory
-
-```bash
+```shell
 $ git clone https://github.com/ixkaito/bathe.git && cd bathe
 ```
 
@@ -54,25 +42,31 @@ You can also download the .zip file from the following URL.
 
 [https://github.com/wp-bathe/bathe/archive/master.zip](https://github.com/wp-bathe/bathe/archive/master.zip)
 
-#### 5. Install Node modules
+#### 3. Install Node modules
 
-```bash
+```shell
 $ npm install
 ```
 
-#### 6. Change the site url
+#### 4. Change the site url
 
-Change `siteurl` in `gulpconfig.json` for your environment. The default siteurl is `wocker.dev` for [Wocker](http://wckr.github.io/).
+Change `siteurl` in `batheconfig.json` for your environment. The default siteurl is `wocker.dev` for [Wocker](http://wckr.github.io/).
 
-#### 7. Run Gulp
+#### 5. Run the package's start script
 
+```shell
+$ npm start
 ```
+
+Or, if you have installed Gulp globally, this is also available and is same as `npm start`.
+
+```shell
 $ gulp
 ```
 
 ### Configurations and Defaults
 
-You can change the configuration by editing `gulpconfig.json`
+You can change the configuration by editing `batheconfig.json`
 
 #### siteurl
 
@@ -84,7 +78,7 @@ example: `"localhost:8888"`
 
 #### tasks
 
-Tasks to run when you exec `gulp` command.
+Tasks to run when you exec `npm start` or `gulp` command.
 
 ##### sass
 
@@ -107,7 +101,7 @@ To minify images.
 default: `true`  
 options: boolean (`true` / `false`)
 
-##### browser-sync
+##### browsersync
 
 To keep browsers in sync with file changes.
 
@@ -170,7 +164,7 @@ default: `"_js"`
 options: string  
 example: `"src/js`"
 
-##### imageSrc
+##### imagesSrc
 
 The directory of image source files to compress.
 
