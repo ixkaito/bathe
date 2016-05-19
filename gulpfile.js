@@ -66,7 +66,7 @@ for (var i = 0; i <= config.js.src.length - 1; i++) {
 /**
  * Browser
  */
-gulp.task('browser-sync', function () {
+gulp.task('browsersync', function () {
   return browserSync.init({
       proxy: config.siteurl
   });
@@ -150,7 +150,7 @@ gulp.task('watch', ['watchify'], function () {
     });
   }
 
-  if (config.tasks['browser-sync']) {
+  if (config.tasks.browsersync) {
     watch([
       '!./node_modules/**/*',
       '!./README.md',
