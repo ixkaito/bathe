@@ -1,4 +1,4 @@
-# Bathe
+# Bathe [![GitHub release](https://img.shields.io/github/release/wp-bathe/bathe.svg)](https://github.com/wp-bathe/bathe/releases) [![license](https://img.shields.io/github/license/wp-bathe/bathe.svg?maxAge=2592000)](https://github.com/wp-bathe/bathe/blob/master/LICENSE)
 
 __WordPress starter theme including full setup for Gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, Imagemin, Browsersync, etc.__
 
