@@ -2,10 +2,10 @@
   "siteurl": "wocker.dev",
 
   "tasks": {
-    "sass":         true,
+    "browser-sync": true,
     "browserify":   true,
     "imagemin":     true,
-    "browser-sync": true,
+    "sass":         true,
     "watch":        true
   },
 
