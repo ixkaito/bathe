@@ -4,12 +4,12 @@
   "description": "WordPress starter theme including full setup for Gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, Imagemin, Browsersync, etc.",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp",
-    "sass": "gulp sass",
     "browserify": "gulp browserify",
+    "browsersync": "gulp browsersync",
     "imagemin": "gulp imagemin",
-    "browser-sync": "gulp browser-sync",
+    "sass": "gulp sass",
+    "test": "gulp test",
     "watch": "gulp watch"
   },
   "repository": {
@@ -21,9 +21,12 @@
     "Gulp",
     "Sass",
     "Autoprefixer",
+    "Bourbon",
+    "Neat",
+    "Bitters",
     "Browserify",
     "Watchify",
-    "Browser-sync"
+    "Browsersync"
   ],
   "author": "Kite",
   "license": "GPL-2.0+",
