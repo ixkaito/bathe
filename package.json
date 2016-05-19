@@ -46,9 +46,5 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.7.0"
-  },
-  "dependencies": {
-    "bourbon": "^4.2.6",
-    "bourbon-neat": "^1.7.4"
   }
 }
