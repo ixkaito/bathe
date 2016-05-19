@@ -1,10 +1,10 @@
 /*
 Theme Name: Bathe
-Theme URI: https://github.com/ixkaito/bathe
+Theme URI: https://github.com/wp-bathe/bathe
 Author: Kite
 Author URI: http://kiteretz.com/
-Description: Blank WordPress theme for Gulp
-Tags: Gulp, Sass, Browserify, Watchify, Browser-sync
+Description: WordPress starter theme including full setup for Gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, Imagemin, Browsersync, etc.
+Tags: Gulp, Sass, Autoprefixer, Bourbon, Neat, Bitters, Browserify, Watchify, Imagemin, Browsersync
 Version: 0.3.0
 Text Domain: bathe
 License: GNU General Public License v2 or later
