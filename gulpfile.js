@@ -91,7 +91,7 @@ gulp.task('sass', function () {
  * Imagemin
  */
 gulp.task('imagemin', function () {
-  return gulp.src(paths.imageSrc + '/**/*')
+  return gulp.src(paths.imagesSrc + '/**/*')
     .pipe(plumber())
     .pipe(newer(paths.images))
     .pipe(imagemin({
@@ -139,7 +139,7 @@ function compile(watching) {
  */
 gulp.task('watch', ['watchify'], function () {
   if (config.tasks.imagemin) {
-    watch(paths.imageSrc + '/**/*', function () {
+    watch(paths.imagesSrc + '/**/*', function () {
       gulp.start('imagemin');
     });
   }

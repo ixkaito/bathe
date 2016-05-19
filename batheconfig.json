@@ -16,7 +16,7 @@
     "images":    "images",
     "sass":      "_sass",
     "jsSrc":     "_js",
-    "imageSrc": "_images"
+    "imagesSrc": "_images"
   },
 
   "sass": {
