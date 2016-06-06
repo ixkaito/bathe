@@ -155,8 +155,8 @@ gulp.task('watch', ['watchify'], function () {
       '!./node_modules/**/*',
       '!./README.md',
       './**/*.php',
-      paths.js + '/**/*',
       paths.css + '/**/*',
+      paths.js + '/**/*',
       paths.images + '/**/*'
     ], function () {
       gulp.start('browser-reload');
