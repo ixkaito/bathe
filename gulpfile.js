@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Gulp modules
+ * gulp modules
  */
 var gulp         = require('gulp');
 var newer        = require('gulp-newer');

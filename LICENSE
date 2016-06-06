@@ -1,4 +1,6 @@
-Bathe - WordPress Starter Theme for Gulp
+Bathe - WordPress starter theme including full setup for gulp, Sass,
+Autoprefixer, Bourbon/Neat/Bitters, Browserify, Imagemin, Browsersync,
+etc.
 
 Copyright (c) 2015-2016 the contributors of the Bathe project
 

@@ -1,10 +1,10 @@
 # Bathe [![GitHub release](https://img.shields.io/github/release/wp-bathe/bathe.svg)](https://github.com/wp-bathe/bathe/releases) [![license](https://img.shields.io/github/license/wp-bathe/bathe.svg?maxAge=2592000)](https://github.com/wp-bathe/bathe/blob/master/LICENSE)
 
-__WordPress starter theme including full setup for Gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, Imagemin, Browsersync, etc.__
+__WordPress starter theme including full setup for gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, Imagemin, Browsersync, etc.__
 
 ## Features
 
-- Gulp
+- gulp
 - Sass
 - Autoprefixer
 - Bourbon/Neat/Bitters
@@ -18,9 +18,9 @@ Bourbon is a lightweight Sass framework. If you don't use it, it will do nothing
 
 ## Usage
 
-If you don't use Gulp or Sass, you can just use this theme like others. Nothing else is necessary except WordPress environment.
+If you don't use gulp or Sass, you can just use this theme like others. Nothing else is necessary except WordPress environment.
 
-### Using Gulp to develop in Bathe
+### Using gulp to develop in Bathe
 
 #### 1 Install Node.js
 
@@ -58,7 +58,7 @@ Change `siteurl` in `batheconfig.json` for your environment. The default siteurl
 $ npm start
 ```
 
-Or, if you have installed Gulp globally, this is also available and is same as `npm start`.
+Or, if you have installed gulp globally, this is also available and is same as `npm start`.
 
 ```shell
 $ gulp
