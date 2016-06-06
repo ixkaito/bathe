@@ -6,7 +6,7 @@
 var gulp         = require('gulp');
 var newer        = require('gulp-newer');
 var plumber      = require('gulp-plumber');
-var browserSync  = require('browser-sync').create();
+var browsersync  = require('browser-sync').create();
 var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var imagemin     = require('gulp-imagemin');
@@ -67,13 +67,13 @@ for (var i = 0; i <= config.js.src.length - 1; i++) {
  * Browser
  */
 gulp.task('browsersync', function () {
-  return browserSync.init({
+  return browsersync.init({
       proxy: config.siteurl
   });
 });
 
 gulp.task('browser-reload', function () {
-  return browserSync.reload();
+  return browsersync.reload();
 });
 
 /**
@@ -85,7 +85,7 @@ gulp.task('sass', function () {
     .pipe(sass({outputStyle: config.sass.outputStyle}))
     .pipe(autoprefixer({ browsers: config.autoprefixer.browsers }))
     .pipe(gulp.dest(paths.css))
-    .pipe(browserSync.stream());
+    .pipe(browsersync.stream());
 });
 
 /**
