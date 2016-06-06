@@ -84,7 +84,8 @@ gulp.task('sass', function () {
     .pipe(sass().on('error', sass.logError))
     .pipe(sass({outputStyle: config.sass.outputStyle}))
     .pipe(autoprefixer({ browsers: config.autoprefixer.browsers }))
-    .pipe(gulp.dest(paths.css));
+    .pipe(gulp.dest(paths.css))
+    .pipe(browserSync.stream());
 });
 
 /**
@@ -155,7 +156,6 @@ gulp.task('watch', ['watchify'], function () {
       '!./node_modules/**/*',
       '!./README.md',
       './**/*.php',
-      paths.css + '/**/*',
       paths.js + '/**/*',
       paths.images + '/**/*'
     ], function () {
