@@ -105,34 +105,22 @@ gulp.task('imagemin', function () {
 /**
  * Browserify and Watchify
  */
-gulp.task('browserify', function () {
-  return compile(false);
-});
+var b = browserify(jsSrc);
+
+function bundle() {
+  return b.bundle()
+    .pipe(source(config.js.dist))
+    .pipe(buffer())
+    .pipe(uglify())
+    .pipe(gulp.dest(paths.js));
+}
+
+gulp.task('browserify', bundle);
 
 gulp.task('watchify', function () {
-  return compile(true);
+  b = watchify(b);
+  b.on('update', bundle);
 });
-
-function compile(watching) {
-  var b = browserify(jsSrc);
-  if (watching) {
-    b = watchify(b);
-  }
-
-  function bundle() {
-    return b.bundle()
-      .pipe(source(config.js.dist))
-      .pipe(buffer())
-      .pipe(uglify())
-      .pipe(gulp.dest(paths.js));
-  }
-
-  b.on('update', function () {
-    bundle();
-  });
-
-  return bundle();
-}
 
 /**
  * Watch files for changes, recompile, and reload the browser.
