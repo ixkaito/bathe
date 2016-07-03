@@ -1,14 +1,15 @@
-// Bitters 1.3.2
+// Bitters 1.2.0
 // http://bitters.bourbon.io
 // Copyright 2013-2015 thoughtbot, inc.
 // MIT License
 
 @import "variables";
 
+// Neat Settings -- uncomment if using Neat -- must be imported before Neat
+// @import "grid-settings";
+
 @import "buttons";
 @import "forms";
-@import "layout";
 @import "lists";
-@import "media";
 @import "tables";
 @import "typography";

@@ -6,14 +6,14 @@ ol {
 }
 
 dl {
-  margin: 0;
-}
+  margin-bottom: $small-spacing;
 
-dt {
-  font-weight: 600;
-  margin: 0;
-}
+  dt {
+    font-weight: 600;
+    margin-top: $small-spacing;
+  }
 
-dd {
-  margin: 0;
+  dd {
+    margin: 0;
+  }
 }
