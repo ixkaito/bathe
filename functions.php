@@ -2,7 +2,7 @@
 
 if ( ! function_exists( 'bathe_setup' ) ) {
 /**
- * Set up theme defaults and registers support fo rvarious WordPress feaures.
+ * Set up theme defaults and registers support for various WordPress feaures.
  */
 function bathe_setup() {
 	load_theme_textdomain( 'bathe', get_template_directory() . '/languages' );
