@@ -39,7 +39,7 @@ Object.keys(config.tasks).forEach(function (key) {
  */
 build = tasks.concat();
 var index;
-['server', 'watch'].forEach(function (value) {
+['browsersync', 'watch'].forEach(function (value) {
   index = build.indexOf(value);
   if (index > -1) {
     build.splice(index, 1);
