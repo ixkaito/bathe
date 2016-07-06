@@ -7,6 +7,7 @@
     "start": "gulp",
     "browserify": "gulp browserify",
     "browsersync": "gulp browsersync",
+    "build": "gulp build",
     "imagemin": "gulp imagemin",
     "sass": "gulp sass",
     "test": "gulp test",
