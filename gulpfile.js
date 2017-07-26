@@ -58,45 +58,6 @@ requireDir('./gulp/tasks', {recurse: true});
 //   }
 // });
 
-// for (var i = 0; i <= config.js.entry.length - 1; i++) {
-//   entry.push(paths.jsSrc + '/' + config.js.entry[i]);
-// }
-
-
-
-
-// /**
-//  * eslint
-//  */
-// gulp.task('eslint', function() {
-//   return gulp.src(entry)
-//   .pipe(eslint())
-//   .pipe(eslint.format())
-//   .pipe(eslint.failOnError());
-// });
-
-// /**
-//  * Webpack
-//  *
-//  * Bundle JavaScript files
-//  */
-// gulp.task('webpack', ['eslint'], function () {
-//   return gulp.src(entry)
-//     .pipe(plumber())
-//     .pipe(named())
-//     .pipe(webpack({
-//       watch: argv.watch ? true : false,
-//     }))
-//     .pipe(uglify())
-//     .pipe(gulp.dest(paths.js));
-// });
-
-// // For internal use only
-// gulp.task('_webpack', function () {
-//   argv.watch = true;
-//   gulp.start('webpack');
-// });
-
 // /**
 //  * Watch files for changes, recompile, and reload the browser.
 //  */
