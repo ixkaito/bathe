@@ -1,15 +1,15 @@
 # Bathe [![GitHub release](https://img.shields.io/github/release/wp-bathe/bathe.svg)](https://github.com/wp-bathe/bathe/releases) [![license](https://img.shields.io/github/license/wp-bathe/bathe.svg?maxAge=2592000)](https://github.com/wp-bathe/bathe/blob/master/LICENSE)
 
-__WordPress starter theme including full setup for gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, Imagemin, Browsersync, etc.__
+__WordPress starter theme including full setup for gulp, Webpack, Sass, Autoprefixer, Bourbon/Neat/Bitters, Imagemin, Browsersync, PostCSS etc.__
 
 ## Features
 
 - gulp
+- Webpack
 - Sass
 - Autoprefixer
 - Bourbon/Neat/Bitters
-- Browserify
-- Watchify
+- PostCSS
 - UglifyJS
 - Imagemin
 - Browsersync
@@ -50,7 +50,7 @@ $ npm install
 
 #### 4. Change the site url
 
-Change `siteurl` in `batheconfig.json` for your environment. The default siteurl is `wocker.dev` for [Wocker](http://wckr.github.io/).
+Change `browsersync.siteurl` in `bathe.config.js` for your environment. The default siteurl is `wocker.dev` for [Wocker](http://wckr.github.io/).
 
 #### 5. Run the package's start script
 
@@ -66,30 +66,22 @@ $ gulp
 
 ### Configurations and Defaults
 
-You can change the configuration by editing `batheconfig.json`
-
-#### siteurl
-
-An EXISTING vhost.
-
-default: `"wocker.dev"`  
-options: string  
-example: `"localhost:8888"`
+You can change the configuration by editing `bathe.config.js`
 
 #### tasks
 
 Tasks to run when you exec `npm start` or `gulp` command.
 
-##### sass
+##### browsersync
 
-To compile Sass.
+To keep browsers in sync with file changes.
 
 default: `true`  
 options: boolean (`true` / `false`)
 
-##### browserify
+##### eslint
 
-To use Browserify.
+To lint JavaScript files.
 
 default: `true`  
 options: boolean (`true` / `false`)
@@ -101,9 +93,9 @@ To minify images.
 default: `true`  
 options: boolean (`true` / `false`)
 
-##### browsersync
+##### sass
 
-To keep browsers in sync with file changes.
+To compile Sass.
 
 default: `true`  
 options: boolean (`true` / `false`)
@@ -112,11 +104,14 @@ options: boolean (`true` / `false`)
 
 To watch files and run tasks on file changes.
 
-#### paths
+##### webpack
 
-Settings about paths.
+To use Webpack.
 
-##### assets
+default: `true`  
+options: boolean (`true` / `false`)
+
+#### assets
 
 The directory to gather all assets.
 
@@ -124,47 +119,23 @@ default: `"./assets"`
 options: string  
 example: `"./"` (directly under the theme direcotry)
 
-##### css
+#### browsersync
 
-The CSS destination directory for Sass.
+Browsersync settings.
 
-default: `"css"`  
+##### siteurl
+
+An EXISTING vhost.
+
+default: `"wocker.dev"`  
 options: string  
-example: `"stylesheets"`
+example: `"localhost:8888"`
 
-##### js
+#### imagemin
 
-The JavaScript destination directory for Browserify.
+Imagemin settings.
 
-default: `"js"`  
-options: string  
-example: `"javascripts"`
-
-##### images
-
-The destination directory of compressed image files for Imagemin.
-
-default: `"images"`  
-options: string  
-example: `"img"`
-
-##### sass
-
-The directory of Sass files.
-
-default: `"_sass"`  
-options: string  
-example: `"src/sass"`
-
-##### jsSrc
-
-The directory of JavaScript source files to bundle up by Browserify.
-
-default: `"_js"`  
-options: string  
-example: `"src/js`"
-
-##### imagesSrc
+##### src
 
 The directory of image source files to compress.
 
@@ -172,9 +143,61 @@ default: `"_images"`
 options: string  
 example: `"src/images"`
 
+##### dest
+
+The destination directory of compressed image files for Imagemin.
+
+default: `"images"`  
+options: string  
+example: `"img"`
+
+#### js
+
+JavaScript settings.
+
+##### src
+
+The directory of JavaScript source files to bundle up by Browserify.
+
+default: `"_js"`  
+options: string  
+example: `"src/js`"
+
+##### dest
+
+The JavaScript destination directory for Webpack.
+
+default: `"js"`  
+options: string  
+example: `"javascripts"`
+
+##### entry
+
+File name(s) of JavaScript entry file(s).
+
+default: `["main.js"]`  
+options: array  
+example: `["pluginA.js", "pluginB.js", "main.js"]`
+
 #### sass
 
 Sass settings.
+
+##### src
+
+The directory of Sass files.
+
+default: `"_sass"`  
+options: string  
+example: `"src/sass"`
+
+##### dest
+
+The CSS destination directory for Sass.
+
+default: `"css"`  
+options: string  
+example: `"stylesheets"`
 
 ##### outputStyle
 
@@ -194,26 +217,6 @@ List of browsers, which are supported in your theme.
 default: `["> 1%", "last 2 versions", "Firefox ESR"]`  
 options: array. See [Browserslist docs](https://github.com/ai/browserslist#queries) for available queries.
 example: `["> 5%", "last 2 versions", "IE 8"]`
-
-#### js
-
-JavaScript settings.
-
-##### src
-
-File name(s) of JavaScript source file(s).
-
-default: `["main.js"]`  
-options: array  
-example: `["pluginA.js", "pluginB.js", "main.js"]`
-
-##### dist
-
-The distribution JavaScript file name.
-
-default: `"main.js"`  
-options: string  
-example: `"script.js"`
 
 ## Notes
 

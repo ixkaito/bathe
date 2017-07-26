@@ -1,15 +1,16 @@
 {
   "name": "bathe",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "description": "WordPress starter theme including full setup for gulp, Webpack, Sass, Autoprefixer, Bourbon/Neat/Bitters, imagemin, Browsersync, PostCSS etc.",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
+    "test": "gulp test",
     "browsersync": "gulp browsersync",
+    "build": "gulp build",
     "eslint": "gulp eslint",
     "imagemin": "gulp imagemin",
     "sass": "gulp sass",
-    "test": "gulp test",
     "watch": "gulp watch"
   },
   "repository": {
