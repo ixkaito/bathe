@@ -6,6 +6,7 @@
   "scripts": {
     "start": "gulp",
     "browsersync": "gulp browsersync",
+    "eslint": "gulp eslint",
     "imagemin": "gulp imagemin",
     "sass": "gulp sass",
     "test": "gulp test",
