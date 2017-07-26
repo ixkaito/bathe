@@ -1,171 +1,159 @@
 'use strict';
 
-/**
- * gulp modules
- */
-var gulp         = require('gulp');
-var newer        = require('gulp-newer');
-var plumber      = require('gulp-plumber');
-var browsersync  = require('browser-sync').create();
-var sass         = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var imagemin     = require('gulp-imagemin');
-var pngquant     = require('imagemin-pngquant');
-var browserify   = require('browserify');
-var watchify     = require('watchify');
-var source       = require('vinyl-source-stream');
-var buffer       = require('vinyl-buffer');
-var uglify       = require('gulp-uglify');
-var watch        = require('gulp-watch');
+const gulp = require('gulp');
+const requireDir = require('require-dir');
 
-// Load configurations set variables
-var config = require('./batheconfig.json');
-var tasks = [];
-var build = [];
-var paths = {};
-var jsSrc = [];
+requireDir('./gulp/tasks', {recurse: true});
 
-/**
- * All tasks
- */
-Object.keys(config.tasks).forEach(function (key) {
-  if (config.tasks[key]) {
-    tasks.push(key);
-  }
-});
+// /**
+//  * gulp modules
+//  */
+// var autoprefixer = require('gulp-autoprefixer');
+// var browsersync  = require('browser-sync').create();
+// var eslint       = require('gulp-eslint');
+// var gulp         = require('gulp');
+// var imagemin     = require('gulp-imagemin');
+// var named        = require('vinyl-named');
+// var newer        = require('gulp-newer');
+// var plumber      = require('gulp-plumber');
+// var pngquant     = require('imagemin-pngquant');
+// var postcss      = require('gulp-postcss');
+// var sass         = require('gulp-sass');
+// var uglify       = require('gulp-uglify');
+// var watch        = require('gulp-watch');
+// var webpack      = require('webpack-stream');
 
-/**
- * Build tasks
- */
-build = tasks.concat();
-var index;
-['browsersync', 'watch'].forEach(function (value) {
-  index = build.indexOf(value);
-  if (index > -1) {
-    build.splice(index, 1);
-  }
-});
+// // Load configurations set variables
+// var config = require('./bathe.config.js');
+// var tasks = [];
+// var build = [];
+// var paths = {};
+// var entry = [];
 
-/**
- * Paths
- */
-Object.keys(config.paths).forEach(function (key) {
-  if (key != 'assets') {
-    if (config.paths.assets === '') {
-      paths[key] = './' + config.paths[key];
-    } else {
-      paths[key] = config.paths.assets + '/' + config.paths[key];
-    }
-  }
-});
+// /**
+//  * All tasks
+//  */
+// Object.keys(config.tasks).forEach(function (key) {
+//   if (config.tasks[key]) {
+//     tasks.push(key == 'webpack' ? '_' + key : key);
+//   }
+// });
 
-for (var i = 0; i <= config.js.src.length - 1; i++) {
-  jsSrc.push(paths.jsSrc + '/' + config.js.src[i]);
-}
+// Object.keys(config.tasks).forEach(function (key) {
+//   if (config.tasks[key] && key != 'browsersync') {
+//     build.push(key);
+//   }
+// });
 
-/**
- * Browser
- */
-gulp.task('browsersync', function () {
-  return browsersync.init({
-      proxy: config.siteurl
-  });
-});
+// /**
+//  * Paths
+//  */
+// Object.keys(config.paths).forEach(function (key) {
+//   if (key != 'assets') {
+//     if (config.paths.assets === '') {
+//       paths[key] = './' + config.paths[key];
+//     } else {
+//       paths[key] = config.paths.assets + '/' + config.paths[key];
+//     }
+//   }
+// });
 
-gulp.task('browser-reload', function () {
-  return browsersync.reload();
-});
+// for (var i = 0; i <= config.js.entry.length - 1; i++) {
+//   entry.push(paths.jsSrc + '/' + config.js.entry[i]);
+// }
 
-/**
- * Sass
- */
-gulp.task('sass', function () {
-  return gulp.src(paths.sass + '/**/*')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(sass({outputStyle: config.sass.outputStyle}))
-    .pipe(autoprefixer({ browsers: config.autoprefixer.browsers }))
-    .pipe(gulp.dest(paths.css));
-});
 
-/**
- * Imagemin
- */
-gulp.task('imagemin', function () {
-  return gulp.src(paths.imagesSrc + '/**/*')
-    .pipe(plumber())
-    .pipe(newer(paths.images))
-    .pipe(imagemin({
-      progressive: true,
-      svgoPlugins: [{removeViewBox: false}],
-      use: [pngquant()]
-    }))
-    .pipe(gulp.dest(paths.images));
-});
+// /**
+//  * imagemin
+//  */
+// gulp.task('imagemin', function () {
+//   return gulp.src(paths.imagesSrc + '/**/*')
+//     .pipe(plumber())
+//     .pipe(newer(paths.images))
+//     .pipe(imagemin({
+//       progressive: true,
+//       svgoPlugins: [{removeViewBox: false}],
+//       use: [pngquant()]
+//     }))
+//     .pipe(gulp.dest(paths.images));
+// });
 
-/**
- * Browserify and Watchify
- */
-var b = browserify(jsSrc);
+// /**
+//  * eslint
+//  */
+// gulp.task('eslint', function() {
+//   return gulp.src(entry)
+//   .pipe(eslint())
+//   .pipe(eslint.format())
+//   .pipe(eslint.failOnError());
+// });
 
-function bundle() {
-  return b.bundle()
-    .pipe(source(config.js.dist))
-    .pipe(buffer())
-    .pipe(uglify())
-    .pipe(gulp.dest(paths.js));
-}
+// /**
+//  * Webpack
+//  *
+//  * Bundle JavaScript files
+//  */
+// gulp.task('webpack', ['eslint'], function () {
+//   return gulp.src(entry)
+//     .pipe(plumber())
+//     .pipe(named())
+//     .pipe(webpack({
+//       watch: argv.watch ? true : false,
+//     }))
+//     .pipe(uglify())
+//     .pipe(gulp.dest(paths.js));
+// });
 
-gulp.task('browserify', bundle);
+// // For internal use only
+// gulp.task('_webpack', function () {
+//   argv.watch = true;
+//   gulp.start('webpack');
+// });
 
-gulp.task('watchify', function () {
-  b = watchify(b);
-  b.on('update', bundle);
-});
+// /**
+//  * Watch files for changes, recompile, and reload the browser.
+//  */
+// gulp.task('watch', function () {
+//   if (config.tasks.imagemin) {
+//     watch(paths.imagesSrc + '/**/*', function () {
+//       gulp.start('imagemin');
+//     });
+//   }
 
-/**
- * Watch files for changes, recompile, and reload the browser.
- */
-gulp.task('watch', ['watchify'], function () {
-  if (config.tasks.imagemin) {
-    watch(paths.imagesSrc + '/**/*', function () {
-      gulp.start('imagemin');
-    });
-  }
+//   if (config.tasks.sass) {
+//     watch(paths.sass + '/**/*', function () {
+//       gulp.start('sass');
+//     });
+//   }
 
-  if (config.tasks.sass) {
-    watch(paths.sass + '/**/*', function () {
-      gulp.start('sass');
-    });
-  }
+//   if (config.tasks.browsersync) {
+//     watch([
+//       '!./node_modules/**/*',
+//       '!./README.md',
+//       './**/*.php',
+//       paths.css + '/**/*',
+//       paths.js + '/**/*',
+//       paths.images + '/**/*'
+//     ], function () {
+//       gulp.start('browser-reload');
+//     });
+//   }
+// });
 
-  if (config.tasks.browsersync) {
-    watch([
-      '!./node_modules/**/*',
-      '!./README.md',
-      './**/*.php',
-      paths.css + '/**/*',
-      paths.js + '/**/*',
-      paths.images + '/**/*'
-    ], function () {
-      gulp.start('browser-reload');
-    });
-  }
-});
+// /**
+//  * Build task, this will minify the images, compile the sass,
+//  * bundle the js, but not launch BrowserSync and watch files.
+//  */
+// gulp.task('build', build);
 
-/**
- * Build task, this will minify the images, compile the sass,
- * bundle the js, but not launch BrowserSync and watch files.
- */
-gulp.task('build', build);
+// /**
+//  * Default task, running just `gulp` will minify the images,
+//  * compile the sass, bundle the js, launch BrowserSync, and
+//  * watch files.
+//  */
+// gulp.task('default', tasks);
 
-/**
- * Default task, running just `gulp` will minify the images,
- * compile the sass, bundle the js, launch BrowserSync, and
- * watch files.
- */
-gulp.task('default', tasks);
-
-/**
- * Test
- */
-gulp.task('test', ['build']);
+// /**
+//  * Test
+//  */
+// gulp.task('test', ['build']);

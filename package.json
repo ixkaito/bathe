@@ -1,13 +1,11 @@
 {
   "name": "bathe",
   "version": "0.3.3",
-  "description": "WordPress starter theme including full setup for gulp, Sass, Autoprefixer, Bourbon/Neat/Bitters, Browserify, imagemin, Browsersync, etc.",
+  "description": "WordPress starter theme including full setup for gulp, Webpack, Sass, Autoprefixer, Bourbon/Neat/Bitters, imagemin, Browsersync, PostCSS etc.",
   "main": "gulpfile.js",
   "scripts": {
     "start": "gulp",
-    "browserify": "gulp browserify",
     "browsersync": "gulp browsersync",
-    "build": "gulp build",
     "imagemin": "gulp imagemin",
     "sass": "gulp sass",
     "test": "gulp test",
@@ -26,9 +24,8 @@
     "Neat",
     "Bitters",
     "imagemin",
-    "Browserify",
-    "Watchify",
-    "Browsersync"
+    "Browsersync",
+    "Webpack"
   ],
   "author": "Kite",
   "license": "GPL-2.0+",
@@ -37,19 +34,21 @@
   },
   "homepage": "https://github.com/wp-bathe/bathe",
   "devDependencies": {
-    "browser-sync": "^2.12.12",
-    "browserify": "^13.0.1",
+    "autoprefixer": "^7.1.2",
+    "browser-sync": "^2.18.13",
+    "eslint-config-google": "^0.9.1",
     "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-imagemin": "^3.0.1",
-    "gulp-newer": "^1.2.0",
+    "gulp-eslint": "^4.0.0",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-newer": "^1.3.0",
     "gulp-plumber": "^1.1.0",
-    "gulp-sass": "^2.3.1",
-    "gulp-uglify": "^1.5.3",
-    "gulp-watch": "^4.3.6",
-    "imagemin-pngquant": "^5.0.0",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.7.0"
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^4.3.11",
+    "imagemin-pngquant": "^5.0.1",
+    "require-dir": "^0.3.2",
+    "vinyl-named": "^1.1.0",
+    "webpack-stream": "^3.2.0"
   }
 }
