@@ -1,10 +1,9 @@
-const assets = require('../config.js').assets;
+const config = require('../config.js');
 const eslint = require('gulp-eslint');
-const config = require('../config.js').js;
 const gulp   = require('gulp');
 
 gulp.task('eslint', function() {
-  return gulp.src([assets + '/' + config.src + '/**/*.js', '!node_modules/**'])
+  return gulp.src([config.assets + '/' + config.js.src + '/**/*.js', '!node_modules/**'])
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(eslint.failOnError());

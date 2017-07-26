@@ -1,10 +1,10 @@
 const browsersync = require('browser-sync').create();
-const config      = require('../config.js').browsersync;
+const config      = require('../config.js');
 const gulp        = require('gulp');
 
 gulp.task('browsersync', function () {
   return browsersync.init({
-      proxy: config.siteurl
+      proxy: config.browsersync.siteurl
   });
 });
 
