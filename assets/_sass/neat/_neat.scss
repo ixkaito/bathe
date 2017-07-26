@@ -1,23 +1,26 @@
-// Neat 1.8.0
+@charset "UTF-8";
+// Neat 2.1.0
 // http://neat.bourbon.io
-// Copyright 2012-2015 thoughtbot, inc.
+// Copyright 2012 thoughtbot, inc.
 // MIT License
 
-// Helpers
-@import "neat-helpers";
+@import "neat/settings/settings";
 
-// Grid
-@import "grid/private";
-@import "grid/box-sizing";
-@import "grid/omega";
-@import "grid/outer-container";
-@import "grid/span-columns";
-@import "grid/row";
-@import "grid/shift";
-@import "grid/pad";
-@import "grid/fill-parent";
-@import "grid/media";
-@import "grid/to-deprecate";
-@import "grid/visual-grid";
-@import "grid/display-context";
-@import "grid/direction-context";
+@import "neat/functions/retrieve-neat-settings";
+@import "neat/functions/neat-column-default";
+@import "neat/functions/neat-column-width";
+@import "neat/functions/neat-column-ratio";
+@import "neat/functions/neat-float-direction";
+@import "neat/functions/neat-merge-defaults";
+@import "neat/functions/neat-opposite-direction";
+@import "neat/functions/neat-parse-columns";
+@import "neat/functions/neat-parse-media";
+@import "neat/functions/neat-append-grid-visual";
+
+@import "neat/mixins/grid-collapse";
+@import "neat/mixins/grid-column";
+@import "neat/mixins/grid-container";
+@import "neat/mixins/grid-media";
+@import "neat/mixins/grid-push";
+@import "neat/mixins/grid-shift";
+@import "neat/mixins/grid-visual";
