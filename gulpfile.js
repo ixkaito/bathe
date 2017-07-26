@@ -63,20 +63,7 @@ requireDir('./gulp/tasks', {recurse: true});
 // }
 
 
-// /**
-//  * imagemin
-//  */
-// gulp.task('imagemin', function () {
-//   return gulp.src(paths.imagesSrc + '/**/*')
-//     .pipe(plumber())
-//     .pipe(newer(paths.images))
-//     .pipe(imagemin({
-//       progressive: true,
-//       svgoPlugins: [{removeViewBox: false}],
-//       use: [pngquant()]
-//     }))
-//     .pipe(gulp.dest(paths.images));
-// });
+
 
 // /**
 //  * eslint
