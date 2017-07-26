@@ -1,36 +1,32 @@
 const argv          = require('yargs').argv;
-const assets        = require('../config.js').assets;
-const config        = require('../config.js').webpack;
-const eslintLoader  = require('../config.js').eslintLoader;
+const config        = require('../config.js')
 const gulp          = require('gulp');
-const js            = require('../config.js').js;
 const named         = require('vinyl-named');
 const plumber       = require('gulp-plumber');
-const tasks         = require('../config.js').tasks;
 const uglify        = require('gulp-uglify');
 const webpackStream = require('webpack-stream');
 const webpack       = require('webpack');
 
 const entry = [];
-for (var i = 0; i <= js.entry.length - 1; i++) {
-  entry.push(assets + '/' + js.src + '/' + js.entry[i]);
+for (var i = 0; i <= config.js.entry.length - 1; i++) {
+  entry.push(config.assets + '/' + config.js.src + '/' + config.js.entry[i]);
 }
 
-if (tasks.eslint) config.module.rules.push(eslintLoader);
+if (config.tasks.eslint) config.webpack.module.rules.push(config.eslintLoader);
 
-config.watch = argv.watch;
+config.webpack.watch = argv.watch;
 
 gulp.task('webpack', function () {
   return gulp.src(entry)
     .pipe(plumber())
     .pipe(named())
-    .pipe(webpackStream(config, webpack))
+    .pipe(webpackStream(config.webpack, webpack))
     .pipe(uglify())
-    .pipe(gulp.dest(assets + '/' + js.dest));
+    .pipe(gulp.dest(config.assets + '/' + config.js.dest));
 });
 
 // For internal use only
 gulp.task('_webpack', function () {
-  config.watch = tasks.watch;
+  config.watch = config.tasks.watch;
   gulp.start('webpack');
 });

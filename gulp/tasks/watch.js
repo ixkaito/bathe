@@ -15,12 +15,6 @@ gulp.task('watch', function () {
     });
   }
 
-  if (config.tasks.webpack) {
-    watch(config.assets + '/' + config.js.src + '/**/*', function () {
-      gulp.start('webpack');
-    });
-  }
-
   if (config.tasks.browsersync) {
     watch([
       '!./node_modules/**/*',

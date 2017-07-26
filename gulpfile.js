@@ -1,6 +1,7 @@
 'use strict';
 
-const gulp = require('gulp');
+const config     = require('./gulp/config.js');
+const gulp       = require('gulp');
 const requireDir = require('require-dir');
 
 requireDir('./gulp/tasks', {recurse: true});
@@ -25,19 +26,16 @@ requireDir('./gulp/tasks', {recurse: true});
 
 // // Load configurations set variables
 // var config = require('./bathe.config.js');
-// var tasks = [];
+const tasks = [];
 // var build = [];
 // var paths = {};
 // var entry = [];
 
-// /**
-//  * All tasks
-//  */
-// Object.keys(config.tasks).forEach(function (key) {
-//   if (config.tasks[key]) {
-//     tasks.push(key == 'webpack' ? '_' + key : key);
-//   }
-// });
+Object.keys(config.tasks).forEach(function (key) {
+  if (config.tasks[key] && key != 'eslint') {
+    tasks.push((key == 'webpack' && config.tasks.watch) ? '_' + key : key);
+  }
+});
 
 // Object.keys(config.tasks).forEach(function (key) {
 //   if (config.tasks[key] && key != 'browsersync') {
@@ -58,35 +56,7 @@ requireDir('./gulp/tasks', {recurse: true});
 //   }
 // });
 
-// /**
-//  * Watch files for changes, recompile, and reload the browser.
-//  */
-// gulp.task('watch', function () {
-//   if (config.tasks.imagemin) {
-//     watch(paths.imagesSrc + '/**/*', function () {
-//       gulp.start('imagemin');
-//     });
-//   }
 
-//   if (config.tasks.sass) {
-//     watch(paths.sass + '/**/*', function () {
-//       gulp.start('sass');
-//     });
-//   }
-
-//   if (config.tasks.browsersync) {
-//     watch([
-//       '!./node_modules/**/*',
-//       '!./README.md',
-//       './**/*.php',
-//       paths.css + '/**/*',
-//       paths.js + '/**/*',
-//       paths.images + '/**/*'
-//     ], function () {
-//       gulp.start('browser-reload');
-//     });
-//   }
-// });
 
 // /**
 //  * Build task, this will minify the images, compile the sass,
@@ -105,3 +75,5 @@ requireDir('./gulp/tasks', {recurse: true});
 //  * Test
 //  */
 // gulp.task('test', ['build']);
+
+gulp.task('default', tasks);
