@@ -1,27 +1,18 @@
 module.exports = {
-  assets: './assets',
-
-  browsersync: {
-    siteurl: 'wocker.dev',
-  },
-
   tasks: {
     browsersync: true,
-    imagemin:    false,
+    eslint:      true,
+    imagemin:    true,
     sass:        true,
     watch:       true,
     webpack:     true,
   },
 
-  // paths: {
-  //   assets:    './assets',
-  //   css:       'css',
-  //   js:        'js',
-  //   images:    'images',
-  //   sass:      '_sass',
-  //   jsSrc:     '_js',
-  //   imagesSrc: '_images',
-  // },
+  assets: './assets',
+
+  browsersync: {
+    siteurl: 'wocker.dev',
+  },
 
   sass: {
     src:          '_sass',
@@ -44,9 +35,23 @@ module.exports = {
   },
 
   js: {
-    src: '_js',
+    src:   '_js',
+    dest:  'js',
     entry: [
       'main.js',
     ],
   },
+
+  webpack: {
+    module: {
+      rules: [],
+    },
+  },
+
+  eslintLoader: {
+    enforce: "pre",
+    test: /\.js$/,
+    exclude: /node_modules/,
+    loader: "eslint-loader",
+  }
 }
