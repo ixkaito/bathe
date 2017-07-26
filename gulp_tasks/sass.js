@@ -1,5 +1,5 @@
 const autoprefixer = require('autoprefixer');
-const config       = require('../config.js');
+const config       = require('../bathe.config.js');
 const gulp         = require('gulp');
 const postcss      = require('gulp-postcss');
 const sass         = require('gulp-sass');

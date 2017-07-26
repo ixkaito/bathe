@@ -1,10 +1,10 @@
 'use strict';
 
-const config     = require('./gulp/config.js');
+const config     = require('./bathe.config.js');
 const gulp       = require('gulp');
 const requireDir = require('require-dir');
 
-requireDir('./gulp/tasks', {recurse: true});
+requireDir('./gulp_tasks', {recurse: true});
 
 const tasks = [];
 Object.keys(config.tasks).forEach(function (key) {

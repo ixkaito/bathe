@@ -1,4 +1,4 @@
-const config        = require('../config.js');
+const config        = require('../bathe.config.js');
 const gulp          = require('gulp');
 const watch         = require('gulp-watch');
 

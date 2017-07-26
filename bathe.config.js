@@ -14,17 +14,11 @@ module.exports = {
     siteurl: 'wocker.dev',
   },
 
-  sass: {
-    src:          '_sass',
-    dest:         'css',
-    outputStyle:  'compressed',
-    autoprefixer: {
-      browsers: [
-        '> 1%',
-        'last 2 versions',
-        'Firefox ESR',
-      ],
-    },
+  eslintLoader: {
+    enforce: "pre",
+    test: /\.js$/,
+    exclude: /node_modules/,
+    loader: "eslint-loader",
   },
 
   imagemin: {
@@ -42,16 +36,22 @@ module.exports = {
     ],
   },
 
+  sass: {
+    src:          '_sass',
+    dest:         'css',
+    outputStyle:  'compressed',
+    autoprefixer: {
+      browsers: [
+        '> 1%',
+        'last 2 versions',
+        'Firefox ESR',
+      ],
+    },
+  },
+
   webpack: {
     module: {
       rules: [],
     },
   },
-
-  eslintLoader: {
-    enforce: "pre",
-    test: /\.js$/,
-    exclude: /node_modules/,
-    loader: "eslint-loader",
-  }
 }

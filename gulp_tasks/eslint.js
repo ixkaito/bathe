@@ -1,4 +1,4 @@
-const config = require('../config.js');
+const config = require('../bathe.config.js');
 const eslint = require('gulp-eslint');
 const gulp   = require('gulp');
 
