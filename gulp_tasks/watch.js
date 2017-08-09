@@ -20,9 +20,9 @@ gulp.task('watch', function () {
       '!./node_modules/**/*',
       '!./README.md',
       './**/*.php',
-      config.sass.dest + '/**/*',
-      config.js.dest + '/**/*',
-      config.imagemin.dest + '/**/*'
+      config.assets + '/' + config.sass.dest + '/**/*',
+      config.assets + '/' + config.js.dest + '/**/*',
+      config.assets + '/' + config.imagemin.dest + '/**/*'
     ], function () {
       gulp.start('browser-reload');
     });
