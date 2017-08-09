@@ -27,6 +27,6 @@ gulp.task('webpack', function () {
 
 // For internal use only
 gulp.task('_webpack', function () {
-  config.watch = config.tasks.watch;
+  config.webpack.watch = config.tasks.watch;
   gulp.start('webpack');
 });
