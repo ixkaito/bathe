@@ -11,7 +11,7 @@ module.exports = {
   assets: './assets',
 
   browsersync: {
-    siteurl: 'wocker.dev',
+    siteurl: 'wocker.test',
   },
 
   eslintLoader: {
