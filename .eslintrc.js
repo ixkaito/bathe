@@ -5,7 +5,9 @@ module.exports = {
     'browser': true
   },
   'rules': {
-    // Insert custom rules here
+    // Insert customrules here
     // For more rules, see here: http://eslint.org/docs/rules/
+    'no-var': 'warn',
+    'require-jsdoc': 'off'
   }
 }
