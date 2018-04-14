@@ -1,4 +1,4 @@
-# Bathe [![GitHub release](https://img.shields.io/github/release/wp-bathe/bathe.svg)](https://github.com/wp-bathe/bathe/releases) [![license](https://img.shields.io/github/license/wp-bathe/bathe.svg?maxAge=2592000)](https://github.com/wp-bathe/bathe/blob/master/LICENSE)
+# Bathe [![GitHub release](https://img.shields.io/github/release/wp-bathe/bathe.svg)](https://github.com/wp-bathe/bathe/releases) [![license](https://img.shields.io/badge/license-GPLv2.0_or_later-orange.svg?maxAge=2592000)](https://github.com/wp-bathe/bathe/blob/master/LICENSE)
 
 __WordPress starter theme including full setup for gulp, Webpack, Sass, Autoprefixer, Imagemin, Browsersync, PostCSS etc.__
 
@@ -8,13 +8,10 @@ __WordPress starter theme including full setup for gulp, Webpack, Sass, Autopref
 - Webpack
 - Sass
 - Autoprefixer
-- Bourbon/Neat/Bitters
 - PostCSS
 - UglifyJS
 - Imagemin
 - Browsersync
-
-Bourbon is a lightweight Sass framework. If you don't use it, it will do nothing to your CSS file.
 
 ## Usage
 
@@ -50,7 +47,7 @@ $ npm install
 
 #### 4. Change the site url
 
-Change `browsersync.siteurl` in `bathe.config.js` for your environment. The default siteurl is `wocker.dev` for [Wocker](http://wckr.github.io/).
+Change `browsersync.siteurl` in `bathe.config.js` for your environment. The default siteurl is `wocker.test` for [Wocker](http://wckr.github.io/).
 
 #### 5. Run the package's start script
 
@@ -127,7 +124,7 @@ Browsersync settings.
 
 An EXISTING vhost.
 
-default: `"wocker.dev"`  
+default: `"wocker.test"`  
 options: string  
 example: `"localhost:8888"`
 
@@ -224,4 +221,4 @@ Bathe doesn't load the default theme stylesheet "style.css" by default.
 
 ## Copyright / License
 
-&copy; 2015 the contributors of the Bathe project under the [GPL version 2](https://raw.githubusercontent.com/wp-bathe/bathe/master/LICENSE) or later.
+&copy; 2015 the contributors of the Bathe project under the [GPL version 2.0](https://raw.githubusercontent.com/wp-bathe/bathe/master/LICENSE) or later.
