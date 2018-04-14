@@ -1,5 +1,6 @@
 const argv          = require('yargs').argv;
-const config        = require('../bathe.config.js')
+const babel         = require('gulp-babel');
+const config        = require('../bathe.config.js');
 const gulp          = require('gulp');
 const named         = require('vinyl-named');
 const plumber       = require('gulp-plumber');
@@ -20,6 +21,7 @@ gulp.task('webpack', function () {
   return gulp.src(entry)
     .pipe(plumber())
     .pipe(named())
+    .pipe(babel())
     .pipe(webpackStream(config.webpack, webpack))
     .pipe(uglify())
     .pipe(gulp.dest(config.assets + '/' + config.js.dest));
