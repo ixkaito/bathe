@@ -16,9 +16,9 @@ module.exports = {
 
   eslintLoader: {
     enforce: "pre",
-    test: /\.js$/,
+    test:    /\.js$/,
     exclude: /node_modules/,
-    loader: "eslint-loader",
+    loader:  "eslint-loader",
   },
 
   imagemin: {
@@ -50,7 +50,7 @@ module.exports = {
   },
 
   webpack: {
-    mode: 'production',
+    mode:   'production',
     module: {
       rules: [],
     },

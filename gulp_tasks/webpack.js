@@ -16,6 +16,7 @@ for (var i = 0; i <= config.js.entry.length - 1; i++) {
 if (config.tasks.eslint) config.webpack.module.rules.push(config.eslintLoader);
 
 config.webpack.watch = argv.watch;
+config.webpack.mode = argv.mode || config.webpack.mode;
 
 gulp.task('webpack', function () {
   return gulp.src(entry)
