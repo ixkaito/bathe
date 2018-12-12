@@ -4,7 +4,6 @@ const config        = require('../bathe.config.js');
 const gulp          = require('gulp');
 const named         = require('vinyl-named');
 const plumber       = require('gulp-plumber');
-const uglify        = require('gulp-uglify');
 const webpackStream = require('webpack-stream');
 const webpack       = require('webpack');
 
@@ -24,7 +23,6 @@ gulp.task('webpack', function () {
     .pipe(named())
     .pipe(babel())
     .pipe(webpackStream(config.webpack, webpack))
-    .pipe(uglify())
     .pipe(gulp.dest(config.assets + '/' + config.js.dest));
 });
 
