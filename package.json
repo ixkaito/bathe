@@ -1,6 +1,6 @@
 {
   "name": "bathe",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "WordPress starter theme including full setup for gulp, Webpack, Sass, Autoprefixer, Bourbon/Neat/Bitters, imagemin, Browsersync, PostCSS etc.",
   "main": "gulpfile.js",
   "scripts": {
@@ -36,26 +36,27 @@
   },
   "homepage": "https://github.com/wp-bathe/bathe",
   "devDependencies": {
-    "autoprefixer": "^8.5.0",
+    "autoprefixer": "^9.0.1",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
-    "browser-sync": "^2.24.4",
+    "browser-sync": "^2.24.6",
     "eslint-config-google": "^0.9.1",
-    "eslint-loader": "^2.0.0",
+    "eslint-loader": "^2.1.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^7.0.1",
-    "gulp-eslint": "^4.0.2",
+    "gulp-eslint": "^5.0.0",
     "gulp-imagemin": "^4.1.0",
     "gulp-newer": "^1.4.0",
     "gulp-plumber": "^1.2.0",
     "gulp-postcss": "^7.0.1",
-    "gulp-sass": "^3.2.1",
+    "gulp-sass": "^4.0.1",
     "gulp-watch": "^5.0.0",
-    "imagemin-pngquant": "^5.1.0",
+    "imagemin-pngquant": "^6.0.0",
+    "natives": "^1.1.6",
     "require-dir": "^1.0.0",
     "vinyl-named": "^1.1.0",
-    "webpack": "^4.8.3",
-    "webpack-stream": "^4.0.3",
-    "yargs": "^11.1.0"
+    "webpack": "^4.16.1",
+    "webpack-stream": "^5.0.0",
+    "yargs": "^12.0.1"
   }
 }

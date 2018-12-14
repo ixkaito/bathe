@@ -72,7 +72,7 @@ function bathe_scripts() {
 
 	wp_enqueue_style( 'bathe-style', get_theme_file_uri( 'assets/css/main.css' ) );
 
-	wp_enqueue_script( 'bathe-script', get_theme_file_uri( 'assets/js/main.js' ), array(), '', true );
+	wp_enqueue_script( 'bathe-script', get_theme_file_uri( 'assets/js/bundle.js' ), array(), '', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
