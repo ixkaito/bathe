@@ -4,7 +4,7 @@ const gulp        = require('gulp');
 
 gulp.task('browsersync', function () {
   return browsersync.init({
-      proxy: config.browsersync.siteurl
+    proxy: config.browsersync.siteurl
   });
 });
 
