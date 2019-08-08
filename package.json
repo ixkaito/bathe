@@ -3,6 +3,11 @@
   "version": "0.5.4",
   "description": "WordPress starter theme including full setup for gulp, Webpack, Sass, Autoprefixer, Bourbon/Neat/Bitters, imagemin, Browsersync, PostCSS etc.",
   "main": "gulpfile.js",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "Firefox ESR"
+  ],
   "scripts": {
     "start": "gulp",
     "test": "gulp test",

@@ -8,9 +8,7 @@ gulp.task('sass', function () {
   return gulp.src(config.assets + '/' + config.sass.src + '/**/*')
     .pipe(sass({outputStyle: config.sass.outputStyle}).on('error', sass.logError))
     .pipe(postcss([
-      autoprefixer({
-        browsers: config.sass.autoprefixer.browsers
-      })
+      autoprefixer()
     ]))
     .pipe(gulp.dest(config.assets + '/' + config.sass.dest));
 });
