@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   tasks: {
     browsersync: true,
     eslint:      true,
