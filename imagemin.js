@@ -4,8 +4,11 @@ const imageminJpegtran = require('imagemin-jpegtran');
 const imageminOptipng = require('imagemin-optipng');
 const imageminSvgo = require('imagemin-svgo');
 
+const input = process.argv[2];
+if (! input) return;
+
 (async () => {
-  const files = await imagemin(['assets/_images/**/*.{jpg,png}'], {
+  const files = await imagemin([input], {
     destination: 'assets/images',
     plugins: [
       imageminGifsicle(),
@@ -19,5 +22,5 @@ const imageminSvgo = require('imagemin-svgo');
     ],
   });
 
-  console.log(files);
+  console.log(`${files.length} images minified`);
 })();

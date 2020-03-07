@@ -1,13 +1,9 @@
 @charset "UTF-8";
 
+body {
+  color: red;
+}
+
 ::placeholder {
   color: gray;
-}
-
-body {
-  color: black;
-}
-
-a {
-  color: green;
 }
