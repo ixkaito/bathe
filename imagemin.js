@@ -5,11 +5,12 @@ const imageminOptipng = require('imagemin-optipng');
 const imageminSvgo = require('imagemin-svgo');
 
 const input = process.argv[2];
+const dest = process.argv[3];
 if (! input) return;
 
 (async () => {
   const files = await imagemin([input], {
-    destination: 'assets/images',
+    destination: dest,
     plugins: [
       imageminGifsicle(),
       imageminJpegtran(),

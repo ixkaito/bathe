@@ -8,17 +8,32 @@
     "last 2 versions",
     "Firefox ESR"
   ],
+  "config": {
+    "image": {
+      "src": "assets/_images",
+      "dist": "assets/images"
+    },
+    "js": {
+      "src": "assets/_js",
+      "dist": "assets/js"
+    },
+    "sass": {
+      "src": "assets/_sass",
+      "dist": "assets/css",
+      "style": "compressed"
+    }
+  },
   "scripts": {
     "start": "npm-run-all build -p browser watch",
     "browser": "browser-sync start --config bs-config.js",
     "build": "run-p imagemin sass webpack",
-    "eslint": "gulp eslint",
-    "imagemin": "node imagemin \"assets/_images/**/*\"",
-    "sass": "sass assets/_sass:assets/css --style=compressed --no-source-map",
-    "postsass": "postcss assets/css/*.css --use=autoprefixer --no-map --dir=assets/css",
+    "imagemin": "node imagemin \"$npm_package_config_image_src/**/*\" $npm_package_config_image_dist",
+    "presass": "stylelint \"$npm_package_config_sass_src/**/*\" --fix",
+    "sass": "sass $npm_package_config_sass_src:$npm_package_config_sass_dist --style=compressed --no-source-map",
+    "postsass": "postcss $npm_package_config_sass_dist/*.css --use=autoprefixer --no-map --dir=$npm_package_config_sass_dist",
     "webpack": "webpack",
-    "watch:imagemin": "onchange \"assets/_images/**/*\" -e \".DS_Store\" -- npm run imagemin",
-    "watch:sass": "onchange \"assets/_sass/**/*\" -e \".DS_Store\" -- npm run sass",
+    "watch:imagemin": "onchange \"$npm_package_config_image_src/**/*\" -e \".DS_Store\" -- npm run imagemin",
+    "watch:sass": "onchange \"$npm_package_config_sass_src/**/*\" -e \".DS_Store\" -- npm run sass",
     "watch:webpack": "npm run webpack -- --watch",
     "watch": "run-p watch:*"
   },
@@ -28,11 +43,14 @@
   },
   "keywords": [
     "WordPress",
+    "Browsersync",
     "Sass",
+    "PostCSS",
     "Autoprefixer",
     "imagemin",
-    "Browsersync",
-    "Webpack"
+    "Webpack",
+    "stylelint",
+    "ESLint"
   ],
   "author": "Kite",
   "license": "GPL-2.0+",
@@ -64,6 +82,8 @@
     "sass": "^1.26.2",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
+    "stylelint": "^13.2.0",
+    "stylelint-config-sass-guidelines": "^7.0.0",
     "webpack": "^4.42.0",
     "webpack-cli": "^3.3.11"
   }
