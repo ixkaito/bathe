@@ -1,7 +1,7 @@
 {
   "name": "bathe",
-  "version": "0.5.4",
-  "description": "WordPress starter theme including full setup for gulp, Webpack, Sass, Autoprefixer, Bourbon/Neat/Bitters, imagemin, Browsersync, PostCSS etc.",
+  "version": "1.0.0",
+  "description": "The simplest WordPress starter theme including full setup for Sass, PostCSS, Autoprefixer, stylelint, Webpack, imagemin, Browsersync etc.",
   "main": "gulpfile.js",
   "browserslist": [
     "> 1%",
@@ -9,31 +9,36 @@
     "Firefox ESR"
   ],
   "config": {
+    "browsersync": {
+      "proxy": "wocker.test"
+    },
     "image": {
       "src": "assets/_images",
       "dist": "assets/images"
     },
     "js": {
+      "entry": "bundle.js",
       "src": "assets/_js",
       "dist": "assets/js"
     },
-    "sass": {
+    "css": {
       "src": "assets/_sass",
       "dist": "assets/css",
-      "style": "compressed"
+      "style": "compressed",
+      "map": "--map"
     }
   },
   "scripts": {
-    "start": "npm-run-all build -p browser watch",
-    "browser": "browser-sync start --config bs-config.js",
+    "dev": "npm-run-all -p imagemin sass webpack -p browser watch",
+    "browser": "browser-sync \"http://$npm_package_config_browsersync_proxy\" -f \"**/*.php\" \"$npm_package_config_css_dist\" \"$npm_package_config_js_dist\" \"$npm_package_config_image_dist\"",
     "build": "run-p imagemin sass webpack",
     "imagemin": "node imagemin \"$npm_package_config_image_src/**/*\" $npm_package_config_image_dist",
-    "presass": "stylelint \"$npm_package_config_sass_src/**/*\" --fix",
-    "sass": "sass $npm_package_config_sass_src:$npm_package_config_sass_dist --style=compressed --no-source-map",
-    "postsass": "postcss $npm_package_config_sass_dist/*.css --use=autoprefixer --no-map --dir=$npm_package_config_sass_dist",
-    "webpack": "webpack",
+    "presass": "stylelint \"$npm_package_config_css_src/**/*\" --fix",
+    "sass": "sass $npm_package_config_css_src:$npm_package_config_css_dist --style=compressed",
+    "postsass": "postcss $npm_package_config_css_dist/*.css --use=autoprefixer --dir=$npm_package_config_css_dist $npm_package_config_css_map",
+    "webpack": "webpack $npm_package_config_js_src/$npm_package_config_js_entry -o $npm_package_config_js_dist/$npm_package_config_js_entry",
     "watch:imagemin": "onchange \"$npm_package_config_image_src/**/*\" -e \".DS_Store\" -- npm run imagemin",
-    "watch:sass": "onchange \"$npm_package_config_sass_src/**/*\" -e \".DS_Store\" -- npm run sass",
+    "watch:sass": "onchange \"$npm_package_config_css_src/**/*\" -e \".DS_Store\" -- npm run sass",
     "watch:webpack": "npm run webpack -- --watch",
     "watch": "run-p watch:*"
   },

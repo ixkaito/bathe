@@ -2,10 +2,10 @@
 Theme Name: Bathe
 Theme URI: https://github.com/ixkaito/bathe
 Author: Kite
-Author URI: http://kiteretz.com/
-Description: WordPress starter theme including full setup for gulp, Webpack, Sass, Autoprefixer, imagemin, Browsersync, PostCSS etc.
-Tags: gulp, Webpack, Sass, Autoprefixer, imagemin, Browsersync, PostCSS
-Version: 0.5.4
+Author URI: https://kiteretz.com/
+Description: The simplest WordPress starter theme including full setup for Sass, PostCSS, Autoprefixer, stylelint, Webpack, imagemin, Browsersync etc.
+Tags: Sass, PostCSS, Autoprefixer, Webpack, imagemin, Browsersync
+Version: 1.0.0
 Text Domain: bathe
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html

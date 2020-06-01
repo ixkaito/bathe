@@ -5,13 +5,6 @@ const enabledSourceMap = (MODE === 'development');
 module.exports = {
   mode: MODE,
 
-  entry: {
-    bundle: './assets/_js/bundle.js',
-  },
-  output: {
-    path: `${__dirname}/assets/js`,
-    filename: '[name].js',
-  },
   module: {
     rules: [
       {
@@ -26,9 +19,9 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
       {
         test: /\.scss/,
@@ -49,7 +42,7 @@ module.exports = {
             options: {
               sourceMap: enabledSourceMap,
               plugins: [
-                require('autoprefixer')({ grid: true })
+                require('autoprefixer')({grid: true}),
               ],
             },
           },
@@ -59,9 +52,9 @@ module.exports = {
               sourceMap: enabledSourceMap,
             },
           },
-        ]
-      }
-    ]
+        ],
+      },
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
