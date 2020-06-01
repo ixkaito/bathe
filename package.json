@@ -63,6 +63,9 @@
     "url": "https://github.com/wp-bathe/bathe/issues"
   },
   "homepage": "https://github.com/wp-bathe/bathe",
+  "engines": {
+    "node": "14.3.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
