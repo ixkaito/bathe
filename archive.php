@@ -1,5 +1,5 @@
 <?php get_header(); ?>
 
-<?php get_template_part( 'templates/loop', 'archive' ); ?>
+<?php get_template_part( 'template-parts/loop', 'archive' ); ?>
 
-<?php get_footer(); ?>
+<?php get_footer();
