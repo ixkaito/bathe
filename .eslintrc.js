@@ -3,7 +3,8 @@ module.exports = {
   'env': {
     // For more environments, see here: http://eslint.org/docs/user-guide/configuring.html#specifying-environments
     'browser': true,
-    'es6': true
+    'es6': true,
+    'jquery': true
   },
   'rules': {
     // Insert custom rules here
