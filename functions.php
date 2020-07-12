@@ -1,10 +1,8 @@
 <?php
-
-if ( ! function_exists( 'bathe_setup' ) ) {
 /**
  * Set up theme defaults and registers support for various WordPress feaures.
  */
-function bathe_setup() {
+add_action( 'after_setup_theme', function() {
 	load_theme_textdomain( 'bathe', get_theme_file_uri( 'languages' ) );
 
 	add_theme_support( 'automatic-feed-links' );
@@ -29,13 +27,25 @@ function bathe_setup() {
 		'default-image' => '',
 	) ) );
 
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	/**
+	 * Add support for core custom logo.
+	 *
+	 * @link https://codex.wordpress.org/Theme_Logo
+	 */
+	add_theme_support( 'custom-logo', array(
+		'height'      => 200,
+		'width'       => 50,
+		'flex-width'  => true,
+		'flex-height' => true,
+	) );
+
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'bathe' ),
 	) );
-}
-
-}
-add_action( 'after_setup_theme', 'bathe_setup' );
+} );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -44,15 +54,14 @@ add_action( 'after_setup_theme', 'bathe_setup' );
  *
  * @global int $content_width
  */
-function bathe_content_width() {
+add_action( 'after_setup_theme', function() {
 	$GLOBALS['content_width'] = apply_filters( 'bathe_content_width', 960 );
-}
-add_action( 'after_setup_theme', 'bathe_content_width', 0 );
+}, 0 );
 
 /**
  * Register widget area.
  */
-function bathe_widgets_init() {
+add_action( 'widgets_init', function() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'bathe' ),
 		'id'            => 'sidebar-1',
@@ -62,20 +71,18 @@ function bathe_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
-}
-add_action( 'widgets_init', 'bathe_widgets_init' );
+} );
 
 /**
  * Enqueue scripts and styles.
  */
-function bathe_scripts() {
+add_action( 'wp_enqueue_scripts', function() {
 
-	wp_enqueue_style( 'bathe-style', get_theme_file_uri( 'assets/css/main.css' ) );
+	wp_enqueue_style( 'bathe-main', get_theme_file_uri( 'assets/css/main.css' ) );
 
-	wp_enqueue_script( 'bathe-script', get_theme_file_uri( 'assets/js/bundle.js' ), array(), '', true );
+	wp_enqueue_script( 'bathe-bundle', get_theme_file_uri( 'assets/js/bundle.js' ), array(), null, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-}
-add_action( 'wp_enqueue_scripts', 'bathe_scripts' );
+} );
