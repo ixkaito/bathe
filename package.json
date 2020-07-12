@@ -2,7 +2,6 @@
   "name": "bathe",
   "version": "1.0.0",
   "description": "The simplest WordPress starter theme including full setup for Sass, PostCSS, Autoprefixer, stylelint, Webpack, imagemin, Browsersync etc.",
-  "main": "gulpfile.js",
   "browserslist": [
     "> 1%",
     "last 2 versions",
@@ -10,7 +9,7 @@
   ],
   "config": {
     "browsersync": {
-      "proxy": "wocker.test"
+      "proxy": "localhost"
     },
     "image": {
       "src": "assets/_images",
@@ -64,7 +63,8 @@
   },
   "homepage": "https://github.com/wp-bathe/bathe",
   "engines": {
-    "node": "14.3.0"
+    "node": ">= 12.0.0",
+    "npm": ">= 6.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
