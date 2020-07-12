@@ -11,10 +11,6 @@ indent_size = 2
 [*.{md,markdown}]
 trim_trailing_whitespace = false
 
-[*.html]
-indent_style = tab
-indent_size = 2
-
-[*.{php,css,scss,sass}]
+[*.{php,html,css,scss,sass}]
 indent_style = tab
 indent_size = 4
