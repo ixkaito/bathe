@@ -29,7 +29,7 @@ node_modules/
 /log/*
 !/log/.keep
 /tmp
-npm-debug.log
+*.log
 
 # Other unneeded files
 doc/

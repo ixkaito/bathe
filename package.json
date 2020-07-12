@@ -9,7 +9,8 @@
   ],
   "config": {
     "browsersync": {
-      "proxy": "localhost"
+      "proxy": "localhost:8888",
+      "port": 3000
     },
     "image": {
       "src": "assets/_images",
@@ -29,7 +30,7 @@
   },
   "scripts": {
     "dev": "npm-run-all -p imagemin sass webpack -p browser watch",
-    "browser": "browser-sync \"http://$npm_package_config_browsersync_proxy\" -f \"**/*.php\" \"$npm_package_config_css_dist\" \"$npm_package_config_js_dist\" \"$npm_package_config_image_dist\"",
+    "browser": "browser-sync \"http://$npm_package_config_browsersync_proxy\" -f \"**/*.php\" \"$npm_package_config_css_dist\" \"$npm_package_config_js_dist\" \"$npm_package_config_image_dist\" --port $npm_package_config_browsersync_port",
     "build": "run-p imagemin sass webpack",
     "imagemin": "node imagemin \"$npm_package_config_image_src/**/*\" $npm_package_config_image_dist",
     "presass": "stylelint \"$npm_package_config_css_src/**/*\" --fix",
