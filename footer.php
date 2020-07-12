@@ -1,6 +1,5 @@
-<?php get_sidebar(); ?>
+		<?php get_sidebar(); ?>
 
-<?php wp_footer(); ?>
-
-</body>
+		<?php wp_footer(); ?>
+	</body>
 </html>
