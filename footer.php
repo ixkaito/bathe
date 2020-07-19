@@ -1,4 +1,10 @@
+		</main>
+
 		<?php get_sidebar(); ?>
+
+		<footer class="site-footer">
+			<p class="copyright">© 2020 the contributors of bathe under the GPLv2 license.</p>
+		</footer>
 
 		<?php wp_footer(); ?>
 	</body>

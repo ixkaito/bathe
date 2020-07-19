@@ -43,7 +43,7 @@ add_action( 'after_setup_theme', function() {
 	) );
 
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'bathe' ),
+		'primary' => __( 'Primary Menu', 'bathe' ),
 	) );
 } );
 
@@ -63,13 +63,13 @@ add_action( 'after_setup_theme', function() {
  */
 add_action( 'widgets_init', function() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'bathe' ),
+		'name'          => __( 'Sidebar', 'bathe' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	) );
 } );
 
