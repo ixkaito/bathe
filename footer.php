@@ -3,7 +3,7 @@
 		<?php get_sidebar(); ?>
 
 		<footer class="footer">
-			<p class="copyright">© 2020 the contributors of bathe under the GPLv2 license.</p>
+			<p class="copyright">© 2020 the contributors of Bathe under the GPLv2 license.</p>
 		</footer>
 
 		<?php wp_footer(); ?>
