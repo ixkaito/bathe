@@ -2,7 +2,7 @@
 
 		<?php get_sidebar(); ?>
 
-		<footer class="site-footer">
+		<footer class="footer">
 			<p class="copyright">© 2020 the contributors of bathe under the GPLv2 license.</p>
 		</footer>
 

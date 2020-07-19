@@ -1,1 +1,1 @@
-{"version":3,"sources":["../_sass/foundation/_base.scss"],"names":[],"mappings":"AAEA,KACC,sBAAA","file":"main.css"}
+{"version":3,"sources":["../_sass/foundation/_base.scss","../_sass/layouts/_header.scss","../_sass/layouts/_footer.scss","../_sass/layouts/_sidebar.scss","../_sass/global/_variables.scss"],"names":[],"mappings":"AAEA,KACC,sBAAA,CCDD,QACC,4BAAA,CCDD,QACC,yBAAA,CCDD,SACC,eCHY,CDIZ,WAAA","file":"main.css"}
