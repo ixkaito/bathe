@@ -951,6 +951,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.10.3":
+  version "7.10.5"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.5.tgz#303d8bd440ecd5a491eae6117fd3367698674c5c"
+  integrity sha512-otddXKhdNn7d0ptoFRHtMLa8LqDxLYwTjB4nYgM1yy5N6gU/MUf8zqyyLltCH3yAVitBzmwK4us+DD0l/MauAg==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/standalone@^7.10.2":
   version "7.10.2"
   resolved "https://registry.yarnpkg.com/@babel/standalone/-/standalone-7.10.2.tgz#49dbbadcbc4b199df064d7d8b3e21c915b84abdb"
@@ -6906,12 +6913,12 @@ gatsby-plugin-page-creator@^2.3.9:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-postcss@^2.3.4:
-  version "2.3.4"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-postcss/-/gatsby-plugin-postcss-2.3.4.tgz#a2c8095453bbb159b3f1942459ffffced78826f9"
-  integrity sha512-EmPGBA8HQZVT+QFu7XljE/UgGt4v085Xy9A7bLV0PQlwLemumWOc9oRj9kUZkcu6uO78tHuOPHk13axpzNTJSw==
+gatsby-plugin-postcss@^2.3.11:
+  version "2.3.11"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-postcss/-/gatsby-plugin-postcss-2.3.11.tgz#e02e3e00f37192263b3c5eb290b1d856771e57d4"
+  integrity sha512-IHZ2s0iLspL3spYKpFz4SUqQHPPImvPhvVAFEBkGNRA65ffmgOLqucsaXzINjFcpdy5o3+dS+GJuMePaSGYIbg==
   dependencies:
-    "@babel/runtime" "^7.10.2"
+    "@babel/runtime" "^7.10.3"
     postcss-loader "^3.0.0"
 
 gatsby-plugin-react-helmet@^3.3.4:
