@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import '../css/main.css'
 
 const Header = ({ siteTitle }) => (
-  <header>
+  <header className="bg-blue-500">
     <h1 className="text-white">
       <Link to="/">
         <img src="" alt=""/>
