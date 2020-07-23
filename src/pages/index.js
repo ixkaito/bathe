@@ -8,12 +8,11 @@ import SEO from '../components/seo'
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <h1>Bathe</h1>
+    <p>The simplest WordPress starter theme including full setup for Sass, PostCSS, Autoprefixer, stylelint, Webpack, imagemin, Browsersync etc.</p>
     <figure
       css={{
-        background: '#eee',
+        background: '#f00'
       }}
     >
       <Image />

@@ -8,9 +8,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
+import Helmet from 'react-helmet'
 
 import Header from './header'
-// import './layout.css'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -25,6 +25,9 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Helmet>
+        <body className="font-inter" />
+      </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
@@ -38,7 +41,7 @@ const Layout = ({ children }) => {
           © {new Date().getFullYear()} the contributors of the Bathe project under the <a
             href="https://raw.githubusercontent.com/wp-bathe/bathe/master/LICENSE"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
           >GPL version 2.0</a> or later.
         </footer>
       </div>
