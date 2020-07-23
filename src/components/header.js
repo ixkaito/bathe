@@ -2,8 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import '../css/main.css'
-
 import logo from '../images/bathe-logo.svg'
 
 const Header = ({ siteTitle }) => (

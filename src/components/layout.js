@@ -35,9 +35,11 @@ const Layout = ({ children }) => {
       >
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          © {new Date().getFullYear()} the contributors of the Bathe project under the <a
+            href="https://raw.githubusercontent.com/wp-bathe/bathe/master/LICENSE"
+            target="_blank"
+            rel="noopener"
+          >GPL version 2.0</a> or later.
         </footer>
       </div>
     </>
