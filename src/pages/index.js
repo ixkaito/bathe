@@ -8,15 +8,21 @@ import SEO from '../components/seo'
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Bathe</h1>
-    <p>The simplest WordPress starter theme including full setup for Sass, PostCSS, Autoprefixer, stylelint, Webpack, imagemin, Browsersync etc.</p>
-    <figure
-      css={{
+    <div
+      style={{
         background: '#f00'
       }}
     >
-      <Image />
-    </figure>
+      <h1>Bathe</h1>
+      <p>The simplest WordPress starter theme including full setup for Sass, PostCSS, Autoprefixer, stylelint, Webpack, imagemin, Browsersync etc.</p>
+      <figure
+        style={{
+          background: '#f00'
+        }}
+      >
+        <Image />
+      </figure>
+    </div>
     <Link to="/page-2/">Go to page 2</Link> <br />
     <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
   </Layout>
