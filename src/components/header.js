@@ -4,12 +4,13 @@ import PropTypes from 'prop-types'
 
 import '../css/main.css'
 
+import logo from '../images/bathe-logo.svg'
+
 const Header = ({ siteTitle }) => (
-  <header className="bg-blue-500">
-    <h1 className="text-white">
+  <header className="bg-blue-500 text-white">
+    <h1>
       <Link to="/">
-        <img src="" alt=""/>
-        {siteTitle}
+        <img src={logo} alt={siteTitle}/>
       </Link>
     </h1>
     <nav>
