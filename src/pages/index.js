@@ -18,8 +18,8 @@ const IndexPage = () => (
         min-height: 56.25vw;
       `}
     >
-      <h1>Bathe</h1>
-      <p>
+      <h1 className="text-5xl font-semibold">Bathe</h1>
+      <p className="font-thin">
         The simplest WordPress starter theme including full setup for Sass,
         PostCSS, Autoprefixer, stylelint, Webpack, imagemin, Browsersync etc.
       </p>
