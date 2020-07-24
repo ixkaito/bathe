@@ -3,3 +3,7 @@
 @tailwind components;
 
 @tailwind utilities;
+
+:root {
+	--blue: #0080ff;
+}

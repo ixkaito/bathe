@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
+import { css } from '@emotion/core'
 
 import logo from '../images/bathe-logo.svg'
 
@@ -17,7 +18,16 @@ const Header = ({ siteTitle }) => (
         <img className="h-8 sm:h-auto" src={logo} alt={siteTitle} />
       </Link>
     </h1>
-    <nav className="order-1 font-light -mx-6 -mb-3 mt-2 sm:ml-auto sm:mr-5 sm:-mt-6 sm:-mb-8">
+    <nav
+      css={css`
+        flex-basis: 100%;
+
+        @media screen and (min-width: 640px) {
+          flex-basis: auto;
+        }
+      `}
+      className="order-1 -mx-6 -mb-3 mt-2 sm:ml-auto sm:mr-5 sm:-mt-6 sm:-mb-8"
+    >
       <ul className="flex px-3 sm:p-0 overflow-x-auto">
         <li>
           <a
