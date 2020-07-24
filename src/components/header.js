@@ -17,7 +17,7 @@ const Header = ({ siteTitle }) => (
         <img className="h-8 sm:h-auto" src={logo} alt={siteTitle} />
       </Link>
     </h1>
-    <nav className="order-1 font-thin -mx-6 -mb-3 mt-2 sm:ml-auto sm:mr-5 sm:-mt-6 sm:-mb-8">
+    <nav className="order-1 font-light -mx-6 -mb-3 mt-2 sm:ml-auto sm:mr-5 sm:-mt-6 sm:-mb-8">
       <ul className="flex px-3 sm:p-0 overflow-x-auto">
         <li>
           <a

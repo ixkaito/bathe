@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Helmet>
-        <body className="font-inter" />
+        <body className="font-inter antialiased" />
       </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
