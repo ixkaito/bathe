@@ -31,8 +31,8 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
       <footer>
-        © {new Date().getFullYear()} the contributors of the Bathe project
-        under the{' '}
+        © {new Date().getFullYear()} the contributors of the Bathe project under
+        the{' '}
         <a
           href="https://raw.githubusercontent.com/wp-bathe/bathe/master/LICENSE"
           target="_blank"
