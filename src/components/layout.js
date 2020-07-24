@@ -29,22 +29,19 @@ const Layout = ({ children }) => {
         <body className="font-inter" />
       </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()} the contributors of the Bathe project under the <a
-            href="https://raw.githubusercontent.com/wp-bathe/bathe/master/LICENSE"
-            target="_blank"
-            rel="noopener noreferrer"
-          >GPL version 2.0</a> or later.
-        </footer>
-      </div>
+      <main>{children}</main>
+      <footer>
+        © {new Date().getFullYear()} the contributors of the Bathe project
+        under the{' '}
+        <a
+          href="https://raw.githubusercontent.com/wp-bathe/bathe/master/LICENSE"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GPL version 2.0
+        </a>{' '}
+        or later.
+      </footer>
     </>
   )
 }
