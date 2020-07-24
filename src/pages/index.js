@@ -17,10 +17,13 @@ const IndexPage = () => (
       "
       css={css`
         background-image: url(${heroImage});
-        min-height: 56.25vw;
       `}
     >
-      <div className="max-w-4xl mx-auto">
+      <div
+      css={css`
+        min-height: 50vw;
+      `}
+      className="max-w-4xl mx-auto flex flex-col justify-center">
         <h1
           className="text-5xl font-bold"
           css={css`
