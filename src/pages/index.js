@@ -19,11 +19,8 @@ const IndexPage = () => (
       <div
         className="
           max-w-4xl mx-auto flex flex-col justify-center items-start
-          px-6 pt-0 pb-12 sm:p-10 sm:pt-10 sm:pb-20 md:px-12 md:py-24
+          px-6 pt-3 pb-12 sm:p-10 sm:pb-20 md:px-12 md:py-24
         "
-        css={css`
-          /* min-height: 50vw; */
-        `}
       >
         <h1
           className="text-5xl font-bold"
@@ -52,6 +49,7 @@ const IndexPage = () => (
           <a
             className="block font-bold text-lg px-12 py-4"
             css={css`
+              background: var(--blue);
               border-radius: 2rem;
               box-shadow: -6px 6px 12px rgba(0, 0, 0, 0.2),
                 6px -6px 12px rgba(255, 255, 255, 0.1);
