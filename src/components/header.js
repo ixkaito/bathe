@@ -15,7 +15,7 @@ const Header = ({ siteTitle }) => (
         <img src={logo} alt={siteTitle} />
       </Link>
     </h1>
-    <nav className="-mx-5 -mb-3 mt-2 sm:m-0 sm:-mr-5 sm:-mt-6 sm:-mb-8">
+    <nav className="font-thin -mx-5 -mb-3 mt-2 sm:m-0 sm:-mr-5 sm:-mt-6 sm:-mb-8">
       <ul className="flex px-3 sm:p-0 overflow-x-auto">
         <li>
           <a className="block p-3 sm:p-5 whitespace-no-wrap" href="#getting-started">
