@@ -12,9 +12,9 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <div
-      className="bg-blue-00 text-white bg-center bg-no-repeat bg-contain p-10"
+      className="bg-blue-500 text-white bg-center bg-no-repeat bg-contain p-10"
       css={css`
-        ${'' /* background: url(${heroImage}); */}
+        background: url(${heroImage});
       `}
     >
       <h1>Bathe</h1>
