@@ -11,7 +11,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <div
-      className="bg-blue-500 text-white bg-right-top bg-no-repeat bg-cover"
+      className="bg-blue-500 text-white bg-right-top bg-no-repeat bg-cover pt-px -mt-px"
       css={css`
         background-image: url(${heroImage});
       `}
@@ -53,6 +53,17 @@ const IndexPage = () => (
               border-radius: 2rem;
               box-shadow: -6px 6px 12px rgba(0, 0, 0, 0.2),
                 6px -6px 12px rgba(255, 255, 255, 0.1);
+              transition: box-shadow 0.25s;
+              &:hover {
+                box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.2),
+                  4px -4px 10px rgba(255, 255, 255, 0.1);
+              }
+              &:active {
+                box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.2),
+                  4px -4px 10px rgba(255, 255, 255, 0.1),
+                  -6px 6px 12px rgba(0, 0, 0, 0.2) inset,
+                  6px -6px 12px rgba(255, 255, 255, 0.1) inset;
+              }
             `}
             href="https://github.com/wp-bathe/bathe/archive/master.zip"
           >
