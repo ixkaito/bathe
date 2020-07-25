@@ -32,5 +32,6 @@ module.exports = {
     // `gatsby-plugin-offline`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-emotion`,
+    `gatsby-plugin-twitter`,
   ],
 }

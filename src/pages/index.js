@@ -135,12 +135,29 @@ const IndexPage = () => (
                 data-show-count="true"
                 aria-label="Follow @ixkaito on GitHub"
               >
-                Follow Me
+                Follow
               </GitHubButton>
             </li>
-            {/* <li><a className="github-button" href="https://github.com/ixkaito/bathe/fork" data-show-count="true" aria-label="Fork ixkaito/bathe on GitHub">Fork</a></li>
-            <li><a className="github-button" href="https://github.com/ixkaito" data-show-count="true" aria-label="Follow @ixkaito on GitHub">Follow Me</a></li>
-            <li><div className="fb-like" data-href="https://example.com/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div></li>
+            <li>
+              <a
+                className="twitter-share-button"
+                href="https://twitter.com/intent/tweet?text=Bathe%20%7C%20The%20simplest%20WordPress%20starter%20theme"
+              >
+                Tweet
+              </a>
+            </li>
+            <li>
+              <a
+                class="twitter-follow-button"
+                href="https://twitter.com/ixkaito"
+                data-show-count="false"
+                data-show-screen-name="false"
+              >
+                Follow @ixkaito
+              </a>
+            </li>
+
+            {/* <li><div className="fb-like" data-href="https://example.com/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div></li>
             <li><a href="https://twitter.com/share" className="twitter-share-button" data-url="https://example.com/">Tweet</a></li>
             <li><a href="https://twitter.com/ixkaito" className="twitter-follow-button" data-show-count="false">Follow Me</a></li>
             <li><a data-pocket-label="pocket" data-pocket-count="horizontal" className="pocket-btn" data-lang="en" data-save-url="https://example.com/"></a></li> */}
