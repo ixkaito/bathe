@@ -4,6 +4,7 @@ import { css } from '@emotion/core'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import GitHubButton from 'react-github-btn'
 
 import heroImage from '../images/hero.png'
 
@@ -19,7 +20,7 @@ const IndexPage = () => (
       <div
         className="
           max-w-4xl mx-auto flex flex-col justify-center items-start
-          px-6 pt-3 pb-12 sm:p-10 sm:pb-20 md:px-12 md:py-24
+          px-6 pt-3 pb-12 sm:p-10 sm:pb-16 md:px-12 md:pt-24 md:pb-20
         "
       >
         <h1
@@ -47,7 +48,7 @@ const IndexPage = () => (
         </p>
         <div className="mt-8 sm:mt-10 md:mt-12">
           <a
-            className="block font-bold text-lg px-12 py-4"
+            className="inline-block font-bold text-lg px-12 py-4"
             css={css`
               background: var(--blue);
               border-radius: 2rem;
@@ -69,7 +70,81 @@ const IndexPage = () => (
           >
             Get Bathe
           </a>
-          <p className="text-center text-sm mt-5">Version 1.0.0</p>
+          <ul
+            className="flex flex-wrap mt-12 sm:mt-16 md:mt-20"
+            css={css`
+              li {
+                flex-shrink: 0;
+                line-height: 0;
+                margin: 0.25rem;
+              }
+            `}
+          >
+            <li>
+              <a href="https://github.com/ixkaito/bathe/releases">
+                <img
+                  alt="GitHub release"
+                  src="https://img.shields.io/github/release/ixkaito/bathe.svg"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/ixkaito/bathe/blob/master/LICENSE">
+                <img
+                  alt="license"
+                  src="https://img.shields.io/github/license/ixkaito/bathe.svg?maxAge=2592000"
+                />
+              </a>
+            </li>
+            <li>
+              <GitHubButton
+                href="https://github.com/ixkaito/bathe"
+                data-color-scheme="no-preference: light; light: light; dark: dark;"
+                data-icon="octicon-star"
+                data-show-count="true"
+                aria-label="Star ixkaito/bathe on GitHub"
+              >
+                Star
+              </GitHubButton>
+            </li>
+            <li>
+              <GitHubButton
+                href="https://github.com/ixkaito/bathe/fork"
+                data-color-scheme="no-preference: light; light: light; dark: dark;"
+                data-icon="octicon-repo-forked"
+                data-show-count="true"
+                aria-label="Fork ixkaito/bathe on GitHub"
+              >
+                Fork
+              </GitHubButton>
+            </li>
+            <li>
+              <GitHubButton
+                href="https://github.com/ixkaito/bathe/generate"
+                data-color-scheme="no-preference: light; light: light; dark: dark;"
+                data-icon="octicon-repo-template"
+                aria-label="Use this template ixkaito/bathe on GitHub"
+              >
+                Use this template
+              </GitHubButton>
+            </li>
+            <li>
+              <GitHubButton
+                href="https://github.com/ixkaito"
+                data-color-scheme="no-preference: light; light: light; dark: dark;"
+                data-show-count="true"
+                aria-label="Follow @ixkaito on GitHub"
+              >
+                Follow Me
+              </GitHubButton>
+            </li>
+            {/* <li><a className="github-button" href="https://github.com/ixkaito/bathe/fork" data-show-count="true" aria-label="Fork ixkaito/bathe on GitHub">Fork</a></li>
+            <li><a className="github-button" href="https://github.com/ixkaito" data-show-count="true" aria-label="Follow @ixkaito on GitHub">Follow Me</a></li>
+            <li><div className="fb-like" data-href="https://example.com/" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div></li>
+            <li><a href="https://twitter.com/share" className="twitter-share-button" data-url="https://example.com/">Tweet</a></li>
+            <li><a href="https://twitter.com/ixkaito" className="twitter-follow-button" data-show-count="false">Follow Me</a></li>
+            <li><a data-pocket-label="pocket" data-pocket-count="horizontal" className="pocket-btn" data-lang="en" data-save-url="https://example.com/"></a></li> */}
+          </ul>
         </div>
       </div>
     </div>
