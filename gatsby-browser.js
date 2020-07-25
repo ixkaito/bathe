@@ -8,16 +8,3 @@
 import 'typeface-inter'
 
 import './src/css/global.css'
-
-const addScript = url => {
-  const script = document.createElement('script')
-  script.src = url
-  script.async = true
-  document.body.appendChild(script)
-}
-
-export const onClientEntry = () => {
-  window.onload = () => {
-    addScript('https://buttons.github.io/buttons.js')
-  }
-}
