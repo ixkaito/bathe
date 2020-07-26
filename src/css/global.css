@@ -24,3 +24,7 @@ html {
 		scroll-behavior: auto;
 	}
 }
+
+svg {
+	@apply max-w-full h-auto;
+}

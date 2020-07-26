@@ -66,6 +66,28 @@ const markdown = css`
     padding-top: 0.125rem;
   }
 
+  .features {
+    ${tw`list-none p-0 -m-4 flex flex-wrap`}
+
+    li {
+      ${tw`text-center m-0 p-4 sm:p-6 md:p-8 w-1/3 sm:w-1/4 md:w-1/4`}
+
+      figcaption {
+        ${tw`mt-1 text-sm text-gray-500 duration-200`}
+      }
+    }
+
+    a {
+      &:hover {
+        ${tw`no-underline`}
+
+        figcaption {
+          ${tw`text-gray-800`}
+        }
+      }
+    }
+  }
+
   .button {
     ${tw`inline-block font-bold px-6 py-2 mx-1 my-2`}
     border-radius: 2rem;
