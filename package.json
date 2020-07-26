@@ -13,16 +13,16 @@
       "port": 3000
     },
     "image": {
-      "src": "assets/_images",
+      "src": "assets/src/images",
       "dist": "assets/images"
     },
     "js": {
       "entry": "bundle.js",
-      "src": "assets/_js",
+      "src": "assets/src/js",
       "dist": "assets/js"
     },
     "css": {
-      "src": "assets/_sass",
+      "src": "assets/src/scss",
       "dist": "assets/css",
       "style": "compressed",
       "map": "--map"
