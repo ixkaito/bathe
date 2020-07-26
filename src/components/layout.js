@@ -27,6 +27,14 @@ const Layout = ({ children }) => {
     <>
       <Helmet>
         <body className="font-inter antialiased" />
+        <div id="fb-root"></div>
+        <script
+          async
+          defer
+          crossOrigin="anonymous"
+          src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0"
+          nonce="7ePK7Kt3"
+        />
       </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
