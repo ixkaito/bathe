@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { css } from '@emotion/core'
 import tw from 'twin.macro'
 
@@ -63,11 +63,12 @@ const markdown = css`
   }
 
   .button {
-    ${tw`inline-block font-bold bg-gray-200 px-6 py-2 mx-1 my-2 no-underline`}
+    ${tw`inline-block font-bold bg-gray-200 px-6 py-2 mx-1 my-2`}
     border-radius: 2rem;
     box-shadow: -6px 6px 12px #cbd5e0, 6px -6px 12px #fff;
     transition: box-shadow 0.25s;
     &:hover {
+      ${tw`no-underline`}
       box-shadow: -4px 4px 10px #cbd5e0, 4px -4px 10px #fff;
     }
     &:active {
@@ -244,8 +245,6 @@ const IndexPage = ({ location, data }) => {
         </ul>
         <div css={markdown} dangerouslySetInnerHTML={{ __html: html }} />
       </div>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
     </Layout>
   )
 }
