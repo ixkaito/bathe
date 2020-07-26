@@ -22,6 +22,13 @@ const markdown = css`
     ${tw`my-4`}
   }
 
+  a {
+    ${tw`text-blue-500 underline`}
+    &:hover {
+      ${tw`no-underline`}
+    }
+  }
+
   strong {
     ${tw`font-semibold`}
   }
@@ -43,11 +50,13 @@ const markdown = css`
   }
 
   code {
-    ${tw`font-mono text-sm bg-blue-200 rounded p-1`}
+    ${tw`font-mono text-sm bg-blue-200 rounded px-1`}
+    padding-bottom: 0.125rem;
+    padding-top: 0.125rem;
   }
 
   .button {
-    ${tw`inline-block font-bold bg-gray-200 px-6 py-2 m-1`}
+    ${tw`inline-block font-bold bg-gray-200 px-6 py-2 mx-1 my-2 no-underline`}
     border-radius: 2rem;
     box-shadow: -6px 6px 12px #cbd5e0,
       6px -6px 12px #fff;
@@ -118,8 +127,8 @@ const IndexPage = ({ location, data }) => {
                     4px -4px 10px rgba(255, 255, 255, 0.1);
                 }
                 &:active {
-                  box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.2),
-                    4px -4px 10px rgba(255, 255, 255, 0.1),
+                  box-shadow: 0 0 0 transparent,
+                    0 0 0 transparent,
                     -6px 6px 12px rgba(0, 0, 0, 0.2) inset,
                     6px -6px 12px rgba(255, 255, 255, 0.1) inset;
                 }
@@ -160,6 +169,16 @@ const IndexPage = ({ location, data }) => {
           </li>
           <li>
             <GitHubButton
+              href="https://github.com/ixkaito/bathe/generate"
+              data-color-scheme="no-preference: light; light: light; dark: dark;"
+              data-icon="octicon-repo-template"
+              aria-label="Use this template ixkaito/bathe on GitHub"
+            >
+              Use this template
+            </GitHubButton>
+          </li>
+          <li>
+            <GitHubButton
               href="https://github.com/ixkaito/bathe"
               data-color-scheme="no-preference: light; light: light; dark: dark;"
               data-icon="octicon-star"
@@ -171,6 +190,16 @@ const IndexPage = ({ location, data }) => {
           </li>
           <li>
             <GitHubButton
+              href="https://github.com/ixkaito"
+              data-color-scheme="no-preference: light; light: light; dark: dark;"
+              data-show-count="true"
+              aria-label="Follow @ixkaito on GitHub"
+            >
+              Follow
+            </GitHubButton>
+          </li>
+          <li>
+            <GitHubButton
               href="https://github.com/ixkaito/bathe/fork"
               data-color-scheme="no-preference: light; light: light; dark: dark;"
               data-icon="octicon-repo-forked"
@@ -178,26 +207,6 @@ const IndexPage = ({ location, data }) => {
               aria-label="Fork ixkaito/bathe on GitHub"
             >
               Fork
-            </GitHubButton>
-          </li>
-          <li>
-            <GitHubButton
-              href="https://github.com/ixkaito/bathe/generate"
-              data-color-scheme="no-preference: light; light: light; dark: dark;"
-              data-icon="octicon-repo-template"
-              aria-label="Use this template ixkaito/bathe on GitHub"
-            >
-              Use this template
-            </GitHubButton>
-          </li>
-          <li>
-            <GitHubButton
-              href="https://github.com/ixkaito"
-              data-color-scheme="no-preference: light; light: light; dark: dark;"
-              data-show-count="true"
-              aria-label="Follow @ixkaito on GitHub"
-            >
-              Follow
             </GitHubButton>
           </li>
           <li>

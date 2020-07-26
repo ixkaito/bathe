@@ -12,6 +12,24 @@ const Header = ({ siteTitle }) => (
       p-6 sm:pl-8 sm:pr-10 sm:pt-6 sm:pb-8 md:pl-10 md:pr-12
       flex flex-wrap justify-between items-center
     "
+    css={css`
+      nav a {
+        @media screen and (min-width: 640px) {
+          border-radius: 2rem;
+          transition: box-shadow 0.25s;
+          &:hover {
+            box-shadow: -4px 4px 8px rgba(0, 0, 0, 0.2),
+              4px -4px 8px rgba(255, 255, 255, 0.1);
+          }
+          &:active {
+            box-shadow: 0 0 0 transparent,
+              0 0 0 transparent,
+              -4px 4px 8px rgba(0, 0, 0, 0.2) inset,
+              4px -4px 8px rgba(255, 255, 255, 0.1) inset;
+          }
+        }
+      }
+    `}
   >
     <h1 className="flex-shrink-0">
       <Link to="/">
@@ -21,25 +39,24 @@ const Header = ({ siteTitle }) => (
     <nav
       css={css`
         flex-basis: 100%;
-
         @media screen and (min-width: 640px) {
           flex-basis: auto;
         }
       `}
       className="order-1 -mx-6 -mb-3 mt-2 sm:ml-auto sm:mr-5 sm:-mt-6 sm:-mb-8"
     >
-      <ul className="flex px-3 sm:p-0 overflow-x-auto">
+      <ul className="flex px-3 sm:p-0 overflow-x-auto sm:overflow-visible">
         <li>
           <a
-            className="block p-3 sm:p-5 whitespace-no-wrap"
-            href="#getting-started"
+            className="block p-3 sm:px-5 sm:py-1 whitespace-no-wrap"
+            href="#quick-start"
           >
-            Getting Started
+            Quick Start
           </a>
         </li>
         <li>
           <a
-            className="block p-3 sm:p-5 whitespace-no-wrap"
+            className="block p-3 sm:px-5 sm:py-1 whitespace-no-wrap"
             href="#configurations"
           >
             Configurations
@@ -52,6 +69,7 @@ const Header = ({ siteTitle }) => (
         href="https://github.com/ixkaito/bathe"
         target="_blank"
         rel="noopener noreferrer"
+        className="block"
       >
         <svg
           className="w-8 h-8"
