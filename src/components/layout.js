@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Helmet>
-        <body className="font-inter antialiased" />
+        <body className="font-inter antialiased bg-gray-200 text-gray-900" />
         <div id="fb-root"></div>
         <script
           async
