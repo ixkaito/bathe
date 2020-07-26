@@ -34,7 +34,11 @@ const markdown = css`
   }
 
   ol {
-    ${tw`list-decimal`}
+    ${tw`list-decimal pl-4`}
+  }
+
+  ul {
+    ${tw`list-disc pl-4`}
   }
 
   li {
@@ -116,7 +120,7 @@ const IndexPage = ({ location, data }) => {
             `}
           >
             The simplest WordPress starter theme including Sass, PostCSS,
-            Autoprefixer, stylelint, Webpack, imagemin, Browsersync etc.
+            Autoprefixer, stylelint, Webpack, imagemin, Browsersync, etc.
           </p>
           <div className="mt-8 sm:mt-10 md:mt-12">
             <a

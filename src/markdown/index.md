@@ -78,3 +78,8 @@ You can modify the configurations by editing `config` in `package.json`.
   }
 }
 ```
+
+## Notes
+
+- Bathe doesn't load the default theme stylesheet `style.css` by default.
+- You can use Bathe without Node.js (Sass, Webpack, Browsersync, etc.) just like other themes. Nothing else is necessary except WordPress environment.
