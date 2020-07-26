@@ -70,10 +70,10 @@ const markdown = css`
     ${tw`list-none p-0 -m-4 flex flex-wrap`}
 
     li {
-      ${tw`text-center m-0 p-4 sm:p-6 md:p-8 w-1/3 sm:w-1/4 md:w-1/4`}
+      ${tw`text-center m-0 p-4 sm:p-3 md:p-4 w-1/3 sm:w-1/6`}
 
       figcaption {
-        ${tw`mt-1 text-sm text-gray-500 duration-200`}
+        ${tw`mt-1 text-xs sm:text-sm text-gray-500 duration-200`}
       }
     }
 
