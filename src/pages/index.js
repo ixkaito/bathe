@@ -9,12 +9,10 @@ import GitHubButton from 'react-github-btn'
 import heroImage from '../images/hero.png'
 
 const IndexPage = ({ location, data }) => {
-  const { markdownRemark } = data
-  const { html } = markdownRemark
+  const { html } = data.markdownRemark
   return (
     <Layout>
       <SEO title="Home" />
-      <div dangerouslySetInnerHTML={{ __html: html }} />
       <div
         className="bg-blue-500 text-white bg-right-top bg-no-repeat bg-cover pt-px -mt-px"
         css={css`
@@ -175,6 +173,7 @@ const IndexPage = ({ location, data }) => {
           </div>
         </div>
       </div>
+      <div dangerouslySetInnerHTML={{ __html: html }} />
       <Link to="/page-2/">Go to page 2</Link> <br />
       <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
     </Layout>
@@ -185,7 +184,7 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query {
-    markdownRemark {
+    markdownRemark(frontmatter: { slug: { eq: "index" } }) {
       html
     }
   }
