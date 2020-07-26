@@ -11,7 +11,7 @@ import heroImage from '../images/hero.png'
 
 const markdown = css`
   h2 {
-    ${tw`text-3xl font-bold mt-10 mb-6`}
+    ${tw`text-3xl font-bold mt-16 sm:mt-20 md:mt-24 mb-6`}
   }
 
   h3 {
@@ -23,9 +23,9 @@ const markdown = css`
   }
 
   a {
-    ${tw`text-blue-500 underline`}
+    ${tw`text-blue-500`}
     &:hover {
-      ${tw`no-underline`}
+      ${tw`underline`}
     }
   }
 
@@ -46,6 +46,13 @@ const markdown = css`
 
     code {
       ${tw`rounded-lg bg-gray-800 text-white block p-4`}
+
+      &.language-shell {
+        &::before {
+          ${tw`text-pink-500`}
+          content: "$ ";
+        }
+      }
     }
   }
 
@@ -58,18 +65,14 @@ const markdown = css`
   .button {
     ${tw`inline-block font-bold bg-gray-200 px-6 py-2 mx-1 my-2 no-underline`}
     border-radius: 2rem;
-    box-shadow: -6px 6px 12px #cbd5e0,
-      6px -6px 12px #fff;
+    box-shadow: -6px 6px 12px #cbd5e0, 6px -6px 12px #fff;
     transition: box-shadow 0.25s;
     &:hover {
-      box-shadow: -4px 4px 10px #cbd5e0,
-        4px -4px 10px #fff;
+      box-shadow: -4px 4px 10px #cbd5e0, 4px -4px 10px #fff;
     }
     &:active {
-      box-shadow: -4px 4px 10px #e2e8f0,
-        4px -4px 10px #fff,
-        -6px 6px 12px #e2e8f0 inset,
-        6px -6px 12px #fff inset;
+      box-shadow: 0 0 0 transparent, 0 0 0 transparent,
+        -6px 6px 12px #e2e8f0 inset, 6px -6px 12px #fff inset;
     }
   }
 `
@@ -87,9 +90,9 @@ const IndexPage = ({ location, data }) => {
       >
         <div
           className="
-          max-w-4xl mx-auto flex flex-col justify-center items-start
-          px-6 pt-3 pb-12 sm:p-10 sm:pb-16 md:px-12 md:pt-24 md:pb-32
-        "
+            max-w-4xl mx-auto flex flex-col justify-center items-start
+            px-6 pt-3 pb-12 sm:p-10 sm:pb-20 md:px-12 md:pt-24 md:pb-32
+          "
         >
           <h1
             className="text-5xl font-bold"

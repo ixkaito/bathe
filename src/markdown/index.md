@@ -2,6 +2,10 @@
 slug: index
 ---
 
+## Features
+
+
+
 <h2 id="quick-start">Quick Start</h2>
 
 ### 1. Download Bathe or generate a new repository with Bathe
@@ -23,7 +27,7 @@ cd /path/to/bathe
 npm install
 ```
 
-or
+Or with [yarn](https://classic.yarnpkg.com/en/):
 
 ```shell
 yarn
@@ -33,3 +37,44 @@ yarn
 
 The default `proxy` is `localhost:8888` for [wp-env](https://developer.wordpress.org/block-editor/packages/packages-env/).
 
+### 6. Start developing
+
+```shell
+npm run dev
+```
+
+Or with yarn:
+
+```shell
+yarn dev
+```
+
+<h2 id="configurations">Configurations and Defaults</h2>
+
+You can modify the configurations by editing `config` in `package.json`.
+
+### Defaults
+
+```json
+"config": {
+  "browsersync": {
+    "proxy": "localhost:8888",
+    "port": 3000
+  },
+  "image": {
+    "src": "assets/src/images",
+    "dist": "assets/images"
+  },
+  "js": {
+    "entry": "bundle.js",
+    "src": "assets/src/js",
+    "dist": "assets/js"
+  },
+  "css": {
+    "src": "assets/src/scss",
+    "dist": "assets/css",
+    "style": "compressed",
+    "map": "--map"
+  }
+}
+```

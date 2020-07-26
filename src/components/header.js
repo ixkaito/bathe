@@ -22,8 +22,7 @@ const Header = ({ siteTitle }) => (
               4px -4px 8px rgba(255, 255, 255, 0.1);
           }
           &:active {
-            box-shadow: 0 0 0 transparent,
-              0 0 0 transparent,
+            box-shadow: 0 0 0 transparent, 0 0 0 transparent,
               -4px 4px 8px rgba(0, 0, 0, 0.2) inset,
               4px -4px 8px rgba(255, 255, 255, 0.1) inset;
           }
