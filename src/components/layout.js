@@ -38,8 +38,8 @@ const Layout = ({ children }) => {
       </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
-      <footer className="p-4 text-center text-gray-500">
-        © {new Date().getFullYear()} the contributors of the Bathe project under
+      <footer className="px-6 py-4 sm:px-10 md:px-12 text-center text-gray-500">
+        © {new Date().getFullYear()} the contributors of Bathe under
         the{' '}
         <a
           href="https://github.com/ixkaito/bathe/blob/master/LICENSE"

@@ -245,7 +245,7 @@ const IndexPage = ({ location, data }) => {
           </ul>
         </div>
       </div>
-      <div className="max-w-4xl mx-auto px-6 pt-8 pb-12 sm:p-10 sm:pt-12 sm:pb-16 md:px-12 md:pt-16 md:pb-20">
+      <div className="max-w-4xl mx-auto px-6 pb-12 sm:px-10 sm:pb-16 md:px-12 md:pb-20">
         <div css={markdown} dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </Layout>
