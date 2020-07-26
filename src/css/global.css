@@ -7,3 +7,20 @@
 :root {
 	--blue: #0080ff;
 }
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 9.5rem;
+}
+
+@media screen and (min-width: 640px) {
+	html {
+		scroll-padding-top: 8rem;
+	}
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
