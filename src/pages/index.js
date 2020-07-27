@@ -108,7 +108,7 @@ const IndexPage = ({ location, data }) => {
   const { html } = data.markdownRemark
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Bathe | The simplest WordPress starter theme" />
       <div
         className="bg-blue-500 text-white bg-right-top bg-no-repeat bg-cover pt-px -mt-px"
         css={css`
