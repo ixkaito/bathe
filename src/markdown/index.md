@@ -82,7 +82,7 @@ Or with [yarn](https://classic.yarnpkg.com/en/):
 yarn
 ```
 
-### 5. Change the `proxy` of browsersync in `package.json` for your environment
+### 5. Modify the `proxy` of browsersync in `package.json` for your environment
 
 The default `proxy` is `localhost:8888` for [wp-env](https://developer.wordpress.org/block-editor/packages/packages-env/).
 
