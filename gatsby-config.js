@@ -2,7 +2,7 @@ module.exports = {
   pathPrefix: '/bathe',
   siteMetadata: {
     title: `Bathe`,
-    description: `The simplest WordPress starter theme including full setup for Sass, PostCSS, Autoprefixer, stylelint, Webpack, imagemin, Browsersync etc.`,
+    description: `The simplest WordPress starter theme including full setup for Sass, PostCSS, Autoprefixer, stylelint, Webpack, Eslint, imagemin, Browsersync, etc.`,
     author: `@ixkaito`,
   },
   plugins: [

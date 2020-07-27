@@ -33,14 +33,13 @@ const Layout = ({ children }) => {
           defer
           crossOrigin="anonymous"
           src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0"
-          nonce="7ePK7Kt3"
-        />
+          nonce="H1yDL0DN"
+        ></script>
       </Helmet>
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
       <footer className="px-6 py-4 sm:px-10 md:px-12 text-center text-gray-500">
-        © {new Date().getFullYear()} the contributors of Bathe under
-        the{' '}
+        © {new Date().getFullYear()} the contributors of Bathe under the{' '}
         <a
           href="https://github.com/ixkaito/bathe/blob/master/LICENSE"
           target="_blank"

@@ -127,6 +127,9 @@ const IndexPage = ({ location, data }) => {
               @media screen and (min-width: 640px) {
                 font-size: 7.5vw;
               }
+              @media screen and (min-width: 1920px) {
+                font-size: 9rem;
+              }
             `}
           >
             Bathe
@@ -135,14 +138,16 @@ const IndexPage = ({ location, data }) => {
             className="font-semibold text-lg sm:text-xl"
             css={css`
               max-width: 22em;
-
               @media screen and (min-width: 640px) {
                 font-size: calc(1.25vw + 0.75rem);
+              }
+              @media screen and (min-width: 1920px) {
+                font-size: 2.25rem;
               }
             `}
           >
             The simplest WordPress starter theme including Sass, PostCSS,
-            Autoprefixer, stylelint, Webpack, imagemin, Browsersync, etc.
+            Autoprefixer, stylelint, Webpack, Eslint, imagemin, Browsersync, etc.
           </p>
           <div className="mt-8 sm:mt-10 md:mt-12">
             <a
@@ -237,14 +242,21 @@ const IndexPage = ({ location, data }) => {
             </li>
             <li>
               <div
-                className="fb-like"
+                class="fb-share-button"
                 data-href={location.href}
-                data-width=""
                 data-layout="button_count"
-                data-action="like"
                 data-size="small"
-                data-share="true"
-              />
+              >
+                <a
+                  target="_blank"
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                    location.href
+                  )}&amp;src=sdkpreparse`}
+                  class="fb-xfbml-parse-ignore"
+                >
+                  Share
+                </a>
+              </div>
             </li>
             <li>
               <a
