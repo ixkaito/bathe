@@ -1,6 +1,6 @@
 # [Bathe](https://ixkaito.github.io/bathe/) [![GitHub release](https://img.shields.io/github/v/release/ixkaito/bathe?color=ed64a6)](https://github.com/wp-bathe/bathe/releases) [![license](https://img.shields.io/badge/license-GPL--2.0%2B-orange)](https://github.com/wp-bathe/bathe/blob/master/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ixkaito/bathe/pulls)
 
-**The simplest WordPress starter theme including full setup for Sass, PostCSS, Autoprefixer, stylelint, Webpack, ESLint, imagemin, Browsersync, etc.**
+Bathe is the simplest WordPress starter theme including full setup for Sass, PostCSS, Autoprefixer, stylelint, Webpack, ESLint, imagemin, Browsersync, etc.
 
 ## Documentation
 
