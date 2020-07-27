@@ -147,7 +147,7 @@ const IndexPage = ({ location, data }) => {
             `}
           >
             The simplest WordPress starter theme including Sass, PostCSS,
-            Autoprefixer, stylelint, Webpack, Eslint, imagemin, Browsersync,
+            Autoprefixer, stylelint, Webpack, ESLint, imagemin, Browsersync,
             etc.
           </p>
           <div className="mt-8 sm:mt-10 md:mt-12">
@@ -176,7 +176,7 @@ const IndexPage = ({ location, data }) => {
           <ul
             className="flex flex-wrap mt-8 sm:mt-12 md:mt-16"
             css={css`
-              max-width: 40rem;
+              max-width: 28rem;
 
               li {
                 flex-shrink: 0;
@@ -189,15 +189,31 @@ const IndexPage = ({ location, data }) => {
               <a href="https://github.com/ixkaito/bathe/releases">
                 <img
                   alt="GitHub release"
-                  src="https://img.shields.io/github/release/ixkaito/bathe.svg"
+                  src="https://img.shields.io/github/v/release/ixkaito/bathe?color=ed64a6"
                 />
               </a>
             </li>
             <li>
               <a href="https://github.com/ixkaito/bathe/blob/master/LICENSE">
                 <img
-                  alt="license"
-                  src="https://img.shields.io/github/license/ixkaito/bathe.svg?maxAge=2592000"
+                  alt="license GPL 2.0 or later"
+                  src="https://img.shields.io/badge/license-GPL--2.0%2B-orange"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/ixkaito/bathe/blob/master/package.json#L67">
+                <img
+                  alt="node >= 12.0.0"
+                  src="https://img.shields.io/badge/node-%3E%3D%2012.0.0-brightgreen"
+                />
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/ixkaito/bathe/blob/master/package.json#L68">
+                <img
+                  alt="npm >= 6.9.0"
+                  src="https://img.shields.io/badge/npm-%3E%3D%206.9.0-brightgreen"
                 />
               </a>
             </li>
@@ -261,7 +277,11 @@ const IndexPage = ({ location, data }) => {
                 </a>
               </div>
             </li>
-            <li>
+            <li
+              css={css`
+                min-width: 60px;
+              `}
+            >
               <a
                 className="twitter-share-button"
                 href="https://twitter.com/intent/tweet?text=Bathe%20%7C%20The%20simplest%20WordPress%20starter%20theme"
