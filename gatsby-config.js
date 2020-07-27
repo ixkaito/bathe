@@ -26,8 +26,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Bathe`,
-        short_name: `starter`,
+        name: `Bathe | The simplest WordPress starter theme`,
+        short_name: `Bathe`,
         start_url: `/`,
         background_color: `#0080ff`,
         theme_color: `#0080ff`,
