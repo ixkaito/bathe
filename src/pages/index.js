@@ -124,8 +124,8 @@ const IndexPage = ({ location, data }) => {
           <h1
             className="text-5xl font-bold"
             css={css`
-              @media screen and (min-width: 640px) {
-                font-size: 7.5vw;
+              @media screen and (min-width: 320px) {
+                font-size: calc(6vw + 1.8rem);
               }
               @media screen and (min-width: 1920px) {
                 font-size: 9rem;
@@ -137,17 +137,18 @@ const IndexPage = ({ location, data }) => {
           <p
             className="font-semibold text-lg sm:text-xl"
             css={css`
-              max-width: 22em;
+              max-width: 23em;
               @media screen and (min-width: 640px) {
-                font-size: calc(1.25vw + 0.75rem);
+                font-size: calc(0.938vw + 0.875rem);
               }
               @media screen and (min-width: 1920px) {
-                font-size: 2.25rem;
+                font-size: 2rem;
               }
             `}
           >
             The simplest WordPress starter theme including Sass, PostCSS,
-            Autoprefixer, stylelint, Webpack, Eslint, imagemin, Browsersync, etc.
+            Autoprefixer, stylelint, Webpack, Eslint, imagemin, Browsersync,
+            etc.
           </p>
           <div className="mt-8 sm:mt-10 md:mt-12">
             <a
@@ -173,8 +174,10 @@ const IndexPage = ({ location, data }) => {
             </a>
           </div>
           <ul
-            className="flex flex-wrap max-w-2xl mt-8 sm:mt-12 md:mt-16"
+            className="flex flex-wrap mt-8 sm:mt-12 md:mt-16"
             css={css`
+              max-width: 40rem;
+
               li {
                 flex-shrink: 0;
                 line-height: 0;
