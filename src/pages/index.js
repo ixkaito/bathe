@@ -152,7 +152,7 @@ const IndexPage = ({ location, data }) => {
           </p>
           <div className="mt-8 sm:mt-10 md:mt-12">
             <a
-              className="inline-block font-bold text-lg px-12 py-4"
+              className="inline-block font-bold text-lg px-12 py-4 bg-blue-500"
               css={css`
                 border-radius: 2rem;
                 box-shadow: -6px 6px 12px rgba(0, 0, 0, 0.2),
