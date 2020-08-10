@@ -1,6 +1,6 @@
 {
   "name": "bathe",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The simplest WordPress starter theme including full setup for Sass, PostCSS, Autoprefixer, stylelint, Webpack, ESLint, imagemin, Browsersync, etc.",
   "browserslist": [
     "> 1%",
@@ -13,16 +13,16 @@
       "port": 3000
     },
     "image": {
-      "src": "assets/src/images",
+      "src": "assets/_src/images",
       "dist": "assets/images"
     },
     "js": {
       "entry": "bundle.js",
-      "src": "assets/src/js",
+      "src": "assets/_src/js",
       "dist": "assets/js"
     },
     "css": {
-      "src": "assets/src/scss",
+      "src": "assets/_src/sass",
       "dist": "assets/css",
       "style": "compressed",
       "map": "--map"
