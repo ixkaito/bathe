@@ -111,16 +111,16 @@ You can modify the configurations by editing `config` in `package.json`.
     "port": 3000
   },
   "image": {
-    "src": "assets/src/images",
+    "src": "assets/_src/images",
     "dist": "assets/images"
   },
   "js": {
     "entry": "bundle.js",
-    "src": "assets/src/js",
+    "src": "assets/_src/js",
     "dist": "assets/js"
   },
   "css": {
-    "src": "assets/src/scss",
+    "src": "assets/_src/sass",
     "dist": "assets/css",
     "style": "compressed",
     "map": "--map"
