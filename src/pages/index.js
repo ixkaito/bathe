@@ -262,7 +262,7 @@ const IndexPage = ({ location, data }) => {
             <li>
               <div
                 class="fb-share-button"
-                data-href={location.href}
+                data-href="https://ixkaito.github.io/bathe/"
                 data-layout="button_count"
                 data-size="small"
               >
