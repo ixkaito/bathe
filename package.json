@@ -17,9 +17,8 @@
       "dist": "assets/images"
     },
     "js": {
-      "entry": "bundle.js",
-      "src": "assets/_src/js",
-      "dist": "assets/js"
+      "entry": "assets/_src/js/bundle.js",
+      "output": "assets/js/bundle.js"
     },
     "css": {
       "src": "assets/_src/sass",
@@ -36,7 +35,7 @@
     "presass": "stylelint \"$npm_package_config_css_src/**/*\" --fix",
     "sass": "sass $npm_package_config_css_src:$npm_package_config_css_dist --style=compressed",
     "postsass": "postcss $npm_package_config_css_dist/*.css --use=autoprefixer --dir=$npm_package_config_css_dist $npm_package_config_css_map",
-    "webpack": "webpack $npm_package_config_js_src/$npm_package_config_js_entry -o $npm_package_config_js_dist/$npm_package_config_js_entry",
+    "webpack": "webpack $npm_package_config_js_entry -o $npm_package_config_js_output",
     "watch:imagemin": "onchange \"$npm_package_config_image_src/**/*\" -e \".DS_Store\" -- npm run imagemin",
     "watch:sass": "onchange \"$npm_package_config_css_src/**/*\" -e \".DS_Store\" -- npm run sass",
     "watch:webpack": "npm run webpack -- --watch",
