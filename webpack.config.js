@@ -9,9 +9,13 @@ module.exports = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.js$/,
+        test: /\.(js|ts)$/,
         exclude: /node_modules/,
         loader: 'eslint-loader',
+      },
+      {
+        test: /\.ts$/,
+        use: 'ts-loader',
       },
       {
         test: /\.js$/,
@@ -22,10 +26,6 @@ module.exports = {
             presets: ['@babel/preset-env'],
           },
         },
-      },
-      {
-        test: /\.ts$/,
-        use: 'ts-loader',
       },
       {
         test: /\.scss/,

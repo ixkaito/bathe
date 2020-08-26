@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "incremental": true,
-    "target": "esnext",
+    "target": "es5",
     "module": "es2015",
     "lib": [
       "esnext",
@@ -23,7 +23,7 @@
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true
   },
-  // "include": [
-  //   "./assets/_src/js/**/*"
-  // ]
+  "include": [
+    "./assets/_src/js/**/*"
+  ]
 }
