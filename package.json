@@ -17,7 +17,7 @@
       "dist": "assets/images"
     },
     "js": {
-      "entry": "assets/_src/js/bundle.ts",
+      "entry": "assets/_src/js/bundle.js",
       "output": "assets/js/bundle.js"
     },
     "css": {

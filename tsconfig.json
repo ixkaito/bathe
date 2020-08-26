@@ -10,7 +10,7 @@
     ],
     "jsx": "react",
     "sourceMap": true,
-    // "outDir": "./assets/js",
+    "outDir": "./assets/js",
     "removeComments": false,
     "downlevelIteration": true,
     "importHelpers": true,
