@@ -24,6 +24,10 @@ module.exports = {
         },
       },
       {
+        test: /\.ts$/,
+        use: 'ts-loader',
+      },
+      {
         test: /\.scss/,
         use: [
           {
@@ -55,6 +59,9 @@ module.exports = {
         ],
       },
     ],
+  },
+  resolve: {
+    extensions: ['.ts', '.js'],
   },
   plugins: [
     new MiniCssExtractPlugin({
