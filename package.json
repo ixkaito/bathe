@@ -1,6 +1,6 @@
 {
   "name": "bathe",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "The simplest WordPress starter theme including full setup for Sass, PostCSS, Autoprefixer, stylelint, Webpack, ESLint, imagemin, Browsersync, etc.",
   "browserslist": [
     "> 1%",
