@@ -29,7 +29,7 @@
   },
   "scripts": {
     "dev": "npm-run-all -p imagemin sass webpack -p browser watch",
-    "browser": "cross-conf-env browser-sync \"http://$npm_package_config_browsersync_proxy\" -f \"**/*.php\" \"$npm_package_config_css_dist\" \"$npm_package_config_js_dist\" \"$npm_package_config_image_dist\" --port $npm_package_config_browsersync_port",
+    "browser": "cross-conf-env browser-sync \"http://$npm_package_config_browsersync_proxy\" -f \"**/*.php\" \"$npm_package_config_css_dist\" \"$npm_package_config_js_output\" \"$npm_package_config_image_dist\" --port $npm_package_config_browsersync_port",
     "build": "run-p imagemin sass webpack",
     "imagemin": "cross-conf-env node imagemin \"$npm_package_config_image_src/**/*\" $npm_package_config_image_dist",
     "presass": "cross-conf-env stylelint \"$npm_package_config_css_src/**/*\" --fix",
