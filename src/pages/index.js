@@ -66,6 +66,12 @@ const markdown = css`
     padding-top: 0.125rem;
   }
 
+  .br {
+    &::after {
+
+    }
+  }
+
   .features {
     ${tw`list-none p-0 -m-4 flex flex-wrap`}
 
@@ -124,10 +130,10 @@ const IndexPage = ({ location, data }) => {
           <h1
             className="text-5xl font-bold"
             css={css`
-              @media screen and (min-width: 320px) {
+              @media (min-width: 320px) {
                 font-size: calc(6vw + 1.8rem);
               }
-              @media screen and (min-width: 1920px) {
+              @media (min-width: 1920px) {
                 font-size: 9rem;
               }
             `}
@@ -138,10 +144,10 @@ const IndexPage = ({ location, data }) => {
             className="font-semibold text-lg sm:text-xl"
             css={css`
               max-width: 23em;
-              @media screen and (min-width: 640px) {
+              @media (min-width: 640px) {
                 font-size: calc(0.938vw + 0.875rem);
               }
-              @media screen and (min-width: 1920px) {
+              @media (min-width: 1920px) {
                 font-size: 2rem;
               }
             `}
@@ -176,7 +182,14 @@ const IndexPage = ({ location, data }) => {
           <ul
             className="flex flex-wrap mt-8 sm:mt-12 md:mt-16"
             css={css`
-              max-width: 28rem;
+              @media (min-width: 640px) {
+                &::before,
+                &::after {
+                  content: "";
+                  flex-basis: 100%;
+                  order: 1;
+                }
+              }
 
               li {
                 flex-shrink: 0;
@@ -218,6 +231,14 @@ const IndexPage = ({ location, data }) => {
               </a>
             </li>
             <li>
+              <a href="https://github.com/ixkaito/bathe/actions">
+                <img
+                  alt="Test"
+                  src="https://github.com/ixkaito/bathe/workflows/Test/badge.svg"
+                />
+              </a>
+            </li>
+            <li className="order-1">
               <GitHubButton
                 href="https://github.com/ixkaito/bathe/generate"
                 data-color-scheme="no-preference: light; light: light; dark: dark;"
@@ -227,7 +248,7 @@ const IndexPage = ({ location, data }) => {
                 Use this template
               </GitHubButton>
             </li>
-            <li>
+            <li className="order-1">
               <GitHubButton
                 href="https://github.com/ixkaito/bathe"
                 data-color-scheme="no-preference: light; light: light; dark: dark;"
@@ -238,7 +259,7 @@ const IndexPage = ({ location, data }) => {
                 Star
               </GitHubButton>
             </li>
-            <li>
+            <li className="order-1">
               <GitHubButton
                 href="https://github.com/ixkaito"
                 data-color-scheme="no-preference: light; light: light; dark: dark;"
@@ -248,7 +269,7 @@ const IndexPage = ({ location, data }) => {
                 Follow
               </GitHubButton>
             </li>
-            <li>
+            <li className="order-1">
               <GitHubButton
                 href="https://github.com/ixkaito/bathe/fork"
                 data-color-scheme="no-preference: light; light: light; dark: dark;"
@@ -259,7 +280,7 @@ const IndexPage = ({ location, data }) => {
                 Fork
               </GitHubButton>
             </li>
-            <li>
+            <li className="order-2">
               <div
                 class="fb-share-button"
                 data-href="https://ixkaito.github.io/bathe/"
@@ -278,6 +299,7 @@ const IndexPage = ({ location, data }) => {
               </div>
             </li>
             <li
+              className="order-2"
               css={css`
                 min-width: 60px;
               `}
@@ -289,7 +311,7 @@ const IndexPage = ({ location, data }) => {
                 Tweet
               </a>
             </li>
-            <li>
+            <li className="order-2">
               <a
                 class="twitter-follow-button"
                 href="https://twitter.com/ixkaito"
