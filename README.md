@@ -1,4 +1,4 @@
-# [Bathe](https://ixkaito.github.io/bathe/) [![GitHub release](https://img.shields.io/github/v/release/ixkaito/bathe?color=ed64a6)](https://github.com/wp-bathe/bathe/releases) [![license](https://img.shields.io/badge/license-GPL--2.0%2B-orange)](https://github.com/wp-bathe/bathe/blob/master/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ixkaito/bathe/pulls)
+# [Bathe](https://ixkaito.github.io/bathe/) [![GitHub release](https://img.shields.io/github/v/release/ixkaito/bathe?color=ed64a6)](https://github.com/wp-bathe/bathe/releases) [![license](https://img.shields.io/badge/license-GPL--2.0%2B-orange)](https://github.com/wp-bathe/bathe/blob/master/LICENSE) [![Test](https://github.com/ixkaito/bathe/workflows/Test/badge.svg)](https://github.com/ixkaito/bathe/actions) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ixkaito/bathe/pulls)
 
 Bathe is the simplest WordPress starter theme including full setup for Sass, PostCSS, Autoprefixer, stylelint, Webpack, ESLint, imagemin, Browsersync, etc.
 
