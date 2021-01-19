@@ -199,7 +199,11 @@ const IndexPage = ({ location, data }) => {
             `}
           >
             <li>
-              <a href="https://github.com/ixkaito/bathe/releases">
+              <a
+                href="https://github.com/ixkaito/bathe/releases"
+                target="_blank"
+                rel="noopener"
+              >
                 <img
                   alt="GitHub release"
                   src="https://img.shields.io/github/v/release/ixkaito/bathe?color=ed64a6"
@@ -207,7 +211,11 @@ const IndexPage = ({ location, data }) => {
               </a>
             </li>
             <li>
-              <a href="https://github.com/ixkaito/bathe/blob/master/LICENSE">
+              <a
+                href="https://github.com/ixkaito/bathe/blob/master/LICENSE"
+                target="_blank"
+                rel="noopener"
+              >
                 <img
                   alt="license GPL 2.0 or later"
                   src="https://img.shields.io/badge/license-GPL--2.0%2B-orange"
@@ -215,7 +223,11 @@ const IndexPage = ({ location, data }) => {
               </a>
             </li>
             <li>
-              <a href="https://github.com/ixkaito/bathe/blob/master/package.json#L67">
+              <a
+                href="https://github.com/ixkaito/bathe/blob/master/package.json#L66"
+                target="_blank"
+                rel="noopener"
+              >
                 <img
                   alt="node >= 12.0.0"
                   src="https://img.shields.io/badge/node-%3E%3D%2012.0.0-brightgreen"
@@ -223,7 +235,11 @@ const IndexPage = ({ location, data }) => {
               </a>
             </li>
             <li>
-              <a href="https://github.com/ixkaito/bathe/blob/master/package.json#L68">
+              <a
+                href="https://github.com/ixkaito/bathe/blob/master/package.json#L67"
+                target="_blank"
+                rel="noopener"
+              >
                 <img
                   alt="npm >= 6.9.0"
                   src="https://img.shields.io/badge/npm-%3E%3D%206.9.0-brightgreen"
@@ -231,7 +247,11 @@ const IndexPage = ({ location, data }) => {
               </a>
             </li>
             <li>
-              <a href="https://github.com/ixkaito/bathe/actions">
+              <a
+                href="https://github.com/ixkaito/bathe/actions"
+                target="_blank"
+                rel="noopener"
+              >
                 <img
                   alt="Test"
                   src="https://github.com/ixkaito/bathe/workflows/Test/badge.svg"
