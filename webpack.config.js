@@ -1,18 +1,22 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+// const ESLintPlugin = require('eslint-webpack-plugin');
+import ESLintPlugin from 'eslint-webpack-plugin';
+// import path from 'path';
 const MODE = 'production';
-const enabledSourceMap = (MODE === 'development');
+const enabledSourceMap = MODE === 'development';
 
-module.exports = {
+export default {
   mode: MODE,
 
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.(js|ts)$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-      },
+      // {
+      //   enforce: 'pre',
+      //   test: /\.(js|ts)$/,
+      //   exclude: /node_modules/,
+      //   loader: 'eslint-loader',
+      // },
       {
         test: /\.ts$/,
         use: 'ts-loader',
@@ -45,9 +49,9 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               sourceMap: enabledSourceMap,
-              plugins: [
-                require('autoprefixer')({grid: true}),
-              ],
+              postcssOptions: {
+                plugins: [['autoprefixer', {grid: true}]],
+              },
             },
           },
           {
@@ -60,12 +64,22 @@ module.exports = {
       },
     ],
   },
+  // cache: {
+  //   type: 'filesystem',
+  //   buildDependencies: {
+  //     config: [__filename],
+  //   },
+  // },
   resolve: {
     extensions: ['.ts', '.js'],
   },
   plugins: [
     new MiniCssExtractPlugin({
       filename: '${__dirname}/assets/css/style.css',
+    }),
+    new ESLintPlugin({
+      extensions: ['.js', '.ts'],
+      exclude: 'node_modules',
     }),
   ],
 };

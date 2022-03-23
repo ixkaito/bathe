@@ -13,6 +13,7 @@ module.exports = {
     'browser': true,
     'es6': true,
     'jquery': true,
+    'node': true,
   },
   'rules': {
     // Insert custom rules here
@@ -23,5 +24,5 @@ module.exports = {
   },
   'parserOptions': {
     'sourceType': 'module',
-  }
-}
+  },
+};
