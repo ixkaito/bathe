@@ -1,12 +1,12 @@
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-// const ESLintPlugin = require('eslint-webpack-plugin');
-import ESLintPlugin from 'eslint-webpack-plugin';
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+const ESLintPlugin = require('eslint-webpack-plugin');
+// import ESLintPlugin from 'eslint-webpack-plugin';
 // import path from 'path';
 const MODE = 'production';
 const enabledSourceMap = MODE === 'development';
 
-export default {
+module.exports = {
   mode: MODE,
 
   module: {

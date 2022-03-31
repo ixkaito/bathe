@@ -79,6 +79,8 @@ add_action( 'widgets_init', function() {
 add_action( 'wp_enqueue_scripts', function() {
 
 	wp_enqueue_style( 'bathe-main', get_theme_file_uri( 'assets/css/main.css' ) );
+	wp_enqueue_style( 'tailwind', get_theme_file_uri( 'assets/css/tailwind.css' ) );
+
 
 	wp_enqueue_script( 'bathe-bundle', get_theme_file_uri( 'assets/js/main.js' ), array(), null, true );
 
