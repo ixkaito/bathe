@@ -1,9 +1,7 @@
 /**
  * @type {import('prettier').Options}
  **/
-const config = {
+module.exports = {
   singleQuote: true,
   semi: true,
 };
-
-module.exports = config;

@@ -1,11 +1,7 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'tailwindcss'],
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:tailwindcss/recommended',
-  ],
+  plugins: ['@typescript-eslint'],
+  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
   env: {
     // For more environments, see here: http://eslint.org/docs/user-guide/configuring.html#specifying-environments
     browser: true,

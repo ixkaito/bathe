@@ -13,8 +13,9 @@
     "jsx": "react",
     "incremental": true,
     "sourceMap": true,
-    "removeComments": false
+    "removeComments": false,
+    "outDir": "assets/js"
   },
-  "include": ["./assets/_src/js/**/*"],
+  "include": ["assets/_src/js/**/*"],
   "exclude": ["node_modules"]
 }
