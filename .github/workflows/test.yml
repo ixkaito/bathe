@@ -2,27 +2,26 @@ name: Test
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node: [ 12.x, 14.x ]
+        node: [17.x, 16.x]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node }}
-    - run: npm install
-    - run: npm run build
-    - run: npm i -g @wordpress/env
-    - run: wp-env start
-    - run: wp-env run cli "wp theme activate bathe"
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm install
+      - run: npm run build
+      - run: npm i -g @wordpress/env
+      - run: wp-env start
+      - run: wp-env run cli "wp theme activate bathe"
