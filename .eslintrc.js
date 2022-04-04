@@ -1,28 +1,26 @@
 module.exports = {
-  'parser': '@typescript-eslint/parser',
-  'plugins': [
-    '@typescript-eslint',
-  ],
-  'extends': [
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint', 'tailwindcss'],
+  extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    'google',
+    'plugin:tailwindcss/recommended',
   ],
-  'env': {
+  env: {
     // For more environments, see here: http://eslint.org/docs/user-guide/configuring.html#specifying-environments
-    'browser': true,
-    'es6': true,
-    'jquery': true,
-    'node': true,
+    browser: true,
+    es6: true,
+    jquery: true,
+    node: true,
   },
-  'rules': {
+  rules: {
     // Insert custom rules here
     // For more rules, see here: http://eslint.org/docs/rules/
     'no-invalid-this': 'off',
     'no-var': 'warn',
     'require-jsdoc': 'off',
   },
-  'parserOptions': {
-    'sourceType': 'module',
+  parserOptions: {
+    sourceType: 'module',
   },
 };
