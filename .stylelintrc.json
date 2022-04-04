@@ -1,5 +1,5 @@
 {
-  "extends": ["stylelint-config-sass-guidelines"],
+  "extends": ["stylelint-config-sass-guidelines", "stylelint-config-prettier"],
   "rules": {
     "indentation": "tab"
   }
