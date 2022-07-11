@@ -9,7 +9,7 @@
 				<?php the_content(); ?>
 			</li>
 
-		<?php endwhile ?>
+		<?php endwhile; ?>
 
 	</ul>
 
