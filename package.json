@@ -92,13 +92,13 @@
     "mini-css-extract-plugin": "^2.6.0",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
-    "postcss-cli": "^9.1.0",
+    "postcss-cli": "^10.1.0",
     "sass": "^1.49.10",
-    "stylelint": "^14.6.1",
+    "stylelint": "^15.7.0",
     "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-sass-guidelines": "^9.0.1",
+    "stylelint-config-sass-guidelines": "^10.0.0",
     "tailwindcss": "^3.0.23",
-    "typescript": "^4.6.3",
+    "typescript": "^5.1.3",
     "vite": "^4.3.9"
   }
 }
