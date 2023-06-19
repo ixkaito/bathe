@@ -24,4 +24,4 @@ jobs:
       - run: npm run build
       - run: npm i -g @wordpress/env
       - run: wp-env start
-      - run: wp-env run cli "wp theme activate bathe"
+      - run: wp-env run cli wp theme activate bathe
