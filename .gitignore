@@ -1,3 +1,6 @@
+# Maps
+assets/css/*.map
+
 # Apache
 .htaccess
 .htpasswd
