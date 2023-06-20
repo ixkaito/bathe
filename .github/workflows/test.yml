@@ -4,7 +4,7 @@ on:
   push:
     branches: [master]
   pull_request:
-    branches: [master]
+    branches: ['**']
 
 jobs:
   test:
@@ -12,16 +12,16 @@ jobs:
 
     strategy:
       matrix:
-        node: [17.x, 16.x]
+        node: [20.x, 18.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
       - run: npm install
       - run: npm run build
       - run: npm i -g @wordpress/env
       - run: wp-env start
-      - run: wp-env run cli "wp theme activate bathe"
+      - run: wp-env run cli wp theme activate bathe
