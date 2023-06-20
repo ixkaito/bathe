@@ -10,9 +10,9 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<header class="header hover:text-red-500 text-red-500">
+<header class="header">
 	<h1>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<a class="text-blue-500 hover:underline" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<?php bloginfo( 'name' ); ?>
 		</a>
 	</h1>
