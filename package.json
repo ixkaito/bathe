@@ -70,8 +70,8 @@
   },
   "homepage": "https://github.com/wp-bathe/bathe",
   "engines": {
-    "node": ">= 16.14.0",
-    "npm": ">= 8.3.1"
+    "node": ">= 18.16",
+    "npm": ">= 9.5"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
