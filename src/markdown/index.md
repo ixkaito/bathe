@@ -30,10 +30,24 @@ slug: index
     </a>
   </li>
   <li>
-    <a href="https://webpack.js.org/" target="_blank" rel="noopener">
+    <a href="https://vitejs.dev/" target="_blank" rel="noopener">
       <figure>
-        <svg width="600" height="600" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 0.00400177L22.6 6.00001V17.996L12 23.992L1.39999 17.996V6.00001L12 0.00400177Z" fill="white"/><path d="M20.708 17.58L12.352 22.312V18.632L17.56 15.764L20.708 17.58ZM21.28 17.064V7.176L18.224 8.94V15.3L21.28 17.064ZM3.25999 17.58L11.616 22.308V18.628L6.40799 15.764L3.25999 17.58V17.58ZM2.68799 17.064V7.176L5.74399 8.94V15.3L2.68799 17.064V17.064ZM3.04399 6.536L11.616 1.688V5.248L6.12399 8.268L6.07999 8.292L3.04399 6.536V6.536ZM20.92 6.536L12.352 1.688V5.248L17.84 8.272L17.884 8.296L20.92 6.536V6.536Z" fill="#8ED6FB"/><path d="M11.616 17.792L6.48 14.964V9.368L11.616 12.332V17.792V17.792ZM12.352 17.792L17.488 14.968V9.368L12.352 12.332V17.792V17.792ZM6.824 8.72L11.984 5.884L17.14 8.72L11.984 11.696L6.824 8.72V8.72Z" fill="#1C78C0"/></svg>
-        <figcaption>Webpack</figcaption>
+        <svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M551.191 121.772L313.625 546.561C308.72 555.331 296.118 555.383 291.14 546.655L48.8634 121.813C43.4396 112.302 51.5729 100.782 62.3511 102.708L300.171 145.215C301.688 145.487 303.242 145.484 304.759 145.208L537.605 102.769C548.348 100.812 556.519 112.243 551.191 121.772Z" fill="url(#paint0_linear_301_5)"/>
+          <path d="M413.458 46.9546L237.652 81.4014C234.762 81.9675 232.623 84.4162 232.449 87.3548L221.634 269.994C221.38 274.296 225.331 277.635 229.529 276.667L278.476 265.371C283.056 264.315 287.194 268.348 286.253 272.953L271.711 344.16C270.732 348.952 275.232 353.05 279.912 351.629L310.144 342.444C314.831 341.021 319.334 345.131 318.343 349.927L295.233 461.776C293.787 468.773 303.093 472.588 306.974 466.59L309.567 462.583L452.823 176.704C455.222 171.917 451.085 166.459 445.828 167.474L395.445 177.197C390.711 178.11 386.682 173.701 388.019 169.069L420.903 55.0787C422.24 50.4389 418.198 46.026 413.458 46.9546Z" fill="url(#paint1_linear_301_5)"/>
+          <defs>
+          <linearGradient id="paint0_linear_301_5" x1="42.9481" y1="87.5272" x2="338.599" y2="489.064" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#41D1FF"/>
+          <stop offset="1" stop-color="#BD34FE"/>
+          </linearGradient>
+          <linearGradient id="paint1_linear_301_5" x1="286.521" y1="56.3068" x2="340.002" y2="423.192" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#FFEA83"/>
+          <stop offset="0.0833333" stop-color="#FFDD35"/>
+          <stop offset="1" stop-color="#FFA800"/>
+          </linearGradient>
+          </defs>
+        </svg>
+        <figcaption>Vite</figcaption>
       </figure>
     </a>
   </li>
@@ -111,16 +125,15 @@ You can modify the configurations by editing `config` in `package.json`.
     "port": 3000
   },
   "image": {
-    "src": "assets/_src/images",
+    "src": "src/images",
     "dist": "assets/images"
   },
   "js": {
-    "entry": "bundle.js",
-    "src": "assets/_src/js",
-    "dist": "assets/js"
+    "entry": "src/js/main.js",
+    "output": "assets/js"
   },
   "css": {
-    "src": "assets/_src/sass",
+    "src": "src/sass",
     "dist": "assets/css",
     "style": "compressed",
     "map": "--map"
@@ -131,4 +144,4 @@ You can modify the configurations by editing `config` in `package.json`.
 ## Notes
 
 - Bathe doesn't load the default theme stylesheet `style.css` by default.
-- You can use Bathe without Node.js (Sass, Webpack, Browsersync, etc.) just like other themes. Nothing else is necessary except WordPress environment.
+- You can use Bathe without Node.js (Sass, Vite, Browsersync, etc.) just like other themes. Nothing else is necessary except WordPress environment.

@@ -1,57 +1,36 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "dependencies": {
-    "@emotion/core": "^10.0.28",
-    "@emotion/styled": "^10.0.27",
-    "gatsby": "^2.23.3",
-    "gatsby-image": "^2.4.7",
-    "gatsby-plugin-canonical-urls": "^2.3.10",
-    "gatsby-plugin-emotion": "^4.3.10",
-    "gatsby-plugin-manifest": "^2.4.21",
-    "gatsby-plugin-offline": "^3.2.21",
-    "gatsby-plugin-postcss": "^2.3.11",
-    "gatsby-plugin-react-helmet": "^3.3.4",
-    "gatsby-plugin-sharp": "^2.6.11",
-    "gatsby-plugin-twitter": "^2.3.10",
-    "gatsby-source-filesystem": "^2.3.23",
-    "gatsby-transformer-remark": "^2.8.27",
-    "gatsby-transformer-sharp": "^2.5.5",
-    "gh-pages": "^3.1.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-github-btn": "^1.2.0",
-    "react-helmet": "^6.1.0",
-    "twin.macro": "^1.6.1",
-    "typeface-inter": "^3.12.0"
-  },
-  "devDependencies": {
-    "prettier": "2.0.5",
-    "tailwindcss": "^1.4.6"
-  },
-  "keywords": [
-    "gatsby"
-  ],
+  "name": "bathe-docs-astro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ixkaito/bathe.git",
   "license": "MIT",
   "scripts": {
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "build": "gatsby build",
-    "dev": "gatsby develop -H 0.0.0.0",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  "devDependencies": {
+    "@typescript-eslint/parser": "^5.60.0",
+    "autoprefixer": "^10.4.14",
+    "clsx": "^1.2.1",
+    "eslint": "^8.43.0",
+    "eslint-plugin-astro": "^0.27.2",
+    "eslint-plugin-tailwindcss": "^3.12.1",
+    "postcss": "^8.4.24",
+    "prettier-plugin-tailwindcss": "^0.3.0",
+    "tailwindcss": "^3.0.24"
   },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  "dependencies": {
+    "@astrojs/react": "^2.2.1",
+    "@astrojs/tailwind": "^4.0.0",
+    "@fontsource-variable/inter": "^5.0.3",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "astro": "^2.6.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-github-btn": "^1.4.0"
   }
 }
