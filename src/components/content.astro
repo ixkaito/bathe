@@ -53,16 +53,16 @@ import { Content as MarkdownContent } from '../markdown/index.md';
     }
 
     :global(.features) {
-      @apply -m-4 flex list-none flex-wrap p-0;
+      @apply grid list-none grid-cols-4 gap-x-2 gap-y-6 p-0 sm:grid-cols-7 sm:gap-4;
 
       :global(li) {
-        @apply m-0 w-1/4 p-1 text-center sm:w-[calc(100%/7)] md:p-2 lg:p-3;
+        @apply m-0 text-center;
 
-        :global(svg) {
-          @apply px-1.5 md:px-1 lg:p-0;
+        :global(figure > div) {
+          @apply m-0.5;
         }
         :global(figcaption) {
-          @apply mt-1 break-words text-xs leading-normal text-gray-400 duration-200 sm:leading-normal md:text-sm;
+          @apply mt-1 text-xs leading-normal text-gray-400 duration-200 sm:leading-normal md:text-sm;
         }
       }
 
