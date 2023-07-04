@@ -1,11 +1,9 @@
 {
-  "name": "bathe-docs-astro",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "bathe-docs",
+  "version": "3.0.0",
   "repository": "git@github.com:ixkaito/bathe.git",
   "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",

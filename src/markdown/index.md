@@ -150,7 +150,7 @@ yarn dev
 
 <h2 id="configurations">Configurations and Defaults</h2>
 
-You can modify the configurations by editing `config` in `package.json`.
+You can modify the configurations by editing [`config` in `package.json`](https://github.com/ixkaito/bathe/blob/main/package.json#L10-L33C4).
 
 ### Defaults
 
@@ -173,6 +173,10 @@ You can modify the configurations by editing `config` in `package.json`.
     "dist": "assets/css",
     "style": "compressed",
     "map": "--map"
+  },
+  "tailwind": {
+    "src": "src/tailwind/tailwind.css",
+    "dist": "assets/css/tailwind.css"
   }
 }
 ```
