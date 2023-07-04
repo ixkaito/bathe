@@ -1,7 +1,7 @@
 {
   "name": "bathe",
-  "version": "2.0.0",
-  "description": "The simplest WordPress starter theme including full setup for Tailwind CSS, Sass, PostCSS, Autoprefixer, Webpack, TypeScript, Browsersync, imagemin, Prettier, stylelint, ESLint.",
+  "version": "3.0.0",
+  "description": "The simplest WordPress starter theme including full setup for Tailwind CSS, Sass, PostCSS, Autoprefixer, Vite, TypeScript, Browsersync, imagemin, Prettier, stylelint, ESLint.",
   "browserslist": [
     "> 1%",
     "last 2 versions",
@@ -13,39 +13,39 @@
       "port": 3000
     },
     "image": {
-      "src": "assets/_src/images",
+      "src": "src/images",
       "dist": "assets/images"
     },
     "js": {
-      "entry": "./assets/_src/js/main.js",
-      "output": "./assets/js"
+      "entry": "src/js/main.js",
+      "output": "assets/js"
     },
     "css": {
-      "src": "assets/_src/sass",
+      "src": "src/sass",
       "dist": "assets/css",
       "style": "compressed",
       "map": "--map"
     },
     "tailwind": {
-      "src": "assets/_src/tailwind/tailwind.css",
+      "src": "src/tailwind/tailwind.css",
       "dist": "assets/css/tailwind.css"
     }
   },
   "scripts": {
-    "dev": "npm-run-all -p imagemin css webpack -p browser watch",
+    "dev": "npm-run-all -p imagemin css -p browser watch",
     "browser": "cross-conf-env browser-sync \"http://$npm_package_config_browsersync_proxy\" -f \"**/*.php\" \"$npm_package_config_css_dist\" \"$npm_package_config_js_output\" \"$npm_package_config_image_dist\" --port $npm_package_config_browsersync_port",
-    "build": "run-p imagemin css webpack",
+    "build": "run-p imagemin css vite",
     "css": "run-p sass tailwind",
     "imagemin": "cross-conf-env node imagemin.mjs \"$npm_package_config_image_src/**/*\" $npm_package_config_image_dist",
     "presass": "cross-conf-env stylelint \"$npm_package_config_css_src/**/*\" --fix",
     "sass": "cross-conf-env sass $npm_package_config_css_src:$npm_package_config_css_dist --style=compressed",
     "postsass": "cross-conf-env postcss $npm_package_config_css_dist/*.css --use=autoprefixer --dir=$npm_package_config_css_dist $npm_package_config_css_map",
     "tailwind": "cross-conf-env tailwindcss -i $npm_package_config_tailwind_src -o $npm_package_config_tailwind_dist --minify",
-    "webpack": "cross-conf-env webpack $npm_package_config_js_entry -o $npm_package_config_js_output",
+    "vite": "vite build",
     "watch:imagemin": "cross-conf-env onchange \"$npm_package_config_image_src/**/*\" -e \".DS_Store\" -- npm run imagemin",
     "watch:sass": "cross-conf-env onchange \"$npm_package_config_css_src/**/*\" -e \".DS_Store\" -- npm run sass",
     "watch:tailwind": "npm run tailwind -- --watch",
-    "watch:webpack": "npm run webpack -- --watch",
+    "watch:vite": "npm run vite -- --watch --mode development",
     "watch": "run-p watch:*"
   },
   "repository": {
@@ -59,7 +59,7 @@
     "PostCSS",
     "Autoprefixer",
     "imagemin",
-    "Webpack",
+    "vite",
     "stylelint",
     "ESLint"
   ],
@@ -70,43 +70,35 @@
   },
   "homepage": "https://github.com/wp-bathe/bathe",
   "engines": {
-    "node": ">= 16.14.0",
-    "npm": ">= 8.3.1"
+    "node": ">= 18.16",
+    "npm": ">= 9.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.8",
-    "@babel/preset-env": "^7.16.11",
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
     "@ixkaito/imagemin": "^0.1.0",
-    "@typescript-eslint/eslint-plugin": "^5.17.0",
-    "@typescript-eslint/parser": "^5.17.0",
-    "autoprefixer": "^10.4.4",
-    "babel-loader": "^8.2.4",
-    "browser-sync": "^2.27.9",
-    "cross-conf-env": "^1.2.1",
-    "css-loader": "^6.7.1",
-    "eslint": "^8.12.0",
-    "eslint-plugin-tailwindcss": "^3.5.0",
-    "eslint-webpack-plugin": "^3.1.1",
-    "globby": "^13.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.60.0",
+    "@typescript-eslint/parser": "^5.60.0",
+    "autoprefixer": "^10.4.14",
+    "browser-sync": "^2.29.3",
+    "cross-conf-env": "^1.3.0",
+    "eslint": "^8.43.0",
+    "eslint-plugin-tailwindcss": "^3.12.1",
+    "globby": "^13.2.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^10.0.1",
-    "mini-css-extract-plugin": "^2.6.0",
+    "mini-css-extract-plugin": "^2.7.6",
     "npm-run-all": "^4.1.5",
     "onchange": "^7.1.0",
-    "postcss-cli": "^9.1.0",
-    "postcss-loader": "^6.2.1",
-    "sass": "^1.49.10",
-    "sass-loader": "^12.6.0",
-    "style-loader": "^3.3.1",
-    "stylelint": "^14.6.1",
-    "stylelint-config-prettier": "^9.0.3",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.63.4",
+    "stylelint": "^14.16.1",
+    "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-sass-guidelines": "^9.0.1",
-    "tailwindcss": "^3.0.23",
-    "ts-loader": "^9.2.8",
-    "typescript": "^4.6.3",
-    "webpack": "^5.70.0",
-    "webpack-cli": "^4.9.2"
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.1.3",
+    "vite": "^4.3.9"
   }
 }

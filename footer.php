@@ -1,6 +1,7 @@
-</main>
+	</main>
 
-<?php get_sidebar(); ?>
+	<?php get_sidebar(); ?>
+</div>
 
 <footer class="footer">
 	<p class="copyright">© 2020 the contributors of Bathe under the GPLv2 license.</p>

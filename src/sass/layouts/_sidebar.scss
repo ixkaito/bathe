@@ -1,0 +1,6 @@
+@use '../global' as *;
+
+.sidebar {
+	border-left: 1px solid $light-gray;
+	padding: 2rem;
+}
