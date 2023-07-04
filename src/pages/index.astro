@@ -1,0 +1,210 @@
+---
+import clsx from 'clsx';
+import GitHubButton from 'react-github-btn';
+import Layout from '../layouts/layout.astro';
+import Content from '../components/content.astro';
+
+const href = Astro.url.href;
+---
+
+<Layout pageTitle="Bathe | The simplest WordPress starter theme">
+  <div
+    class={clsx(
+      '-mt-px pt-px text-white',
+      "bg-blue-500 bg-[url('/images/hero.png')] bg-cover bg-right-top bg-no-repeat"
+    )}
+  >
+    <div
+      class={clsx(
+        'mx-auto flex max-w-4xl flex-col items-start justify-center',
+        'px-6 pb-12 pt-3 sm:p-10 sm:pb-20 md:px-12 md:py-24'
+      )}
+    >
+      <h1
+        class="text-5xl font-bold leading-normal xs:text-[calc(6vw_+_1.8rem)] 3xl:text-[9rem]"
+      >
+        Bathe
+      </h1>
+
+      <p
+        class={clsx(
+          'max-w-[23em] text-lg font-semibold leading-normal',
+          'sm:text-[calc(0.938vw+0.875rem)]',
+          '2xl:text-[2rem]'
+        )}
+      >
+        The simplest WordPress starter theme including Tailwind CSS, Sass,
+        PostCSS, Autoprefixer, stylelint, Vite, ESLint, imagemin, Browsersync,
+        etc.
+      </p>
+      <div class="mt-8 sm:mt-10 md:mt-12">
+        <a
+          class={clsx(
+            'inline-block rounded-[2rem] bg-blue-500 px-12 py-4 text-lg font-bold leading-normal',
+            'shadow-[-6px_6px_12px_rgba(0,0,0,0.2),6px_-6px_12px_rgba(255,255,255,0.1)]',
+            'transition-shadow duration-[250ms]',
+            'hover:shadow-[-4px_4px_10px_rgba(0,0,0,0.2),4px_-4px_10px_rgba(255,255,255,0.1)]',
+            'active:shadow-[0_0_0_transparent,0_0_0_transparent,-6px_6px_12px_rgba(0,0,0,0.2)_inset,6px_-6px_12px_rgba(255,255,255,0.1)_inset]'
+          )}
+          href="https://github.com/wp-bathe/bathe/archive/master.zip"
+        >
+          Get Bathe
+        </a>
+      </div>
+      <ul
+        class={clsx(
+          'mt-8 flex flex-wrap sm:mt-12 md:mt-16',
+          "sm:before:order-1 sm:before:basis-full sm:before:content-['']",
+          "sm:after:order-1 sm:after:basis-full sm:after:content-['']",
+          '[&_li]:m-1 [&_li]:h-5 [&_li]:shrink-0 [&_li]:leading-none',
+          'focus-visible:[&_li_iframe]:outline-none'
+        )}
+      >
+        <li>
+          <a
+            href="https://github.com/ixkaito/bathe/releases"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              alt="GitHub release"
+              src="https://img.shields.io/github/v/release/ixkaito/bathe?color=ed64a6"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/ixkaito/bathe/blob/master/LICENSE"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              alt="license GPL 2.0 or later"
+              src="https://img.shields.io/badge/license-GPL--2.0%2B-orange"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/ixkaito/bathe/blob/master/package.json#L66"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              alt="node >= 12.0.0"
+              src="https://img.shields.io/badge/node-%3E%3D%2012.0.0-brightgreen"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/ixkaito/bathe/blob/master/package.json#L67"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              alt="npm >= 6.9.0"
+              src="https://img.shields.io/badge/npm-%3E%3D%206.9.0-brightgreen"
+            />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/ixkaito/bathe/actions"
+            target="_blank"
+            rel="noopener"
+          >
+            <img
+              src="https://github.com/ixkaito/bathe/workflows/Test/badge.svg"
+            />
+          </a>
+        </li>
+        <li class="order-1">
+          <GitHubButton
+            client:load
+            href={`https://github.com/ixkaito/bathe/generate`}
+            data-color-scheme="no-preference: light; light: light; dark: dark;"
+            data-icon="octicon-repo-template"
+            aria-label="Use this template ixkaito/bathe on GitHub"
+          >
+            Use this template
+          </GitHubButton>
+        </li>
+        <li class="order-1">
+          <GitHubButton
+            client:load
+            href="https://github.com/ixkaito/bathe"
+            data-color-scheme="no-preference: light; light: light; dark: dark;"
+            data-icon="octicon-star"
+            data-show-count="true"
+            aria-label="Star ixkaito/bathe on GitHub"
+          >
+            Star
+          </GitHubButton>
+        </li>
+        <li class="order-1">
+          <GitHubButton
+            client:load
+            href="https://github.com/ixkaito"
+            data-color-scheme="no-preference: light; light: light; dark: dark;"
+            data-show-count="true"
+            aria-label="Follow @ixkaito on GitHub"
+          >
+            Follow
+          </GitHubButton>
+        </li>
+        <li class="order-1">
+          <GitHubButton
+            client:load
+            href="https://github.com/ixkaito/bathe/fork"
+            data-color-scheme="no-preference: light; light: light; dark: dark;"
+            data-icon="octicon-repo-forked"
+            data-show-count="true"
+            aria-label="Fork ixkaito/bathe on GitHub"
+          >
+            Fork
+          </GitHubButton>
+        </li>
+        <li class="order-2">
+          <div
+            class="fb-share-button"
+            data-href="https://ixkaito.github.io/bathe/"
+            data-layout="button_count"
+            data-size="small"
+          >
+            <a
+              target="_blank"
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                href
+              )}&amp;src=sdkpreparse`}
+              class="fb-xfbml-parse-ignore"
+            >
+              Share</a
+            >
+          </div>
+        </li>
+        <li class="order-2 min-w-[60px]">
+          <a
+            href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+            class="twitter-share-button"
+            data-text="Bathe | The simplest WordPress starter theme"
+            data-url="https://ixkaito.github.io/bathe/ "
+            data-lang="en"
+            data-show-count="false">Tweet</a
+          >
+        </li>
+        <li class="order-2">
+          <a
+            href="https://twitter.com/ixkaito?ref_src=twsrc%5Etfw"
+            data-show-screen-name="false"
+            class="twitter-follow-button"
+            data-show-count="false">Follow</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="mx-auto max-w-4xl px-6 pb-12 sm:px-10 sm:pb-16 md:px-12 md:pb-20">
+    <Content />
+  </div>
+</Layout>

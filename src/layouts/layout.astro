@@ -1,0 +1,67 @@
+---
+import '@fontsource-variable/inter';
+import Header from '../components/header.astro';
+import { config } from '../../site.config';
+import '../css/global.css';
+
+export interface Props {
+  pageTitle?: string;
+}
+
+const { pageTitle } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle || config.siteMetadata.title}</title>
+    <meta name="description" content={config.siteMetadata.description} />
+    <meta name="og:title" content={pageTitle} />
+    <meta name="og:type" content="website" />
+    <meta
+      name="og:image"
+      content={`${config.siteMetadata.url}/images/ogimage.png`}
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content={config.siteMetadata.author} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta
+      name="twitter:description"
+      content={config.siteMetadata.description}
+    />
+  </head>
+  <body class="bg-[#edf2f7] font-inter text-gray-900 antialiased"
+    ><div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossOrigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0"
+      nonce="H1yDL0DN"></script>
+    <script
+      is:inline
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"></script>
+    <main>
+      <Header />
+      <slot />
+    </main>
+    <footer class="px-6 py-4 text-center text-gray-400 sm:px-10 md:px-12">
+      © {new Date().getFullYear()} the contributors of Bathe under the{' '}
+      <a
+        href="https://github.com/ixkaito/bathe/blob/master/LICENSE"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-gray-700 hover:underline"
+      >
+        GPL version 2.0
+      </a>{' '}
+      or later.
+    </footer>
+  </body>
+</html>

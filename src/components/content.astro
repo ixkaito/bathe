@@ -1,0 +1,88 @@
+---
+import { Content as MarkdownContent } from '../markdown/index.md';
+---
+
+<style>
+  .markdown {
+    :global(h2) {
+      @apply mb-6 mt-16 text-3xl font-bold leading-normal sm:mt-20 md:mt-24;
+    }
+
+    :global(h3) {
+      @apply mb-4 mt-8 text-lg font-bold leading-normal;
+    }
+
+    :global(p) {
+      @apply my-4;
+    }
+
+    :global(a) {
+      @apply text-blue-500 hover:underline;
+    }
+
+    :global(strong) {
+      @apply font-semibold;
+    }
+
+    :global(ol) {
+      @apply list-decimal pl-4;
+    }
+
+    :global(ul) {
+      @apply list-disc pl-4;
+    }
+
+    :global(li) {
+      @apply my-4;
+    }
+
+    :global(pre) {
+      @apply my-4;
+    }
+
+    :global(pre code) {
+      @apply block rounded-lg bg-[#2d3748] p-4 leading-normal text-white;
+
+      &.language-shell {
+        @apply before:text-pink-500 before:content-["$_"];
+      }
+    }
+
+    :global(code) {
+      @apply rounded bg-blue-200 px-1 py-[0.125rem] font-mono text-sm;
+    }
+
+    :global(.features) {
+      @apply grid list-none grid-cols-4 gap-x-2 gap-y-6 p-0 sm:grid-cols-7 sm:gap-4;
+
+      :global(li) {
+        @apply m-0 text-center;
+
+        :global(figure > div) {
+          @apply m-0.5;
+        }
+        :global(figcaption) {
+          @apply mt-1 text-xs leading-normal text-gray-400 duration-200 sm:leading-normal md:text-sm;
+        }
+      }
+
+      :global(a) {
+        @apply hover:no-underline;
+      }
+      :global(a:hover figcaption) {
+        @apply text-gray-800;
+      }
+    }
+    :global(.button) {
+      @apply mx-1 my-2 inline-block rounded-[2rem] px-6 py-2 font-bold
+        shadow-[-6px_6px_12px_#cbd5e0,6px_-6px_12px_#fff]
+        transition-shadow duration-[250ms]
+        hover:no-underline hover:shadow-[-4px_4px_10px_#cbd5e0,_4px_-4px_10px_#fff]
+        active:shadow-[0_0_0_transparent,0_0_0_transparent,_-6px_6px_12px_#e2e8f0_inset,6px_-6px_12px_#fff_inset];
+    }
+  }
+</style>
+
+<div class="markdown">
+  <MarkdownContent />
+</div>
