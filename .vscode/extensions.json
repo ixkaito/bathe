@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "shevaua.phpcs",
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "bradlc.vscode-tailwindcss",
+    "valeryanm.vscode-phpsab"
+  ]
+}

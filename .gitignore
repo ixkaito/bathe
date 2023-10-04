@@ -9,6 +9,9 @@ assets/css/*.map
 wp-config.php
 *.sql
 
+# PHP
+vendor/
+
 # Node.js
 node_modules/
 
