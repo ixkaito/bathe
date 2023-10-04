@@ -2,7 +2,8 @@
 
 	<ul>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php while ( have_posts() ) : ?>
+			<?php the_post(); ?>
 
 			<li>
 				<h1 class="text-2xl font-bold hover:underline">
@@ -17,4 +18,5 @@
 
 	</ul>
 
-<?php endif;
+	<?php
+endif;

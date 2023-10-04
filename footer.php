@@ -1,4 +1,12 @@
-	</main>
+<?php
+/**
+ * The footer
+ *
+ * @package Bathe
+ */
+
+?>
+</main>
 
 	<?php get_sidebar(); ?>
 </div>
