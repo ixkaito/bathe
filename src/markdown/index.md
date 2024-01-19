@@ -120,7 +120,7 @@ slug: index
 cd /path/to/bathe
 ```
 
-### 4. Install dependencies
+### 4. Install Node.js dependencies
 
 ```shell
 npm install
@@ -132,11 +132,30 @@ Or with [yarn](https://classic.yarnpkg.com/en/):
 yarn
 ```
 
-### 5. Modify the `proxy` of browsersync in `package.json` for your environment
+### 5. Install Composer packages (Optional)
+
+```shell
+composer install
+```
+
+### 6. Modify the `proxy` of browsersync in `package.json` for your environment
 
 The default `proxy` is `localhost:8888` for [wp-env](https://developer.wordpress.org/block-editor/packages/packages-env/).
 
-### 6. Start developing
+For example:
+
+```json
+{
+  ...
+  "browsersync": {
+    "proxy": "your-site.local",
+    "port": 3000
+  },
+  ...
+}
+```
+
+### 7. Start developing
 
 ```shell
 npm run dev
